@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/qt-logo.png" style="width: 160px; height: 117px">
+  <img src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/qt-logo.png" style="width: 160px; height: 117px">
 </p>
 
 <h1 align="center">
@@ -17,20 +17,20 @@ First, here's the screenshots with Hyprland's transparency effects enabled, and 
 
 *(I've cropped my status bar to focus purely on the qt6ct themed applications)*
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/transparent/catppuccin-mocha-mauve-transparent.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/transparent/catppuccin-mocha-mauve-transparent.png">
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/transparent/darker-transparent.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/transparent/darker-transparent.png">
 
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/transparent/dracula-transparent.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/transparent/dracula-transparent.png">
 
 ---
 
 While the above results look nice IMO, they may not exactly match yours if you are using a different DE, or simply don't have transparency effects enabled. Luckily, I took screenshots with transparency effects disabled and only one consistent wallpaper throughout so you can get a better idea of what *exactly* each theme is doing:
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/opaque/catppuccin-mocha-mauve-opaque.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/opaque/catppuccin-mocha-mauve-opaque.png">
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/opaque/darker-opaque.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/opaque/darker-opaque.png">
 
 
-<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/qt6ct/assets/screenshots/opaque/dracula-opaque.png">
+<img align="center" src="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/md-assets/qt6ct/opaque/dracula-opaque.png">
