@@ -1,11 +1,9 @@
-# qt6ct dotfiles
+# qt6ct configuration/dot files
 
 Below I've included screenshots of different tools that use qt6ct theming with different colorschemes so you can get an idea of the potential styles. I have also split them up into categories with Hyprland transparency effects enabled/disabled so you can get a better idea of how things might look on *your* system. All colorschemes shown are available within this branch of the repository, along with extras.
 
 >  [!TIP]
 >  To perfectly recreate what you see in the screenshots, download and select the 'Breeze" style. The different wallpapers you see are also available within my dotfiles GitHub repository.
-
-
 
 ---
 
