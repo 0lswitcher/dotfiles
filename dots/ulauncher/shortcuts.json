@@ -1,0 +1,32 @@
+{
+    "4dfb2913-8c36-40d3-9c64-7aa5e8fabf8b": {
+        "id": "4dfb2913-8c36-40d3-9c64-7aa5e8fabf8b",
+        "name": "Firefox Search",
+        "keyword": "ff",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "~/stuff/pictures/icons/firefox-nightly.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1747721939.1553662
+    },
+    "70534216-7836-431b-9afe-c60a61ab0343": {
+        "id": "70534216-7836-431b-9afe-c60a61ab0343",
+        "name": "Discord",
+        "keyword": "discord",
+        "cmd": "vesktop",
+        "icon": "~/stuff/pictures/icons/vencord.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1748079071.7164714
+    },
+    "d33bb1a7-e35d-4293-acca-c79145f5086b": {
+        "id": "d33bb1a7-e35d-4293-acca-c79145f5086b",
+        "name": "Calculator",
+        "keyword": "calc",
+        "cmd": "qalculate-qt",
+        "icon": "~/stuff/pictures/icons/calculator.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1748161597.6636565
+    }
+}
