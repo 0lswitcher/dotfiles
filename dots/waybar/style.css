@@ -1,0 +1,222 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+    font-size:14px;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window#waybar{
+    all:unset;
+    transition: opacity 0.3s ease;
+}
+
+.modules-left {
+    padding:0px;
+    margin:6 0 0 10;
+    border-radius:10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding:5px;
+    margin:6 0 0 0;
+    border-radius:10px;
+    background: alpha(@background, 0.6); 
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding:0px;
+    margin: 6 10 0 0;
+    border-radius:10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+
+
+
+
+tooltip {
+    background:@background;
+    color: @color7;
+}
+
+#custom-terminal:hover,
+#custom-sunshine:hover,
+#custom-obsidian:hover,
+#custom-firefox:hover,
+#custom-discord:hover,
+#custom-spotify:hover,
+#custom-vscode:hover,
+#custom-steam:hover,
+#custom-heroic:hover,
+#custom-minecraft:hover,
+#custom-fm:hover,
+#custom-ranger:hover,
+#custom-rangerh:hover,
+#clock:hover,
+#custom-waypaper:hover,
+#custom-swww:hover,
+#custom-wp2theme:hover,
+#custom-pywal:hover,
+#custom-colorpicker:hover,
+#custom-reload:hover,
+#custom-notifications:hover,
+#cpu:hover,
+#custom-gpu:hover,
+#memory:hover,
+#temperature:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#custom-off:hover,
+#custom-reboot:hover,
+#custom-lock:hover {
+    transition: all .2s ease;
+    color:@color9;
+}
+
+#custom-spacer {
+    color: alpha(@color7,.3);
+}
+
+
+
+
+
+#shortcuts {
+    padding: 0px 5px 0px 5px; 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#custom-firefox {
+    padding: 0px 5px 0px 0px;
+}
+
+#workspaces {
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px; 
+    padding: 0px 5px 0px 5px; 
+    margin-left: 8px;
+}
+
+#workspaces button {
+    all:unset;
+    padding: 0px 15px 0px 10px;
+    border: none;
+    color: alpha(@color7,.4);
+    transition: all .2s ease-in;
+}
+
+#workspaces button:hover {
+    color: alpha(@color7,.9);
+}
+
+#workspaces button.active {
+    color: @color9;
+}
+
+#workspaces button.active:hover {
+    color: alpha(@color7,.9);
+}
+
+#workspaces button.empty {
+    color: alpha(@color7,.4);
+}
+#workspaces button.empty:hover {
+    color: alpha(@color7,.9);
+}
+#workspaces button.empty.active {
+    color: @color9;
+}
+
+
+#window {
+    color:@color7;
+    padding: 0px 5px 0px 0px; 
+}
+
+window#waybar.empty #window {
+    padding: 0px 0px 0px 5px;
+}
+
+#custom-spacer {
+    padding: 0px 0px 0px 5px;
+}
+
+
+
+
+
+
+#clock{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+
+
+
+
+
+
+#custom-notifications {
+    padding: 0px 6px 0px 10px; 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#performance {
+    padding: 0px 4px 0px 4px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+  }
+
+#cpu {
+  color:#ff6161;
+}
+
+#custom-gpu {
+  color:#a561ff;
+}
+
+#memory {
+  color:#61ff96;
+}
+
+#temperature {
+  color:#6198ff;
+}
+
+#connections {
+    padding: 0px 6px 0px 8px;  
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#pulseaudio {
+    padding: 0px 0px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#power {
+    padding: 0px 10px 0px 7px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+ }
