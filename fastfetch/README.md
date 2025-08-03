@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  qt6ct configuration/dot files
+  fastfetch configuration/dot files
 </h2>
 
 Below I've included screenshots of different tools that use qt6ct theming with different colorschemes so you can get an idea of the potential styles. I have also split them up into categories with Hyprland transparency effects enabled/disabled so you can get a better idea of how things might look on *your* system. All colorschemes shown are available within this branch of the repository, along with extras.
