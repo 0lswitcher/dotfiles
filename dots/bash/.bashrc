@@ -9,7 +9,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias lsa='ls -a'
-alias lst='lsd --tree --depth'
+alias lst='lsd --tree --depth 2'
 alias tree='lsd --tree --depth'
 alias cpa='cp -a'
 alias cpd='cp -r'
@@ -46,6 +46,11 @@ alias docker-reboot='sudo systemctl restart docker'
 
 # directories
 alias wad='cd /home/y2k/stuff/ && lsd'
+alias hdd='cd /storage/ && lsd'
+alias storage='cd /storage/ && lsd'
+alias scripts='cd /home/y2k/stuff/dev/bash/scripts && lsd'
+alias scr='cd /home/y2k/stuff/dev/bash/scripts && lsd'
+alias bs='cd /home/y2k/stuff/dev/bash/scripts && lsd'
 alias ss='cd /home/y2k/stuff/pictures/screenshots/ && lsd'
 alias stk='cd /home/y2k/stuff/docker/komodo/stacks/ && lsd'
 alias stks='cd /home/y2k/stuff/docker/komodo/stacks/ && lsd'
@@ -64,6 +69,7 @@ alias roblox='org.vinegarhq.Sober &'
 alias calc='qalculate-qt'
 alias neofetch='fastfetch'
 alias astro='astroterm --color --constellations --speed 10000 --fps 64 --city Singapore'
+alias neonav='/home/y2k/stuff/dev/rust/neonav/neonav-v0.4.6/target/release/neonav'
 
 # system management
 alias gc='sudo nix-collect-garbage -d'
@@ -75,20 +81,26 @@ alias ciaor='sudo reboot'
 alias smith='ssh smith'
 alias neovault='ssh smith -L 42051:localhost:42051'
 alias vaulttunnel='ssh smith -L 42051:localhost:42051'
+alias vaultwarden='ssh smith -L 42051:localhost:42051'
 alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
+alias github='cat /home/y2k/stuff/notes/github.txt'
+alias gh='cat /home/y2k/stuff/notes/github.txt'
+alias cr='cargo run'
 
-# functions
+# ░█▀▀░█░█░█▀█░█▀▀░▀█▀░▀█▀░█▀█░█▀█░█▀▀░░░░
+# ░█▀▀░█░█░█░█░█░░░░█░░░█░░█░█░█░█░▀▀█░░▀░
+# ░▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
 
 # copy or move files and dirs to Syncthing link
 send() {
-  local mode="cp"
+  local mode="cp -R"
   local target="link"
 
   # parse options
   while getopts ":cmt:" opt; do
     case ${opt} in
-      c) mode="cp" ;;  # default
-      m) mode="mv" ;;
+      c) mode="cp -R" ;;  # default
+      m) mode="mv -R" ;;
       t) target=$OPTARG ;;
       \?) echo "Invalid option: -$OPTARG" >&2; return 1 ;;
       :) echo "Option -$OPTARG requires an argument." >&2; return 1 ;;
@@ -134,6 +146,7 @@ send() {
   done
 }
 
+
 # lcd a.k.a. cd /dir && lsd
 lcd() {
   if [ -d "$1" ]; then
@@ -144,18 +157,31 @@ lcd() {
   fi
 }
 
+# ░█▀▄░█▀█░█▀▀░█░█░░░█░█░▀█▀░█▀▀░▀█▀░█▀█░█▀▄░█░█░░░░
+# ░█▀▄░█▀█░▀▀█░█▀█░░░█▀█░░█░░▀▀█░░█░░█░█░█▀▄░░█░░░▀░
+# ░▀▀░░▀░▀░▀▀▀░▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░░▀░░░▀░
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# don't put duplicate lines or lines starting with space in the history
+HISTCONTROL=ignoreboth # ignoredups:erasedups
+# define maximum number of stored commands
+HISTSIZE=100000 # 100,000 commands
+# define maximum number of total lines
+HISTFILESIZE=10000000 # 10,000,000 lines
 
 # ░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀░░░░
 # ░█░░░█░█░█░░░█░█░█▀▄░▀▀█░░▀░
 # ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
 
-if [ -f "$HOME/.cache/current-pywal-theme" ]; then
-    theme=$(<"$HOME/.cache/current-pywal-theme")
-    wal -q --theme "$theme" || wal -q -i "$theme"
-fi
+#if [ -f "$HOME/.cache/current-pywal-theme" ]; then
+#    theme=$(<"$HOME/.cache/current-pywal-theme")
+#    wal -q --theme "$theme" || wal -q -i "$theme"
+#fi
 
 # load last colorscheme from cache
-# (cat ~/.cache/wal/sequences &)
+ (cat ~/.cache/wal/sequences &)
 
 # pywal TTY support (colors.tty doesnt exist atm)
 # source ~/.cache/wal/colors.tty/sh
@@ -185,10 +211,15 @@ echo "$ART"
 
 export PATH=$PATH:/home/y2k/.spicetify
 
-# format prompt
+# ░█▀▀░█▀█░█▀▄░█▄█░█▀█░▀█▀░░░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀░░░░
+# ░█▀▀░█░█░█▀▄░█░█░█▀█░░█░░░░█▀▀░█▀▄░█░█░█░█░█▀▀░░█░░░▀░
+# ░▀░░░▀▀▀░▀░▀░▀░▀░▀░▀░░▀░░░░▀░░░▀░▀░▀▀▀░▀░▀░▀░░░░▀░░░▀░
+
+# define colors
 BLUE="\[\e[38;5;39m\]"
 YELLOW="\[\e[38;5;214m\]"
 RED="\[\e[38;5;196m\]"
 RESET="\[\e[0m\]"
 
+# display nixos-glyph[user@host:privilege]directory
 PS1=" ${BLUE} [\u@\h:${YELLOW}\w${BLUE}]\$ ${RESET}"
