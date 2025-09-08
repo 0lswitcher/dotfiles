@@ -5,15 +5,19 @@
 
 # config editing
 alias codex='micro ~/stuff/notes/codex.txt'
-alias bashrc='micro ~/.bashrc'
+alias bashrc='micro ~/.bashrc_local'
+alias bashrc-comb='micro ~/.bashrc'
+alias bashrc-true='micro ~/.bashrc'
 alias hypr-conf='micro ~/.config/hypr/hyprland.conf'
 alias waybar-conf='micro ~/.config/waybar/config'
 alias waybar-style='micro ~/.config/waybar/style.css'
 
 # directories
 alias wad='cd /home/y2k/stuff/ && lsd'
+alias arr='cd /storage/arr/ && lsd'
 alias hdd='cd /storage/ && lsd'
 alias storage='cd /storage/ && lsd'
+alias dev='cd /home/y2k/stuff/dev && lsd'
 alias scripts='cd /home/y2k/stuff/dev/bash/scripts && lsd'
 alias scr='cd /home/y2k/stuff/dev/bash/scripts && lsd'
 alias bs='cd /home/y2k/stuff/dev/bash/scripts && lsd'
@@ -27,6 +31,15 @@ alias linked='cd /home/y2k/stuff/sync/link/ && lsd'
 alias mc-server='cd /home/y2k/stuff/other/ && lsd'
 alias playit='cd /home/y2k/stuff/other/ && lsd'
 
+# git
+alias gh='cat /home/y2k/stuff/notes/github.txt'
+alias gs='git status'
+alias gi='git init'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gpl='git pull origin main'
+alias gpsh='git push -u origin main'
+
 # programs
 alias vault='obsidian'
 alias junts='ncspot'
@@ -34,8 +47,9 @@ alias juntui='com.spotify.Client &'
 alias roblox='org.vinegarhq.Sober &'
 alias calc='qalculate-qt'
 alias neofetch='fastfetch'
+alias ff='fastfetch'
 alias astro='astroterm --color --constellations --speed 10000 --fps 64 --city Singapore'
-alias neonav='/home/y2k/stuff/dev/rust/neonav/neonav-v0.4.6/target/release/neonav'
+alias neonav='echo "this is an outdated version!!" && sleep 2 && /home/y2k/stuff/dev/rust/neonav/neonav-v0.4.6/target/release/neonav'
 alias cursor='cursor --ozone-platform=x11 &'
 alias aiide='cursor --ozone-platform=x11 &'
 
@@ -45,7 +59,22 @@ alias vaulttunnel='ssh smith -L 42051:localhost:42051'
 alias vaultwarden='ssh smith -L 42051:localhost:42051'
 alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
 alias github='cat /home/y2k/stuff/notes/github.txt'
-alias gh='cat /home/y2k/stuff/notes/github.txt'
+
+# ░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀░░░░
+# ░█░░░█░█░█░░░█░█░█▀▄░▀▀█░░▀░
+# ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
+
+#if [ -f "$HOME/.cache/current-pywal-theme" ]; then
+#    theme=$(<"$HOME/.cache/current-pywal-theme")
+#    wal -q --theme "$theme" || wal -q -i "$theme"
+#fi
+
+# load last colorscheme from cache
+ (cat ~/.cache/wal/sequences &)
+
+# pywal TTY support (colors.tty doesnt exist atm)
+# source ~/.cache/wal/colors.tty/sh
+
 
 # ░█▀█░█▀▀░█▀▀░▀█▀░▀█▀░░░█▀█░█▀▄░▀█▀░░░░
 # ░█▀█░▀▀█░█░░░░█░░░█░░░░█▀█░█▀▄░░█░░░▀░
