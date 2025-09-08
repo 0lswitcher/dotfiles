@@ -11,7 +11,7 @@ fi
 source "$CACHE"
 [ -f ~/.profile_local ] && source ~/.profile_local
 
-# only one alias, all other are kept in .bashrc_local and .bashrc_shared
+# limited alises, all other are kept in .profile_local and .bashrc_shared
 alias    bashrc-pull='curl -fsSL "$URL" -o "$CACHE" && echo "pulled latest .bashrc_shared from repo"'
 alias   profile-pull='curl -fsSL "$URL" -o "$CACHE" && echo "pulled latest .bashrc_shared from repo"'
 alias  bashrc-update='curl -fsSL "$URL" -o "$CACHE" && echo "pulled latest .bashrc_shared from repo"'
