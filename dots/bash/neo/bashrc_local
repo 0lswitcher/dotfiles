@@ -1,0 +1,84 @@
+# ░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░░░
+# ░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░▀░
+# ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
+
+# config editing
+alias bashrc='micro ~/.bashrc_local'
+alias bashrc-comb='micro ~/.bashrc'
+alias bashrc-true='micro ~/.bashrc'
+alias codex='micro ~/stuff/notes/codex.txt'
+alias hypr-conf='micro ~/.config/hypr/hyprland.conf'
+alias waybar-conf='micro ~/.config/waybar/config'
+alias waybar-style='micro ~/.config/waybar/style.css'
+
+# directories
+alias wad='cd /home/y2k/stuff/ && lsd'
+alias scripts='cd /home/y2k/stuff/dev/bash/scripts && lsd'
+alias scr='cd /home/y2k/stuff/dev/bash/scripts && lsd'
+alias bs='cd /home/y2k/stuff/dev/bash/scripts && lsd'
+alias ss='cd /home/y2k/stuff/Pictures/screenshots/ && lsd'
+
+# programs
+alias junts='ncspot'
+alias juntui='com.spotify.Client &'
+alias calc='qalculate-qt'
+alias neofetch='fastfetch'
+alias ff='fastfetch'
+
+# other
+alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
+alias github='cat /home/y2k/stuff/notes/github.txt'
+alias gh='cat /home/y2k/stuff/notes/github.txt'
+
+# ░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀░░░░
+# ░█░░░█░█░█░░░█░█░█▀▄░▀▀█░░▀░
+# ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
+
+#if [ -f "$HOME/.cache/current-pywal-theme" ]; then
+#    theme=$(<"$HOME/.cache/current-pywal-theme")
+#    wal -q --theme "$theme" || wal -q -i "$theme"
+#fi
+
+# load last colorscheme from cache
+ (cat ~/.cache/wal/sequences &)
+
+# pywal TTY support (colors.tty doesnt exist atm)
+# source ~/.cache/wal/colors.tty/sh
+
+# ░█▀█░█▀▀░█▀▀░▀█▀░▀█▀░░░█▀█░█▀▄░▀█▀░░░░
+# ░█▀█░▀▀█░█░░░░█░░░█░░░░█▀█░█▀▄░░█░░░▀░
+# ░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░░▀░▀░▀░▀░░▀░░░▀░
+
+read -r -d '' ART <<'EOF'
+⁤⁣︇󠀡؜
+                -=====-                         -=====-
+                 _..._                           _..._
+               .~     `~.        __           .~`     ~.
+       ,_     /          }      / /\/\       {          \     _,
+      ,_\'--, \   _.'`~~/       \_\  /        \~~`'._   / ,--'/_,
+       \'--,_`{_,}    -(        /_/  \         )-    {,_}`_,--'/
+        '.`-.`\;--,___.'_       \_\/\ \       _'.___,--;/`.-`.'
+          '._`/    |_ _{@}         \_\/      {@}_ _|    \`_.'
+             /     ` |-';/                   \;'-| `     \
+            /   \    /  |                     |  \    /   \
+           /     '--;_                           _;--'     \
+          _\          `\                       /`          /_
+         / |`-.___.    /                       \    .___,-'| \
+ ^^^^^^^`--`------'`--`^^^^^^^^^^^^^^^^^^^^^^^^^`--`'------`--`^^^^^^^
+EOF
+echo "$ART"
+
+export PATH=$PATH:/home/y2k/.spicetify
+
+# ░█▀▀░█▀█░█▀▄░█▄█░█▀█░▀█▀░░░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀░░░░
+# ░█▀▀░█░█░█▀▄░█░█░█▀█░░█░░░░█▀▀░█▀▄░█░█░█░█░█▀▀░░█░░░▀░
+# ░▀░░░▀▀▀░▀░▀░▀░▀░▀░▀░░▀░░░░▀░░░▀░▀░▀▀▀░▀░▀░▀░░░░▀░░░▀░
+
+# define colors
+BLUE="\[\e[38;5;39m\]"
+YELLOW="\[\e[38;5;214m\]"
+RED="\[\e[38;5;196m\]"
+RESET="\[\e[0m\]"
+
+# display nixos-glyph[user@host:privilege]directory
+PS1=" ${BLUE} [\u@\h:${YELLOW}\w${BLUE}]\$ ${RESET}"
