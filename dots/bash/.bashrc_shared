@@ -41,7 +41,7 @@ alias docker-restart='docker compose down && docker compose up -d'
 alias docker-reboot='sudo systemctl restart docker'
 
 # system management
-alias gc='sudo nix-collect-garbage -d'
+alias cg='sudo nix-collect-garbage -d'
 alias rebuild='sudo nixos-rebuild switch'
 alias ciao='shutdown now'
 alias ciaor='sudo reboot'
