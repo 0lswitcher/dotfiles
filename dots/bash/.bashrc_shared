@@ -41,7 +41,8 @@ alias docker-restart='docker compose down && docker compose up -d'
 alias docker-reboot='sudo systemctl restart docker'
 
 # system management
-alias cg='sudo nix-collect-garbage -d'
+alias cyagarb='sudo nix-collect-garbage'
+alias cyagens='sudo nix-collect-garbage -d && echo "yo, make sure to type sudo nixos-rebuild boot after this-DONT CONFUSE IT W/ REBUILD ALIAS, then ciar"'
 alias rebuild='sudo nixos-rebuild switch'
 alias ciao='shutdown now'
 alias ciaor='sudo reboot'
