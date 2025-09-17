@@ -1,0 +1,358 @@
+
+{
+        "layer": "top",
+        "position": "top",
+        "spacing": 0,
+        "reload_style_on_change": true,
+        "height": 10,
+        "margin": 0,
+        "modules-left": ["hyprland/workspaces","group/shortcuts"],
+        "modules-center": ["clock"],
+        "modules-right": [
+            "custom/notifications",
+            "group/performance",
+            "pulseaudio",
+            "backlight",
+            "group/connections",
+            "battery",
+            "group/power"
+         ],
+
+
+ // LEFT MODULES
+
+	"group/shortcuts": {
+	    "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 1000,
+                "children-class": "not-power",
+                "transition-left-to-right": false,
+            },
+	    "modules": [
+            "hyprland/window",
+            "custom/swww",
+            "custom/wp2theme",
+            "custom/pywal",
+            "custom/colorpicker",
+            "custom/victoria",
+            "custom/spacer",
+            "custom/terminal",
+            "custom/sunshine",
+            "custom/firefox",
+            "custom/vscode",
+            "custom/spacer",
+            "custom/fm",
+            "custom/ranger",
+            "custom/rangerh",
+        "custom/spacer"
+	    ]
+	},
+
+        "custom/swww": {
+            "format": "  ",
+            "on-click": "bash wallpaper-picker.sh",
+            "tooltip-format": "change wallpaper"
+        },
+
+        "custom/wp2theme": {
+            "format": "  ",
+            "on-click": "bash swww-as-theme.sh",
+            "tooltip-format": "set colorscheme from wallpaper"
+        },
+
+        "custom/pywal": {
+            "format": "  ",
+            "on-click": "bash theme-picker.sh",
+            "tooltip-format": "change theme"
+        },
+
+        "custom/colorpicker": {
+            "format": "  ",
+            "on-click": "alacritty --title ColorPicker --hold --command hyprpicker",
+            "tooltip-format": "color picker"
+        },
+
+        "custom/victoria": {
+            "format": "  ",
+            "on-click": "alacritty --command pkill waybar && hyprctl dispatch exec waybar",
+            "tooltip-format": "reload waybar"
+        },
+
+        "custom/leader": {
+        /*  "    "  */
+            "format": "  ",
+            "tooltip": false
+        },
+
+        "custom/spacer": {
+            "format": "|",
+            "tooltip": false
+        },
+
+        "custom/terminal": {
+            "format": "  ",
+            "on-click": "alacritty",
+            "tooltip-format": "alacritty"
+        },
+
+        "custom/fm": {
+            "format": "  ",
+            "on-click": "pcmanfm-qt",
+            "tooltip-format": "file manager"
+        },
+
+        "custom/ranger": {
+            "format": "  ",
+            "on-click": "foot -f 'JetBrainsMono Nerd Font:size=12' --hold -e ranger stuff & wal -R",
+            "tooltip-format": "ranger > stuff"
+        },
+
+        "custom/rangerh": {
+            "format": "  ",
+            "on-click": "foot -f 'JetBrainsMono Nerd Font:size=12' --hold -e ranger .config & wal -R",
+            "tooltip-format": "ranger > .config"
+        },
+
+        "custom/sunshine": {
+            "format": "  ",
+            "on-click": "alacritty --command sunshine; firefox --new-tab https://localhost:47990/",
+            "tooltip-format": "sunshine host"
+        },
+
+        "custom/firefox": {
+            "format": " 󰈹",
+            "on-click": "firefox",
+            "tooltip-format": "firefox"
+        },
+
+        "custom/vscode": {
+            "format": " 󰨞 ",
+            "on-click": "code",
+            "tooltip-format": "vscode"
+        },
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4,5 ]
+            }
+        },
+        
+    //    "hyprland/workspaces": {
+    //        "enable-bar-scroll": true,
+    //        "format": "  ",
+    //        "format-icons": {
+    //            "1": " ",
+    //            "2": "󰯂 ",
+    //            "3": " ",
+    //            "4": " ",
+    //            "5": " ",
+    //        }, /* 󰈹       */
+    //        "persistent-workspaces": {
+    //            "*": [ 1,2,3 ]
+    //        }
+    //    },
+
+        
+       "hyprland/window": {
+              /* 󱞩     */
+            "format": "   {}",
+            "max-length": 50,
+            "separate-outputs": true,
+            "icon": false,
+            "icon-size": 14,
+            "offscreen-css" : true,
+            "offscreen-css-text": "(inactive)",
+          //  "rewrite":{
+          //    "(.*) — Mozilla Firefox": "󰈹 "
+          //  }
+       },
+
+ // CENTER MODULES
+
+
+        "clock": {
+            "format": "{:%I:%M:%S %p}",
+            "interval": 1,   
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+                "format": {
+                    "today": "<span color='#4169E1'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-right": "shift_down",
+                "on-click": "shift_up"
+            }
+        },
+
+ // RIGHT MODULES
+
+        "custom/notifications": {
+            "format": " ",
+            "on-click": "swaync-client -t",
+            "tooltip-format": "notifications"
+        },
+
+
+	"group/performance": {
+	    "orientation": "inherit",
+	    "modules": [
+                "cpu",
+		"memory",
+                "temperature"
+	    ]
+	},
+      
+        "custom/spacer": {
+            "format": "|",
+            "tooltip": false
+        },
+
+        "cpu": {
+            "format": "  {usage}% ",
+            "tooltip": false
+        },
+
+
+        "memory": {
+            "format": "   {}% "
+        },
+
+
+        "temperature": {
+            "critical-threshold": 80,
+            "format": " {icon} {temperatureC}°C ",
+            "format-icons": ["", "", "", "", ""]
+        },
+
+        "pulseaudio": {
+            "format": " {icon} {volume}% ",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " 󰝟 ",
+            "format-icons": {
+                "headphone": " ",
+                "hands-free": " ",
+                "headset": " ",
+                "phone": " ",
+                "portable": " ",
+                "car": " ",
+                "default": ["", "", " "]
+            },
+            "on-click": "pavucontrol"
+        },
+    
+        "backlight": {
+            "interval": 2,
+            "align": 0.35,
+            "rotate": 1,
+            "format": " {icon}{}% ",
+            "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
+         // "format-icons": [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],
+            "on-click": "",
+            "on-click-middle": "",
+            "on-click-right": "",
+            "on-update": "",
+            "on-scroll-up": "brightnessctl s 10%+",
+            "on-scroll-down": "brightnessctl s 10%-",
+            "smooth-scrolling-threshold": 1, 
+	    "tooltip-format": "{percent}%",
+        },
+
+	"group/connections": {
+	    "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "not-power",
+                "transition-left-to-right": false,
+            },
+	    "modules": [
+                "network",
+		"bluetooth"
+	    ]
+	},
+      
+        "bluetooth": {
+            "format-on": "󰂯 ",
+            "format-off": " BT-off ",
+            "format-disabled": " 󰂲 ",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias}󰂯 ",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click": "alacritty --command bluetui",
+        },
+
+
+        "network": {
+            "format-wifi": "{icon} ",
+            "format-ethernet":"   ",
+            "format-disconnected": "   ",
+            "tooltip-format-disconnected": "Error  ",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon} ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "alacritty --command nmtui",
+             /* BACKUP ICON:   */
+            "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",], /*
+            "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",], */
+        },
+
+         
+        "battery": {
+            "interval":30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": " {icon}  ",
+            "format-charging": " {capacity}%  ",
+            "format-plugged": " {capacity}%   ",
+            "format-alt": " {icon}  {capacity}% ",
+            "format-icons": [ "", "", "", "", "",],
+            "tooltip":true,
+            "tooltip-format":" :{capacity}%",
+        },
+
+        "group/power": {
+            "orientation": "inherit",
+                "drawer": {
+                    "transition-duration": 500,
+                    "children-class": "not-power",
+                    "transition-left-to-right": false,
+                },
+            "modules": [
+                "custom/off",
+                "custom/reboot",
+                "custom/lock"
+            ]
+        },
+
+        "custom/off": {
+            "format": " ⏻ ",
+            "on-click": "shutdown -h now",
+            "tooltip-format": "shutdown"
+        },
+
+        "custom/reboot": {
+            "format": "  ",
+            "on-click": "shutdown -r now",
+            "tooltip-format": "reboot"
+        },
+
+        "custom/lock": {
+            "format": "  ",
+            "on-click": "hyprctl dispatch exit",
+            "tooltip-format": "lock"
+        }
+
+}
+

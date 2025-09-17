@@ -1,0 +1,229 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+    font-size:14px;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window#waybar{
+    all:unset;
+    transition: opacity 0.3s ease;
+}
+
+.modules-left {
+    padding:0px;
+    margin:6 0 0 10;
+    border-radius:10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding:5px;
+    margin:6 0 0 0;
+    border-radius:10px;
+    background: alpha(@background, 0.6); /* grey background */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding:0px;
+    margin: 6 10 0 0;
+    border-radius:10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+}
+
+/* default settings
+    padding:7px;
+    margin: 10 10 0 0;
+*/
+
+/*  ALL MODULES  */
+
+tooltip {
+    background:@background;
+    color: @color7;
+}
+
+#custom-swww:hover,
+#custom-wp2theme:hover,
+#custom-pywal:hover,
+#custom-colorpicker:hover,
+#custom-victoria:hover,
+#custom-terminal:hover,
+#custom-sunshine:hover,
+#custom-firefox:hover,
+#custom-vscode:hover,
+#custom-fm:hover,
+#custom-ranger:hover,
+#custom-rangerh:hover,
+#clock:hover,
+#custom-notifications:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#custom-off:hover,
+#custom-reboot:hover,
+#custom-lock:hover {
+    transition: all .2s ease;
+    color:@color9;
+}
+
+#custom-spacer {
+    color: alpha(@color7,.3);
+}
+
+/*  LEFT MODULES  */
+
+#shortcuts {
+    padding: 0px 5px 0px 5px;  /* top, right, bottom, left  */
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#custom-firefox {
+    padding: 0px 5px 0px 0px;
+}
+
+#workspaces {
+    background-color: alpha(@background, 0.6); /* grey background */
+    border-radius: 6px; /* round corners */
+    padding: 0px 5px 0px 5px; /* space between icons */
+    margin-left: 8px; /* space from other modules */
+}
+
+#workspaces button {
+    all:unset;
+    padding: 0px 15px 0px 10px;
+    border: none;
+    color: alpha(@color7,.4);
+    transition: all .2s ease-in;
+}
+
+#workspaces button:hover {
+    color: alpha(@color7,.9);
+}
+
+#workspaces button.active {
+    color: @color9;
+}
+
+#workspaces button.active:hover {
+    color: alpha(@color7,.9);
+}
+
+#workspaces button.empty {
+    color: alpha(@color7,.4);
+}
+#workspaces button.empty:hover {
+    color: alpha(@color7,.9);
+}
+#workspaces button.empty.active {
+    color: @color9;
+}
+
+
+#window {
+    color:@color7;
+    padding: 0px 5px 0px 0px; /* add extra padding to right */
+}
+/* reset window padding when no windows are present */
+window#waybar.empty #window {
+    padding: 0px 0px 0px 5px;
+}
+
+#custom-spacer {
+    padding: 0px 0px 0px 5px;
+}
+
+
+/*  CENTER MODULES  */
+
+#clock{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+
+
+/*  RIGHT MODULES  */
+
+#custom-notifications {
+    padding: 0px 6px 0px 10px;  /* top, right, bottom, left  */
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#performance {
+    padding: 0px 4px 0px 4px;
+    margin-left: 8px; /* creates the gap between modules */
+    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    border-radius: 6px;
+    transition: all .3s ease; 
+  }
+
+#cpu {
+  color:#ff6161;
+}
+
+#memory {
+  color:#61ff9e;
+}
+
+#temperature {
+  color:#61b8ff;
+}
+
+#connections {
+    padding: 0px 6px 0px 8px;  /* top, right, bottom, left  */
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#pulseaudio,
+#backlight,
+#battery {
+  padding: 0px 0px;
+  margin-left: 8px; /* creates the gap between modules */
+  background-color: alpha(@background, 0.6); /* optional pill-box styling */
+  border-radius: 6px;
+  transition: all .3s ease; 
+  color:@color7;
+}
+
+#power {
+    padding: 0px 10px 0px 7px;
+    margin-left: 8px; /* creates the gap between modules */
+    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+  }
+
+#battery.charging {
+    color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
