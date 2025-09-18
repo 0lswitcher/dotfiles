@@ -4,85 +4,53 @@
         "position": "top",
         "spacing": 0,
         "reload_style_on_change": true,
-        "height": 10,
-        "margin": 0,
-        "modules-left": ["hyprland/workspaces","group/shortcuts"],
-        "modules-center": ["clock"],
+        "height": 36,
+        "margin": 0,        
+        "modules-left": [
+            "hyprland/workspaces",
+            "group/shortcuts"
+        ],        
+        "modules-center": [
+            "group/files",
+            "clock",
+            "group/tools"
+        ],
         "modules-right": [
             "custom/notifications",
             "group/performance",
             "pulseaudio",
-            "backlight",
             "group/connections",
-            "battery",
+            "custom/backlight",
+            "custom/battery",
             "group/power"
-         ],
+        ],
 
 
  // LEFT MODULES
 
-	"group/shortcuts": {
-	    "orientation": "inherit",
+	    "group/shortcuts": {
+	        "orientation": "inherit",
             "drawer": {
                 "transition-duration": 1000,
                 "children-class": "not-power",
                 "transition-left-to-right": false,
             },
-	    "modules": [
-            "hyprland/window",
-            "custom/swww",
-            "custom/wp2theme",
-            "custom/pywal",
-            "custom/colorpicker",
-            "custom/victoria",
-            "custom/spacer",
-            "custom/terminal",
-            "custom/sunshine",
-            "custom/firefox",
-            "custom/vscode",
-            "custom/spacer",
-            "custom/fm",
-            "custom/ranger",
-            "custom/rangerh",
-        "custom/spacer"
-	    ]
-	},
-
-        "custom/swww": {
-            "format": "  ",
-            "on-click": "bash wallpaper-picker.sh",
-            "tooltip-format": "change wallpaper"
-        },
-
-        "custom/wp2theme": {
-            "format": "  ",
-            "on-click": "bash swww-as-theme.sh",
-            "tooltip-format": "set colorscheme from wallpaper"
-        },
-
-        "custom/pywal": {
-            "format": "  ",
-            "on-click": "bash theme-picker.sh",
-            "tooltip-format": "change theme"
-        },
-
-        "custom/colorpicker": {
-            "format": "  ",
-            "on-click": "alacritty --title ColorPicker --hold --command hyprpicker",
-            "tooltip-format": "color picker"
-        },
-
-        "custom/victoria": {
-            "format": "  ",
-            "on-click": "alacritty --command pkill waybar && hyprctl dispatch exec waybar",
-            "tooltip-format": "reload waybar"
-        },
-
-        "custom/leader": {
-        /*  "    "  */
-            "format": "  ",
-            "tooltip": false
-        },
+	        "modules": [
+                "hyprland/window",
+                "custom/terminal",
+                "custom/sunshine",
+                "custom/obsidian",
+                "custom/firefox",
+                "custom/spotify",
+                "custom/discord",
+                "custom/vscode",
+                "custom/spacer",
+                "custom/steam",
+                "custom/heroic",
+                "custom/minecraft",
+                "custom/spacer",
+	        ]
+	    },
 
         "custom/spacer": {
             "format": "|",
@@ -91,8 +59,133 @@
 
         "custom/terminal": {
             "format": "  ",
-            "on-click": "alacritty",
-            "tooltip-format": "alacritty"
+            "on-click": "foot -f 'JetBrainsMono Nerd Font:size=12'",
+            "tooltip-format": "foot terminal"
+        },
+
+        "custom/sunshine": {
+            "format": "  ",
+            "on-click": "foot sunshine; firefox --new-tab https://localhost:47990/",
+            "tooltip-format": "sunshine host"
+        },
+
+        "custom/obsidian": {
+            "format": "  ",
+            "on-click": "obsidian",
+            "tooltip-format": "obsidian vault"
+        },
+        
+        "custom/firefox": {
+            "format": " 󰈹",
+            "on-click": "firefox",
+            "tooltip-format": "firefox"
+        },
+        
+        "custom/spotify": {
+            "format": "  ",
+            "on-click": "com.spotify.Client",
+            "tooltip-format": "spotify"
+        },
+
+        "custom/discord": {
+            "format": "  ",
+            "on-click": "vesktop",
+            "tooltip-format": "discord"
+        },
+        
+        "custom/vscode": {
+            "format": " 󰨞 ",
+            "on-click": "code",
+            "tooltip-format": "vscode"
+        },
+
+        "custom/steam": {
+            "format": "  ",
+            "on-click": "steam",
+            "tooltip-format": "steam"
+        },
+
+        "custom/heroic": {
+            "format": " 󱢾 ",
+            "on-click": "foot --hold heroic",
+            "tooltip-format": "heroic"
+        },
+
+        "custom/minecraft": {
+            "format": " 󰍳 ",
+            "on-click": "prismlauncher",
+            "tooltip-format": "minecraft"
+        },
+
+        "hyprland/workspaces": {
+            "format": "<sub>{icon}</sub>{windows}",
+            "format-icons": {
+                "active":  "",
+                "default": "",
+                "empty":   ""
+            },
+            "active-only": false,
+            "all-outputs": false,
+            "persistent-only": false,
+            "persistent-workspaces": [ ],
+            //"persistent-workspaces": {
+            //  "*": [ 1,2,3,4,5 ]
+            //  "DP-2":     [ 1,2,3 ], // left monitor
+            //  "HDMI-A-1": [ 4,5,6 ], // center monitor
+            //  "DP-1":     [ 7,8,9 ], // right monitor
+            //},
+            "window-rewrite": {
+             // "title<.*youtube.*>": "", 
+              "class<firefox>": "",
+              "class<Spotify>": "",
+              "class<feh>":     "",
+              "foot": "",
+            },
+        },
+        
+       "hyprland/window": {
+              /* 󱞩     */
+            "format": "   {}",
+            "max-length": 50,
+            "separate-outputs": true,
+            "icon": false,
+            "icon-size": 14,
+            "offscreen-css" : true,
+            "offscreen-css-text": "(inactive)",
+          //  "rewrite":{
+          //    "(.*) — Mozilla Firefox": "󰈹 "
+          //  }
+       },
+
+
+
+
+
+
+
+ // CENTER MODULES
+
+	    "group/files": {
+	        "orientation": "inherit",
+                "drawer": {
+                    "transition-duration": 500,
+                    "children-class": "not-power",
+                    "transition-left-to-right": true,
+                },
+	        "modules": [
+                "custom/larrow",
+                "custom/spacer",
+                "custom/fm",
+                "custom/ranger",
+                "custom/rangerh",
+                "custom/spacer"
+	        ]
+	    },
+
+        "custom/larrow": {
+        /*  " 󰥓     "  */
+            "format": " 󰥓 ",
+            "tooltip": false
         },
 
         "custom/fm": {
@@ -113,69 +206,6 @@
             "tooltip-format": "ranger > .config"
         },
 
-        "custom/sunshine": {
-            "format": "  ",
-            "on-click": "alacritty --command sunshine; firefox --new-tab https://localhost:47990/",
-            "tooltip-format": "sunshine host"
-        },
-
-        "custom/firefox": {
-            "format": " 󰈹",
-            "on-click": "firefox",
-            "tooltip-format": "firefox"
-        },
-
-        "custom/vscode": {
-            "format": " 󰨞 ",
-            "on-click": "code",
-            "tooltip-format": "vscode"
-        },
-
-        "hyprland/workspaces": {
-            "format": "{icon}",
-            "format-icons": {
-                "active": "",
-                "default": "",
-                "empty": ""
-            },
-            "persistent-workspaces": {
-                "*": [ 1,2,3,4,5 ]
-            }
-        },
-        
-    //    "hyprland/workspaces": {
-    //        "enable-bar-scroll": true,
-    //        "format": "  ",
-    //        "format-icons": {
-    //            "1": " ",
-    //            "2": "󰯂 ",
-    //            "3": " ",
-    //            "4": " ",
-    //            "5": " ",
-    //        }, /* 󰈹       */
-    //        "persistent-workspaces": {
-    //            "*": [ 1,2,3 ]
-    //        }
-    //    },
-
-        
-       "hyprland/window": {
-              /* 󱞩     */
-            "format": "   {}",
-            "max-length": 50,
-            "separate-outputs": true,
-            "icon": false,
-            "icon-size": 14,
-            "offscreen-css" : true,
-            "offscreen-css-text": "(inactive)",
-          //  "rewrite":{
-          //    "(.*) — Mozilla Firefox": "󰈹 "
-          //  }
-       },
-
- // CENTER MODULES
-
-
         "clock": {
             "format": "{:%I:%M:%S %p}",
             "interval": 1,   
@@ -191,6 +221,82 @@
             }
         },
 
+
+	    "group/tools": {
+	        "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "not-power",
+                "transition-left-to-right": false,
+            },
+	        "modules": [
+                "custom/rarrow",
+                "custom/spacer",
+                "custom/waypaper",
+                "custom/random-background",
+                "custom/swww",
+                "custom/wp2theme",
+                "custom/pywal",
+                "custom/colorpicker",
+                "custom/reload",
+                "custom/spacer",
+	        ]
+	    },
+
+        "custom/rarrow": {
+        /*  " 󰥓     "  */
+            "format": " 󰥓 ",
+            "tooltip": false
+        },
+
+        "custom/waypaper": {
+            "format": "  ",
+            "on-click": "waypaper",
+            "tooltip-format": "change wallpaper w/ waypaper"
+        },
+
+        "custom/random-background": {
+            "format": "  ",
+            "on-click": "foot bash ~/stuff/dev/bash/scripts/random-background.sh",
+            "tooltip-format": "change to random wallpaper"
+        },
+
+        "custom/swww": {
+            "format": " 󰸉 ",
+            "on-click": "foot -T WallpaperPicker bash ~/stuff/dev/bash/scripts/background-picker.sh & wal -R",
+            "tooltip-format": "change wallpaper"
+        },
+
+        "custom/wp2theme": {
+            "format": "  ",
+            "on-click": "bash ~/stuff/dev/bash/scripts/swww-as-theme.sh",
+            "tooltip-format": "set colorscheme from wallpaper"
+        },
+
+        "custom/pywal": {
+            "format": "  ",
+            "on-click": "foot -T ThemePicker bash ~/stuff/dev/bash/scripts/theme-picker.sh & wal -R",
+            "tooltip-format": "change theme"
+        },
+
+        "custom/colorpicker": {
+            "format": "  ",
+            "on-click": "foot --title ColorPicker --hold --command hyprpicker",
+            "tooltip-format": "color picker"
+        },
+
+        "custom/reload": {
+            "format": "  ",
+            "on-click": "foot pkill waybar && hyprctl dispatch exec waybar",
+            "tooltip-format": "reload waybar"
+        },
+
+
+
+
+
+
+
  // RIGHT MODULES
 
         "custom/notifications": {
@@ -199,15 +305,15 @@
             "tooltip-format": "notifications"
         },
 
-
-	"group/performance": {
-	    "orientation": "inherit",
-	    "modules": [
-                "cpu",
-		"memory",
-                "temperature"
-	    ]
-	},
+	    "group/performance": {
+	        "orientation": "inherit",
+	        "modules": [
+              "cpu",  
+              "custom/gpu", 
+		      "memory",
+              "temperature"
+	        ]
+	    },
       
         "custom/spacer": {
             "format": "|",
@@ -216,38 +322,83 @@
 
         "cpu": {
             "format": "  {usage}% ",
-            "tooltip": false
+            "interval": 1
         },
 
+        "custom/gpu": {
+          "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+          "format": "   {}% ",
+          "return-type": "",
+          "interval": 1
+        },
 
         "memory": {
-            "format": "   {}% "
+            "format": "   {}% ",
+            "interval": 1
         },
-
 
         "temperature": {
             "critical-threshold": 80,
             "format": " {icon} {temperatureC}°C ",
-            "format-icons": ["", "", "", "", ""]
+            "format-icons": ["", "", "", "", ""],
+            "interval": 1
         },
 
         "pulseaudio": {
             "format": " {icon} {volume}% ",
             "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": " {icon} {format_source}",
-            "format-muted": " 󰝟 ",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
             "format-icons": {
                 "headphone": " ",
                 "hands-free": " ",
                 "headset": " ",
                 "phone": " ",
                 "portable": " ",
-                "car": " ",
                 "default": ["", "", " "]
             },
             "on-click": "pavucontrol"
         },
     
+ 	    "group/connections": {
+	        "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "not-power",
+                "transition-left-to-right": false,
+            },
+	        "modules": [
+            "network",
+		    "bluetooth"
+	        ]
+	    },
+      
+        "bluetooth": {
+            "format-on": "󰂯 ",
+            "format-off": " BT-off ",
+            "format-disabled": " 󰂲 ",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias}󰂯 ",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click": "foot bluetui",
+        },
+
+        "network": {
+            "format-wifi": "{icon} ",
+            "format-ethernet":"   ",
+            "format-disconnected": "   ",
+            "tooltip-format-disconnected": "Error  ",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon} ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "foot nmtui",
+             /* BACKUP ICON:   */
+            "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",], /*
+            "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",], */
+        },
+
         "backlight": {
             "interval": 2,
             "align": 0.35,
@@ -265,47 +416,7 @@
 	    "tooltip-format": "{percent}%",
         },
 
-	"group/connections": {
-	    "orientation": "inherit",
-            "drawer": {
-                "transition-duration": 500,
-                "children-class": "not-power",
-                "transition-left-to-right": false,
-            },
-	    "modules": [
-                "network",
-		"bluetooth"
-	    ]
-	},
-      
-        "bluetooth": {
-            "format-on": "󰂯 ",
-            "format-off": " BT-off ",
-            "format-disabled": " 󰂲 ",
-            "format-connected-battery": "{device_battery_percentage}% 󰂯",
-            "format-alt": "{device_alias}󰂯 ",
-            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-            "on-click": "alacritty --command bluetui",
-        },
 
-
-        "network": {
-            "format-wifi": "{icon} ",
-            "format-ethernet":"   ",
-            "format-disconnected": "   ",
-            "tooltip-format-disconnected": "Error  ",
-            "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon} ",
-            "tooltip-format-ethernet": "{ifname} 🖧 ",
-            "on-click": "alacritty --command nmtui",
-             /* BACKUP ICON:   */
-            "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",], /*
-            "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",], */
-        },
-
-         
         "battery": {
             "interval":30,
             "states": {
@@ -320,7 +431,7 @@
             "format-icons": [ "", "", "", "", "",],
             "tooltip":true,
             "tooltip-format":" :{capacity}%",
-        },
+        },        
 
         "group/power": {
             "orientation": "inherit",
@@ -330,10 +441,16 @@
                     "transition-left-to-right": false,
                 },
             "modules": [
-                "custom/off",
+                "custom/leader",
+                "custom/lock",
                 "custom/reboot",
-                "custom/lock"
+                "custom/off"
             ]
+        },
+
+        "custom/leader": { 
+            "format": "  ",
+            "tooltip":false
         },
 
         "custom/off": {
