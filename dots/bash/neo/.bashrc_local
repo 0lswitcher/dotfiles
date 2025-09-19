@@ -16,7 +16,7 @@ alias wad='cd /home/y2k/stuff/ && lsd'
 alias scripts='cd /home/y2k/stuff/dev/bash/scripts && lsd'
 alias scr='cd /home/y2k/stuff/dev/bash/scripts && lsd'
 alias bs='cd /home/y2k/stuff/dev/bash/scripts && lsd'
-alias ss='cd /home/y2k/stuff/Pictures/screenshots/ && lsd'
+alias ss='cd /home/y2k/stuff/pictures/screenshots/ && lsd'
 
 # programs
 alias junts='ncspot'
