@@ -20,8 +20,8 @@
             "group/performance",
             "pulseaudio",
             "group/connections",
-            "custom/backlight",
-            "custom/battery",
+            "backlight",
+            "battery",
             "group/power"
         ],
 
