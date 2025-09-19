@@ -42,26 +42,35 @@ tooltip {
     color: @color7;
 }
 
-#custom-swww:hover,
-#custom-wp2theme:hover,
-#custom-pywal:hover,
-#custom-colorpicker:hover,
-#custom-victoria:hover,
 #custom-terminal:hover,
 #custom-sunshine:hover,
+#custom-obsidian:hover,
 #custom-firefox:hover,
+#custom-discord:hover,
+#custom-spotify:hover,
 #custom-vscode:hover,
+#custom-steam:hover,
+#custom-heroic:hover,
+#custom-minecraft:hover,
 #custom-fm:hover,
 #custom-ranger:hover,
 #custom-rangerh:hover,
 #clock:hover,
+#custom-waypaper:hover,
+#custom-random-background:hover,
+#custom-swww:hover,
+#custom-wp2theme:hover,
+#custom-pywal:hover,
+#custom-colorpicker:hover,
+#custom-reload:hover,
 #custom-notifications:hover,
 #cpu:hover,
+#custom-gpu:hover,
 #memory:hover,
 #temperature:hover,
 #pulseaudio:hover,
-#backlight:hover,
 #bluetooth:hover,
+#backlight:hover,
 #network:hover,
 #battery:hover,
 #custom-off:hover,
@@ -70,7 +79,6 @@ tooltip {
     transition: all .2s ease;
     color:@color9;
 }
-
 #custom-spacer {
     color: alpha(@color7,.3);
 }
