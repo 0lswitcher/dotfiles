@@ -325,12 +325,12 @@
             "interval": 1
         },
 
-        "custom/gpu": {
-          "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-          "format": "   {}% ",
-          "return-type": "",
-          "interval": 1
-        },
+//        "custom/gpu": {
+//          "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+//          "format": "   {}% ",
+//          "return-type": "",
+//          "interval": 1
+//        },
 
         "memory": {
             "format": "   {}% ",
