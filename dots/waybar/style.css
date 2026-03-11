@@ -48,11 +48,12 @@ tooltip {
 #custom-steam:hover,
 #custom-heroic:hover,
 #custom-minecraft:hover,
-#custom-fm:hover,
-#custom-ranger:hover,
-#custom-rangerh:hover,
+#custom-tome42:hover,
+#custom-spicetify-apply:hover,
+#custom-spicetify-restore:hover,
 #clock:hover,
 #custom-waypaper:hover,
+#custom-random-background:hover,
 #custom-swww:hover,
 #custom-wp2theme:hover,
 #custom-pywal:hover,
@@ -72,7 +73,6 @@ tooltip {
     transition: all .2s ease;
     color:@color9;
 }
-
 #custom-spacer {
     color: alpha(@color7,.3);
 }
@@ -176,7 +176,7 @@ window#waybar.empty #window {
     background-color: alpha(@background, 0.6);
     border-radius: 6px;
     transition: all .3s ease; 
-  }
+}
 
 #cpu {
   color:#ff6161;

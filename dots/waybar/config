@@ -21,10 +21,10 @@
             "pulseaudio",
             "group/connections",
             "group/power"
-         ],
+        ],
 
 
-
+ // LEFT MODULES
 
 	    "group/shortcuts": {
 	        "orientation": "inherit",
@@ -46,6 +46,8 @@
                 "custom/steam",
                 "custom/heroic",
                 "custom/minecraft",
+                "custom/spacer",
+                "custom/tome42",
                 "custom/spacer",
 	        ]
 	    },
@@ -115,6 +117,13 @@
             "tooltip-format": "minecraft"
         },
 
+        "custom/tome42": {
+            "format": "  ",
+            "on-click": "firefox --new-window http://192.168.254.130:6875/shelves/tome42-private",
+            "tooltip-format": "Tome42"
+        },        
+
+
         "hyprland/workspaces": {
             "format": "<sub>{icon}</sub>{windows}",
             "format-icons": {
@@ -124,18 +133,21 @@
             },
             "active-only": false,
             "all-outputs": false,
-            "persistent-only": true,
-            "persistent-workspaces": {
+            "persistent-only": false,
+            "persistent-workspaces": [ ],
+            //"persistent-workspaces": {
             //  "*": [ 1,2,3,4,5 ]
-              "DP-2":     [ 1,2,3 ], // left monitor
-              "HDMI-A-1": [ 4,5,6 ], // center monitor
-              "DP-1":     [ 7,8,9 ], // right monitor
-            },
+            //  "DP-2":     [ 1,2,3 ], // left monitor
+            //  "HDMI-A-1": [ 4,5,6 ], // center monitor
+            //  "DP-1":     [ 7,8,9 ], // right monitor
+            //},
             "window-rewrite": {
              // "title<.*youtube.*>": "", 
               "class<firefox>": "",
               "class<Spotify>": "",
               "class<feh>":     "",
+              "class<steam>":   "",
+              "class<heroic>":  "󱢾",
               "foot": "",
             },
         },
@@ -160,7 +172,7 @@
 
 
 
-
+ // CENTER MODULES
 
 	    "group/files": {
 	        "orientation": "inherit",
@@ -172,9 +184,8 @@
 	        "modules": [
                 "custom/larrow",
                 "custom/spacer",
-                "custom/fm",
-                "custom/ranger",
-                "custom/rangerh",
+                "custom/spicetify-apply",
+                "custom/spicetify-restore",
                 "custom/spacer"
 	        ]
 	    },
@@ -185,22 +196,16 @@
             "tooltip": false
         },
 
-        "custom/fm": {
-            "format": "  ",
-            "on-click": "pcmanfm-qt",
-            "tooltip-format": "file manager"
+        "custom/spicetify-apply": {
+            "format": "   ",
+            "on-click": "foot spicetify apply && sleep 2s && com.spotify.Client",
+            "tooltip-format": "enable spicetify theme"
         },
 
-        "custom/ranger": {
-            "format": "  ",
-            "on-click": "foot -f 'JetBrainsMono Nerd Font:size=12' --hold -e ranger stuff & wal -R",
-            "tooltip-format": "ranger > stuff"
-        },
-
-        "custom/rangerh": {
-            "format": "  ",
-            "on-click": "foot -f 'JetBrainsMono Nerd Font:size=12' --hold -e ranger .config & wal -R",
-            "tooltip-format": "ranger > .config"
+        "custom/spicetify-restore": {
+            "format": "   ",
+            "on-click": "foot spicetify restore && sleep 2s && com.spotify.Client",
+            "tooltip-format": "disable spicetify theme"
         },
 
         "clock": {
@@ -230,6 +235,7 @@
                 "custom/rarrow",
                 "custom/spacer",
                 "custom/waypaper",
+                "custom/random-background",
                 "custom/swww",
                 "custom/wp2theme",
                 "custom/pywal",
@@ -248,24 +254,30 @@
         "custom/waypaper": {
             "format": "  ",
             "on-click": "waypaper",
-            "tooltip-format": "change wallpaper"
+            "tooltip-format": "change wallpaper w/ waypaper"
+        },
+
+        "custom/random-background": {
+            "format": "  ",
+            "on-click": "foot bash ~/stuff/dev/bash/scripts/random-background.sh",
+            "tooltip-format": "change to random wallpaper"
         },
 
         "custom/swww": {
             "format": " 󰸉 ",
-            "on-click": "foot -T WallpaperPicker bash ~/stuff/scripts/wallpaper-picker.sh & wal -R",
+            "on-click": "foot -T WallpaperPicker bash ~/stuff/dev/bash/scripts/background-picker.sh & wal -R",
             "tooltip-format": "change wallpaper"
         },
 
         "custom/wp2theme": {
             "format": "  ",
-            "on-click": "bash ~/stuff/scripts/swww-as-theme.sh",
+            "on-click": "bash ~/stuff/dev/bash/scripts/swww-as-theme.sh",
             "tooltip-format": "set colorscheme from wallpaper"
         },
 
         "custom/pywal": {
             "format": "  ",
-            "on-click": "foot -T ThemePicker bash ~/stuff/scripts/theme-picker.sh & wal -R",
+            "on-click": "foot -T ThemePicker bash ~/stuff/dev/bash/scripts/theme-picker.sh & wal -R",
             "tooltip-format": "change theme"
         },
 
@@ -287,7 +299,7 @@
 
 
 
-
+ // RIGHT MODULES
 
         "custom/notifications": {
             "format": " ",
@@ -311,13 +323,15 @@
         },
 
         "cpu": {
-            "format": "  {usage}% ",
+            "format": "   {usage}%  ",
             "interval": 1
         },
 
         "custom/gpu": {
           "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-          "format": "   {}% ",
+      //  "format": " 󰢮 {}% ", // 
+          "format": "<span font='16'>󰢮 </span><span rise='2000'>{}%</span> ",
+          "markup": true,
           "return-type": "",
           "interval": 1
         },
@@ -331,7 +345,8 @@
             "critical-threshold": 80,
             "format": " {icon} {temperatureC}°C ",
             "format-icons": ["", "", "", "", ""],
-            "interval": 1
+            "interval": 1,
+            "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input"
         },
 
         "pulseaudio": {
