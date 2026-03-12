@@ -4,6 +4,7 @@
 # ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
 
 # general commands
+alias try='nix-shell -p'
 alias pls='sudo $(history -p !!)'
 alias ..='cd ..'
 alias ...='cd ../../'
