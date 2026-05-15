@@ -1,0 +1,915 @@
+{
+  "menus": [
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "mm",
+      "centered": false,
+      "root": {
+        "type": "submenu",
+        "name": "Main Menu",
+        "icon": "award_star",
+        "iconTheme": "material-symbols-rounded",
+        "children": [
+          {
+            "type": "submenu",
+            "name": "Apps",
+            "icon": "apps",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "x-www-browser"
+                },
+                "name": "Web Browser",
+                "icon": "globe",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-email"
+                },
+                "name": "E-Mail",
+                "icon": "mail",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "gimp"
+                },
+                "name": "GIMP",
+                "icon": "gimp",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~"
+                },
+                "name": "File Browser",
+                "icon": "folder_shared",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "x-terminal-emulator"
+                },
+                "name": "Terminal",
+                "icon": "terminal",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Web Links",
+            "icon": "public",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://www.google.com"
+                },
+                "name": "Google",
+                "icon": "google",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/kando-menu/kando"
+                },
+                "name": "Kando on GitHub",
+                "icon": "github",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://ko-fi.com/schneegans"
+                },
+                "name": "Kando on Ko-fi",
+                "icon": "kofi",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://www.youtube.com/@simonschneegans"
+                },
+                "name": "Kando on YouTube",
+                "icon": "youtube",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://discord.gg/hZwbVSDkhy"
+                },
+                "name": "Kando on Discord",
+                "icon": "discord",
+                "iconTheme": "simple-icons"
+              }
+            ]
+          },
+          {
+            "type": "hotkey",
+            "data": {
+              "hotkey": "ControlLeft+AltLeft+ArrowRight",
+              "delayed": false
+            },
+            "name": "Next Workspace",
+            "icon": "arrow_forward",
+            "iconTheme": "material-symbols-rounded"
+          },
+          {
+            "type": "submenu",
+            "name": "Clipboard",
+            "icon": "assignment",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "ControlLeft+KeyV",
+                  "delayed": true
+                },
+                "name": "Paste",
+                "icon": "content_paste_go",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "ControlLeft+KeyC",
+                  "delayed": true
+                },
+                "name": "Copy",
+                "icon": "content_copy",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "ControlLeft+KeyX",
+                  "delayed": true
+                },
+                "name": "Cut",
+                "icon": "cut",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Audio",
+            "icon": "play_circle",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackNext",
+                  "delayed": false
+                },
+                "name": "Next Track",
+                "icon": "skip_next",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaPlayPause",
+                  "delayed": false
+                },
+                "name": "Play / Pause",
+                "icon": "play_pause",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "AudioVolumeMute",
+                  "delayed": false
+                },
+                "name": "Mute",
+                "icon": "music_off",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackPrevious",
+                  "delayed": false
+                },
+                "name": "Previous Track",
+                "icon": "skip_previous",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 270
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Windows",
+            "icon": "select_window",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MetaLeft+ArrowUp",
+                  "delayed": true
+                },
+                "name": "Toggle Maximize",
+                "icon": "open_in_full",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 0
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MetaLeft+ArrowRight",
+                  "delayed": true
+                },
+                "name": "Tile Right",
+                "icon": "text_select_jump_to_end",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "AltLeft+F4",
+                  "delayed": true
+                },
+                "name": "Close Window",
+                "icon": "cancel_presentation",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MetaLeft+ArrowLeft",
+                  "delayed": true
+                },
+                "name": "Tile Left",
+                "icon": "text_select_jump_to_beginning",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 270
+              }
+            ]
+          },
+          {
+            "type": "hotkey",
+            "data": {
+              "hotkey": "ControlLeft+AltLeft+ArrowLeft",
+              "delayed": false
+            },
+            "name": "Previous Workspace",
+            "icon": "arrow_back",
+            "iconTheme": "material-symbols-rounded"
+          },
+          {
+            "type": "submenu",
+            "name": "Bookmarks",
+            "icon": "folder_special",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir DOWNLOAD)\""
+                },
+                "name": "Downloads",
+                "icon": "download",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir VIDEOS)\""
+                },
+                "name": "Videos",
+                "icon": "video_camera_front",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir PICTURES)\""
+                },
+                "name": "Pictures",
+                "icon": "imagesmode",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir DOCUMENTS)\""
+                },
+                "name": "Documents",
+                "icon": "text_ad",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir DESKTOP)\""
+                },
+                "name": "Desktop",
+                "icon": "desktop_windows",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~"
+                },
+                "name": "Home",
+                "icon": "home",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open \"$(xdg-user-dir MUSIC)\""
+                },
+                "name": "Music",
+                "icon": "music_note",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "type": "submenu",
+        "name": "SAO",
+        "icon": "neurology",
+        "iconTheme": "material-symbols-rounded",
+        "children": [
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Pkgs",
+            "icon": "package_2",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Games",
+                "icon": "stadia_controller",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "heroic",
+                      "delayed": false
+                    },
+                    "name": "Heroic",
+                    "icon": "swords",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "submenu",
+                    "data": {},
+                    "name": "Library",
+                    "icon": "gamepad",
+                    "iconTheme": "material-symbols-rounded",
+                    "children": [
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open heroic://launch?appName=2umDGWwQxwLxKRb4Y9Pi8y&runner=sideload",
+                          "delayed": false
+                        },
+                        "name": "BeamNG.drive",
+                        "icon": "terminal",
+                        "iconTheme": "material-symbols-rounded"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "prismlauncher",
+                          "delayed": false
+                        },
+                        "name": "Minecraft",
+                        "icon": "terminal",
+                        "iconTheme": "material-symbols-rounded"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open heroic://launch?appName=eEpgZpF9QuE6kG9pWK71oR&runner=sideload",
+                          "delayed": false
+                        },
+                        "name": "Cruelty Squad",
+                        "icon": "terminal",
+                        "iconTheme": "material-symbols-rounded"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "steam",
+                      "delayed": false
+                    },
+                    "name": "Steam",
+                    "icon": "steam",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Main",
+                "icon": "bookmark_heart",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "firefox",
+                      "delayed": false
+                    },
+                    "name": "Firefox",
+                    "icon": "firefoxbrowser",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "codium",
+                      "delayed": false
+                    },
+                    "name": "VSCode",
+                    "icon": "vscodium",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide",
+                      "delayed": false
+                    },
+                    "name": "Neovim",
+                    "icon": "neovim",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "xdg-open 'obsidian://open?vault=vault'",
+                      "delayed": false
+                    },
+                    "name": "Obsidian",
+                    "icon": "obsidian",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff",
+                      "delayed": false
+                    },
+                    "name": "File Explorer",
+                    "icon": "folder_open",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "foot",
+                      "delayed": false
+                    },
+                    "name": "Terminal",
+                    "icon": "terminal",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 75
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "com.spotify.Client",
+                      "delayed": false
+                    },
+                    "name": "Spotify",
+                    "icon": "spotify",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "vesktop",
+                      "delayed": false
+                    },
+                    "name": "Discord",
+                    "icon": "discord",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Links",
+            "icon": "link",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "http://192.168.254.167:48483/"
+                },
+                "name": "NeoDash",
+                "icon": "team_dashboard",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/0lswitcher/tome42/blob/main/README.md"
+                },
+                "name": "Tome42",
+                "icon": "book_4_spark",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/0lswitcher"
+                },
+                "name": "GitHub",
+                "icon": "github",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://www.youtube.com/"
+                },
+                "name": "YouTube",
+                "icon": "youtube",
+                "iconTheme": "simple-icons"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "DE",
+            "icon": "hyprland",
+            "iconTheme": "simple-icons",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "waypaper",
+                  "delayed": false
+                },
+                "name": "Change Wallpaper",
+                "icon": "replace_image",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "foot -T ColorPicker --hold hyprpicker -a",
+                  "delayed": false
+                },
+                "name": "Color Picker",
+                "icon": "colorize",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "bash ~/stuff/dev/bash/scripts/swww-as-theme.sh",
+                  "delayed": false
+                },
+                "name": "Set theme from wallpaper",
+                "icon": "imagesearch_roller",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "foot -T ThemePicker bash ~/stuff/dev/bash/scripts/theme-picker.sh & wal -R",
+                  "delayed": false
+                },
+                "name": "Change Theme",
+                "icon": "format_paint",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "foot bash ~/stuff/dev/bash/scripts/random-background.sh",
+                  "delayed": false
+                },
+                "name": "Random Background",
+                "icon": "shuffle",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "System",
+            "icon": "nixos",
+            "iconTheme": "simple-icons",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "shutdown -h now",
+                  "delayed": false
+                },
+                "name": "Shutdown",
+                "icon": "power_settings_new",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "shutdown -r now",
+                  "delayed": false
+                },
+                "name": "Restart",
+                "icon": "restart_alt",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Configure",
+            "icon": "tools_pliers_wire_stripper",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "neovide ~/.config/hypr/hyprland.conf",
+                  "delayed": false
+                },
+                "name": "Hyprland",
+                "icon": "hyprland",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "neovide /etc/nixos/configuration.nix",
+                  "delayed": false
+                },
+                "name": "NixOS",
+                "icon": "nixos",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/0lswitcher/dotfiles/blob/main/dots/bash/.bashrc_shared"
+                },
+                "name": "Bash Aliases",
+                "icon": "gnubash",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Waybar",
+                "icon": "position_top_right",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide ~/.config/waybar/waybar.conf",
+                      "delayed": false
+                    },
+                    "name": "Waybar .conf",
+                    "icon": "terminal",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide ~/.config/waybar/waybar.css",
+                      "delayed": false
+                    },
+                    "name": "Waybar .style",
+                    "icon": "css",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Bookmarks",
+            "icon": "folder_data",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "pcmanfm-qt ~/Desktop",
+                  "delayed": false
+                },
+                "name": "Desktop",
+                "icon": "desktop_windows",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Dots",
+                "icon": "background_dot_large",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/.cache",
+                      "delayed": false
+                    },
+                    "name": ".cache/",
+                    "icon": "folder_delete",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/.local",
+                      "delayed": false
+                    },
+                    "name": ".local/",
+                    "icon": "folder_shared",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/.config",
+                      "delayed": false
+                    },
+                    "name": ".config/",
+                    "icon": "folder_code",
+                    "iconTheme": "material-symbols-rounded"
+                  }
+                ]
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "pcmanfm-qt ~/stuff/temp",
+                  "delayed": false
+                },
+                "name": "Temp",
+                "icon": "takeout_dining",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "pcmanfm-qt ~/stuff/other",
+                  "delayed": false
+                },
+                "name": "Other",
+                "icon": "tag",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "pcmanfm-qt ~/stuff/videos",
+                  "delayed": false
+                },
+                "name": "Videos",
+                "icon": "videocam",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Pictures",
+                "icon": "image",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/backgrounds",
+                      "delayed": false
+                    },
+                    "name": "Backgrounds",
+                    "icon": "imagesmode",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/aesthetic",
+                      "delayed": false
+                    },
+                    "name": "Aesthetic",
+                    "icon": "kid_star",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/chorts",
+                      "delayed": false
+                    },
+                    "name": "Chorts",
+                    "icon": "comedy_mask",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/irl",
+                      "delayed": false
+                    },
+                    "name": "IRL",
+                    "icon": "sunny",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/yours-truly",
+                      "delayed": false
+                    },
+                    "name": "Yours Truly",
+                    "icon": "person",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 68
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/other",
+                      "delayed": false
+                    },
+                    "name": "Other",
+                    "icon": "tag",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/vroom",
+                      "delayed": false
+                    },
+                    "name": "Vroom",
+                    "icon": "swap_driving_apps_wheel",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff/pictures/screenshots",
+                      "delayed": false
+                    },
+                    "name": "Screenshots",
+                    "icon": "screenshot_monitor",
+                    "iconTheme": "material-symbols-rounded"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "shortcut": "",
+      "shortcutID": "sao",
+      "centered": false,
+      "warpMouse": false,
+      "anchored": false
+    }
+  ],
+  "templates": []
+}

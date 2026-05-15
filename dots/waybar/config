@@ -1,6 +1,6 @@
-
 {
         "layer": "top",
+        "output": ["DP-2", "DP-1", "HDMI-A-1"],
         "position": "top",
         "spacing": 0,
         "reload_style_on_change": true,
@@ -18,7 +18,7 @@
         "modules-right": [
             "custom/notifications",
             "group/performance",
-            "pulseaudio",
+            "group/sound",
             "group/connections",
             "group/power"
         ],
@@ -37,17 +37,23 @@
                 "hyprland/window",
                 "custom/terminal",
                 "custom/sunshine",
-                "custom/obsidian",
                 "custom/firefox",
                 "custom/spotify",
                 "custom/discord",
+                "custom/neovide",
                 "custom/vscode",
+                "custom/spacer",                
+                "custom/obsidian-vault",
+                "custom/obsidian-tome42",
+                "custom/obsidian-dotfiles",                
                 "custom/spacer",
                 "custom/steam",
                 "custom/heroic",
+                "custom/beamng",
                 "custom/minecraft",
                 "custom/spacer",
                 "custom/tome42",
+                "custom/bashrc",
                 "custom/spacer",
 	        ]
 	    },
@@ -56,6 +62,13 @@
             "format": "|",
             "tooltip": false
         },
+
+/*
+        "tray": {
+        	"icon-size": 21,
+        	"spacing": 10,
+        },
+*/
 
         "custom/terminal": {
             "format": "  ",
@@ -67,13 +80,7 @@
             "format": "  ",
             "on-click": "foot sunshine; firefox --new-tab https://localhost:47990/",
             "tooltip-format": "sunshine host"
-        },
-
-        "custom/obsidian": {
-            "format": "  ",
-            "on-click": "obsidian",
-            "tooltip-format": "obsidian vault"
-        },
+        },             
         
         "custom/firefox": {
             "format": " 󰈹",
@@ -92,12 +99,36 @@
             "on-click": "vesktop",
             "tooltip-format": "discord"
         },
+
+        "custom/neovide": {
+        	"format": " <span>\u2009</span>",
+        	"on-click": "neovide",
+        	"tooltip-format": "neovide"
+        },
         
         "custom/vscode": {
             "format": " 󰨞 ",
-            "on-click": "code",
-            "tooltip-format": "vscode"
+            "on-click": "codium",
+            "tooltip-format": "open source vscode"
         },
+
+        "custom/obsidian-vault": {
+            "format": " <sub></sub> ",
+            "on-click": "xdg-open 'obsidian://open?vault=vault'",
+            "tooltip-format": "obsidian vault"
+        },
+
+        "custom/obsidian-tome42": {
+            "format": " <sub></sub> ",
+            "on-click": "xdg-open 'obsidian://open?vault=tome42'",
+            "tooltip-format": "obsidian Tome42 repo"
+        },
+
+        "custom/obsidian-dotfiles": {
+            "format": " <sub></sub>󰜥 ",
+            "on-click": "xdg-open 'obsidian://open?vault=dotfiles'",
+            "tooltip-format": "obsidian dotfiles repo"
+        },   
 
         "custom/steam": {
             "format": "  ",
@@ -107,8 +138,14 @@
 
         "custom/heroic": {
             "format": " 󱢾 ",
-            "on-click": "foot --hold heroic",
+            "on-click": "foot --hold heroic", 
             "tooltip-format": "heroic"
+        },
+
+        "custom/beamng": {
+        	"format": "<span>\u2008</span><span font='12'>󰓔</span><span>\u2008</span>",
+        	"on-click": "~/Desktop/BeamNG.drive.desktop",
+        	"tooltip-format": "BeamNG.drive"
         },
 
         "custom/minecraft": {
@@ -123,6 +160,11 @@
             "tooltip-format": "Tome42"
         },        
 
+        "custom/bashrc": {
+            "format": "<span font='16'> 󱆃 </span>",
+            "on-click": "firefox --new-window https://github.com/0lswitcher/dotfiles/blob/main/dots/bash/.bashrc_shared",
+            "tooltip-format": "Globally shared .bashrc sourced from GitHub"
+        },   
 
         "hyprland/workspaces": {
             "format": "<sub>{icon}</sub>{windows}",
@@ -138,17 +180,29 @@
             //"persistent-workspaces": {
             //  "*": [ 1,2,3,4,5 ]
             //  "DP-2":     [ 1,2,3 ], // left monitor
-            //  "HDMI-A-1": [ 4,5,6 ], // center monitor
-            //  "DP-1":     [ 7,8,9 ], // right monitor
+            //  "DP-1":     [ 4,5,6 ], // center monitor
+            //  "HDMI-A-1": [ 7,8,9 ], // right monitor            
             //},
+            // to find name of program to rewrite, run hyprctl clients
             "window-rewrite": {
-             // "title<.*youtube.*>": "", 
+              "class<firefox> title<.*youtube.*>": "", 
+              "class<firefox> title<.*github.*>": "",
+              "class<firefox> title<.*r/.*>": "",
+              "class<firefox> title<.*photopea.*>": "",
+              "class<firefox> title<.*tome42.*>": "",
+              "class<firefox> title<.*neowiki.*>": "",
               "class<firefox>": "",
+              "class<obsidian> title<.*vault.*>": "",
+              "class<obsidian> title<.*tome42.*>": "",
+              "class<obsidian> title<.*dotfiles.*>": "󰜥",
               "class<Spotify>": "",
               "class<feh>":     "",
               "class<steam>":   "",
               "class<heroic>":  "󱢾",
+              "class<neovide":  "",
+              "class<codium>":  "",
               "foot": "",
+              "vesktop": "",
             },
         },
         
@@ -211,6 +265,7 @@
         "clock": {
             "format": "{:%I:%M:%S %p}",
             "interval": 1,   
+            "tooltip": true,
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
                 "format": {
@@ -283,7 +338,7 @@
 
         "custom/colorpicker": {
             "format": "  ",
-            "on-click": "foot --title ColorPicker --hold --command hyprpicker",
+            "on-click": "foot -T ColorPicker --hold hyprpicker -a",
             "tooltip-format": "color picker"
         },
 
@@ -309,17 +364,34 @@
 
 	    "group/performance": {
 	        "orientation": "inherit",
+	        "drawer": {
+	            "transition-duration": 500,
+	            "transition-left-to-right": false,
+	            "click-to-reveal": true,
+	            "start-expanded": true,
+	        },
 	        "modules": [
+	          "custom/pulse",
               "cpu",  
+              "temperature",      
+              "custom/spacer",        
               "custom/gpu", 
+              "custom/gpu-temp",
+              "custom/gpu-fan",
+              "custom/spacer",
 		      "memory",
-              "temperature"
+		      "custom/spacer",
 	        ]
 	    },
       
         "custom/spacer": {
-            "format": "|",
+            "format": "|<span>\u2009</span>",
             "tooltip": false
+        },
+
+        "custom/pulse": {
+        	"format": "<span>\u205f</span> <span>\u200a</span>",
+        	"tooltip": "hardware"
         },
 
         "cpu": {
@@ -330,11 +402,30 @@
         "custom/gpu": {
           "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
       //  "format": " 󰢮 {}% ", // 
-          "format": "<span font='16'>󰢮 </span><span rise='2000'>{}%</span> ",
+          "format": "<span>\u0020</span><span font='16'>󰢮 </span><span rise='2000'>{}%</span> ",
           "markup": true,
           "return-type": "",
           "interval": 1
         },
+
+        "custom/gpu-temp": {
+        	"exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        	"format": "  {icon} {}°C ",
+        	"format-icons": ["", "", "", "", ""],  
+        	"return-type": "",
+        	"interval": 1
+        },
+
+/*
+        "custom/gpu-fan": {
+            "exec": "nvidia-smi --query-gpu=fan.speed --format=csv,noheader,nounits",
+            "interval": 5,
+            "format": "  {}%",
+            "format-icons": ["󱑰", "", "󱑯" ],
+            "tooltip": true,
+            "tooltip-format": "NVIDIA GPU Fan Speed"
+       },
+*/
 
         "memory": {
             "format": "   {}% ",
@@ -342,11 +433,56 @@
         },
 
         "temperature": {
-            "critical-threshold": 80,
-            "format": " {icon} {temperatureC}°C ",
-            "format-icons": ["", "", "", "", ""],
+            "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+            "input-filename": "temp1_input",
             "interval": 1,
-            "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input"
+            "critical-threshold": 90,
+            "warning-threshold": 78,
+            "format": " {icon} {temperatureC}°C ",
+            "format-icons": ["", "", "", "", "", ""],            
+            "format-critical": " {icon} {temperatureC}°C ",
+        },
+
+	    "group/sound": {
+	        "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "transition-left-to-right": false,
+                "click-to-reveal": true,
+            },	        
+	        "modules": [
+                "pulseaudio",
+                "cava"
+	        ]
+	    },
+
+        "cava": {
+            // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 60,
+            "autosens": 1,
+            "sensitivity": 1,
+            "bars": 16,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 10000,
+            "sleep_timer": 4,
+            "hide_on_silence": false,
+           // "format_silent": "quiet",
+            "method": "pulse",
+            "source": "auto",
+            "stereo": true,
+            "reverse": false,
+          //  "bar_width": 2,
+          //  "bar_spacing": 53,
+            "bar_delimiter": 32,
+            "monstercat": false,
+            "waves": false,
+            "noise_reduction": 0.77,
+            "input_delay": 2,
+            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+            "on-click": "pavucontrol",
+            "actions": {
+                       "on-click-right": "mode"
+                       }
         },
 
         "pulseaudio": {
@@ -362,7 +498,7 @@
                 "portable": " ",
                 "default": ["", "", " "]
             },
-            "on-click": "pavucontrol"
+           // "on-click": "pavucontrol"
         },
     
  	    "group/connections": {
@@ -374,12 +510,15 @@
             },
 	        "modules": [
             "network",
-		    "bluetooth"
+		    "bluetooth",
+		    "custom/spacer",
+		    "network#ip",
+		    "custom/spacer",		    
 	        ]
 	    },
       
         "bluetooth": {
-            "format-on": "󰂯 ",
+            "format-on": "<span font='12'> 󰂯 </span>",
             "format-off": " BT-off ",
             "format-disabled": " 󰂲 ",
             "format-connected-battery": "{device_battery_percentage}% 󰂯",
@@ -391,17 +530,22 @@
             "on-click": "foot bluetui",
         },
 
+        "network#ip": {
+        	"format": " {ipaddr}/{cidr} ",
+        },
+
         "network": {
             "format-wifi": "{icon} ",
-            "format-ethernet":"   ",
+            "format-ethernet":" 󰈀  <span alpha='50%'>|</span>   {bandwidthDownBytes} ",
             "format-disconnected": "   ",
             "tooltip-format-disconnected": "Error  ",
             "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon} ",
             "tooltip-format-ethernet": "{ifname} 🖧 ",
             "on-click": "foot nmtui",
-             /* BACKUP ICON:   */
-            "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",], /*
-            "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",], */
+            /* BACKUP ICON:       󰈀  󰈁 󰈂 */
+            "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",],  /*  
+            "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",],       */
+            "interval": 10,
         },
 
         "group/power": {
@@ -420,7 +564,7 @@
         },
 
         "custom/leader": { 
-            "format": "  ",
+            "format": "<span>\u2004</span> ",
             "tooltip":false
         },
 

@@ -1,3 +1,4 @@
+
 @import url('../../.cache/wal/colors-waybar.css');
 
 * {
@@ -8,6 +9,7 @@
 window#waybar{
     all:unset;
     transition: opacity 0.3s ease;
+    min-height: 30px;
 }
 
 .modules-left {
@@ -33,6 +35,8 @@ window#waybar{
 
 
 
+
+
 tooltip {
     background:@background;
     color: @color7;
@@ -40,15 +44,20 @@ tooltip {
 
 #custom-terminal:hover,
 #custom-sunshine:hover,
-#custom-obsidian:hover,
 #custom-firefox:hover,
 #custom-discord:hover,
 #custom-spotify:hover,
+#custom-neovide:hover,
 #custom-vscode:hover,
+#custom-obsidian-vault:hover,
+#custom-obsidian-tome42:hover,
+#custom-obsidian-dotfiles:hover,
 #custom-steam:hover,
 #custom-heroic:hover,
+#custom-beamng:hover,
 #custom-minecraft:hover,
 #custom-tome42:hover,
+#custom-bashrc:hover,
 #custom-spicetify-apply:hover,
 #custom-spicetify-restore:hover,
 #clock:hover,
@@ -60,10 +69,12 @@ tooltip {
 #custom-colorpicker:hover,
 #custom-reload:hover,
 #custom-notifications:hover,
+#custom-pulse:hover,
 #cpu:hover,
-#custom-gpu:hover,
-#memory:hover,
 #temperature:hover,
+#custom-gpu:hover,
+#custom-gpu-temp:hover,
+#memory:hover,
 #pulseaudio:hover,
 #bluetooth:hover,
 #network:hover,
@@ -73,13 +84,6 @@ tooltip {
     transition: all .2s ease;
     color:@color9;
 }
-#custom-spacer {
-    color: alpha(@color7,.3);
-}
-
-
-
-
 
 #shortcuts {
     padding: 0px 5px 0px 5px; 
@@ -141,8 +145,13 @@ window#waybar.empty #window {
     padding: 0px 0px 0px 5px;
 }
 
+
+
+
+
 #custom-spacer {
     padding: 0px 0px 0px 5px;
+    color: alpha(@color7,.5);    
 }
 
 
@@ -179,25 +188,46 @@ window#waybar.empty #window {
 }
 
 #cpu {
-  color:#ff6161;
+  color:#ff6161; /* color:#ff6161; */
 }
 
 #custom-gpu {
-  color:#a561ff;
+  color:#fe5f55; /* color:#c04abc; */ /* color:#f7ae62; */ /* color:#a561ff; */
+}
+
+#custom-gpu-temp {
+  color:#6198ff; 
 }
 
 #memory {
-  color:#61ff96;
+  color:#6ab487; /*  */ /* color:#00ccaa; */ /* color:#61ff96; */
 }
 
 #temperature {
   color:#6198ff;
 }
 
+#temperature.warning {
+  color:#ffa500;
+}
+
+#temperature.critical {
+  color:#ff0000;
+}
+
 #connections {
     padding: 0px 6px 0px 8px;  
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#cava {
+    padding: 0px 6px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
