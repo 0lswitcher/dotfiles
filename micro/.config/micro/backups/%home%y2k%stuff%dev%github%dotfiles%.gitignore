@@ -1,7 +1,0 @@
-*.log
-Cache/
-cache/
-dots/gtk-3.0/bookmarks
-dots/micro/backups/
-dots/micro/buffers/
-dots/ulauncher/shortcuts.json

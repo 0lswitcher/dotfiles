@@ -1,7 +1,7 @@
 *.log
 *.tmp
 .obsidian/
-theming/gtk-3.0/bookmarks
-micro/backups/
-micro/buffers/
-ulauncher/shortcuts.json
+theming/.config/gtk-3.0/bookmarks
+micro/.config/micro/backups/
+micro/.config/micro/buffers/
+ulauncher/.config/ulauncher/shortcuts.json
