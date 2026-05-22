@@ -1,0 +1,138 @@
+
+# ░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░░░
+# ░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░▀░
+# ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
+
+# general commands
+alias try='nix-shell -p'
+alias pls='sudo $(history -p !!)'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias lsa='ls -a'
+alias lst='lsd --tree --depth 2'
+alias tree='lsd --tree --depth'
+alias cpa='cp -a'
+alias cpd='cp -r'
+alias cpr='cp -r'
+alias cya='sudo rm'
+alias cyall='sudo rm -R'
+alias edit='micro'
+alias who-owns='ls -l'
+alias who-owns-d='ls -ld'
+alias gimme='sudo chown -R 1000:100'
+alias lemme='sudo chmod -R 644'
+alias LEMME='sudo chmod -R 775'
+alias bashable='chmod +x'
+alias ports='sudo ss -tulnp'
+alias purl='curl -v'
+alias p='ping neocities.org'
+alias m='micro'
+alias q='exit'
+alias c='exit'
+
+# config editing
+alias ssh-conf='micro ~/.ssh/config'
+alias nixos='micro /etc/nixos/configuration.nix'
+alias nixos-conf='micro /etc/nixos/configuration.nix'
+
+# docker
+alias docker-deploy='docker compose up -d'
+alias docker-down='docker compose down'
+alias docker-restart='docker compose down && docker compose up -d'
+alias docker-reboot='sudo systemctl restart docker'
+
+# system management
+alias cyagarb='sudo nix-collect-garbage'
+alias cyagens='sudo nix-collect-garbage --delete-older-than 2d && echo "yo, make sure to type sudo nixos-rebuild boot after this-DONT CONFUSE IT W/ REBUILD ALIAS, then ciar"'
+alias rebuild='sudo nixos-rebuild switch'
+alias ciao='shutdown now'
+alias ciaor='sudo reboot'
+
+# other
+alias smith='ssh smith'
+alias cr='cargo run'
+
+# ░█▀▀░█░█░█▀█░█▀▀░▀█▀░▀█▀░█▀█░█▀█░█▀▀░░░░
+# ░█▀▀░█░█░█░█░█░░░░█░░░█░░█░█░█░█░▀▀█░░▀░
+# ░▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
+
+# copy or move files and dirs to Syncthing link
+send() {
+  local mode="cp -R"
+  local target="link"
+
+  # parse options
+  while getopts ":cmt:" opt; do
+    case ${opt} in
+      c) mode="cp -R" ;;  # default
+      m) mode="mv -R" ;;
+      t) target=$OPTARG ;;
+      \?) echo "Invalid option: -$OPTARG" >&2; return 1 ;;
+      :) echo "Option -$OPTARG requires an argument." >&2; return 1 ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+
+  # check for file/dir input
+  if [ $# -eq 0 ]; then
+    echo "Usage: send [-c|-m] [-t target] <file-or-dir>..." >&2
+    return 1
+  fi
+
+  # set destination paths
+  case "$target" in
+    syncthing) dest="/home/y2k/stuff/sync/link" ;;
+    sync)      dest="/home/y2k/stuff/sync/link" ;;
+    link)      dest="/home/y2k/stuff/sync/link" ;;  
+    *) echo "Unknown target: $target" >&2; return 1 ;;
+  esac
+
+  # loop through each item
+  for item in "$@"; do
+    if [ ! -e "$item" ]; then
+      echo "File not found: $item" >&2
+      continue
+    fi
+
+    if [ "$mode" = "mv" ]; then
+      read -p "Are you sure you want to move '$item' to '$target'? [y/N] " confirm
+      if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+        echo "Skipped: $item"
+        continue
+      fi
+    fi
+
+    $mode -v "$item" "$dest/"
+    if [ $? -eq 0 ]; then
+      echo "Successfully ${mode}ed '$item' to '$target' :)"
+    else
+      echo "Failed to ${mode} '$item' to '$target'" >&2
+    fi
+  done
+}
+
+
+# lcd a.k.a. cd /dir && lsd
+lcd() {
+  if [ -d "$1" ]; then
+    cd "$1" && lsd
+  else
+    echo "lcd: '$1' is not a directory" >&2
+    return 1
+  fi
+}
+
+# ░█▀▄░█▀█░█▀▀░█░█░░░█░█░▀█▀░█▀▀░▀█▀░█▀█░█▀▄░█░█░░░░
+# ░█▀▄░█▀█░▀▀█░█▀█░░░█▀█░░█░░▀▀█░░█░░█░█░█▀▄░░█░░░▀░
+# ░▀▀░░▀░▀░▀▀▀░▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░░▀░░░▀░
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# don't put duplicate lines or lines starting with space in the history
+HISTCONTROL=ignoreboth # ignoredups:erasedups
+# define maximum number of stored commands
+HISTSIZE=100000 # 100,000 commands
+# define maximum number of total lines
+HISTFILESIZE=10000000 # 10,000,000 lines

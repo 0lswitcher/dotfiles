@@ -7,6 +7,74 @@ No install scripts, just pure dotfiles.
 
 > [!TIP]
 > If you're looking for bash scripts, take a look at my [bash-scripts](https://github.com/0lswitcher/bash-scripts) repository since I've moved them there.
+> 
+> If you're instead looking for NixOS configuration files, take a look at my [nixfiles](https://github.com/0lswitcher/nixfiles) repository since I've moved them there.
+
+<br>
+
+### Installation
+---
+My dotfiles now use [GNU Stow](https://www.gnu.org/software/stow/) for management, so installation is easier than ever.
+
+<details>
+<summary>What is GNU Stow?</summary>
+According to the gnu.org site:<br>
+GNU Stow is a symlink farm manager which takes distinct packages of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in the same place.
+</details>
+
+To begin installation, first clone the repository to your `$HOME` directory:
+
+```
+$ git clone https://github.com/0lswitcher/dotfiles.git
+```
+
+> [!TIP]
+> You can optionally clone the repository to any other desired directory in your system, just make sure you know how to use `stow` with `-t` flag set to your `$HOME` directory.
+
+Next, ensure you have `stow` installed in your systems package manager.\
+With `stow` installed, getting the dotfiles is as easy as removing or backing up any previous dots you want to change:\
+*(I'll use hyprland for this example-)*
+> *Removal:*
+> ```
+> $ sudo rm -r ~/.config/hypr
+> ```
+
+Or, alternatively;
+
+> *Backup:*
+> ```
+> $ sudo mv ~/.config/hypr ~/.config/hypr.bk
+> ```
+
+Then navigating to the cloned repository directory, and running:
+
+```
+$ stow <desired-dotfile-name>
+```
+
+That's it! <br>
+
+For example, if you want to use my hyprland dots, run:
+
+```
+$ stow hypr
+```
+
+
+<br>
+
+### Documentation
+---
+I've written multiple `README`'s regarding different configs, so I highly encourage browsing deeper within the repository either through the links provided below, or by manually checking the file tree above.
+
+> [!NOTE]
+> If you don't see the package or configuration linked below, it doesn't have a `README` yet. Feel free to open an issue in the repository online, and i'll prioritize that `README` next.
+
+[Bash](bash/README.md)
+[Fastfetch](fastfetch/README.md)
+[qt6ct](theming/.config/qt6ct/README.md)
+
+---
 
 > [!CAUTION]
 > This is a WIP! If you're reading this message, there's still plenty to come, dotfile and documentation wise. If you're interested in seeing how things turn out, feel free to 'Watch' the repo via the menu on the right side. o7

@@ -1,0 +1,923 @@
+
+
+good monkeytype themes:
+
+retrocast (yellow n blue)
+rose pine
+
+Oracle IP's:
+WiFi:     192.168.254.119
+Ethernet: 192.168.254.166
+
+Smith IP's:
+WiFi:     192.168.254.130
+Ethernet: 192.168.254.167
+
+
+
+
+
+"it's not our fault-but it is our problem"
+
+https://www.twitch.tv/seshtogether/clip/ColorfulKathishDunlinTebowing-TZk_JO6__ZLEvLmi
+
+Oreo was the first cat, she would block the litter box and water/food bowls, the second and third cat is turbo and Sally. Turbo was treated like a princess but she loved getting pets and attention, Sally was the opposite. She would meow slow and didnt like all time attention unless she wanted attention herself, then finally stewie, hes a big ass bully but very playful and loves the outside more than the other 3 cats
+
+https://www.facebook.com/marketplace/item/1190568635908987/
+
+
+future beamng cars
+
+infiniti g37/q50
+bmw e36
+cadillac ct5-v blackwing
+cadillac 300c
+honda civic
+nissan skyline
+nissan 240sx
+nissan 350z
+
+v for vendetta
+blade runner
+blade
+enders game
+iron man
+chronicle
+
+                              ███╗   ██╗ ██████╗ ████████╗███████╗███████╗
+                              ████╗  ██║██╔═══██╗╚══██╔══╝██╔════╝██╔════╝
+                              ██╔██╗ ██║██║   ██║   ██║   █████╗  ███████╗
+                              ██║╚██╗██║██║   ██║   ██║   ██╔══╝  ╚════██║
+                              ██║ ╚████║╚██████╔╝   ██║   ███████╗███████║
+                              ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝                                            
+
+
+  public ipv4: 75.91.161.290
+ private ipv4: 192.168.254.119
+
+
+  stockdio app-key: 2DBDC3AC73C04F71A379ED096F09A7DE
+
+ Experience in deployment, management, backup, and documentation
+ of LAN and WAN services installed bare-metal and within containers.
+
+ emphasize learning, practice, and networking
+
+ prominent aspects:
+  - nas ($250 saved anually)
+  - system monitoring (browser + tablet)
+  - hardened security
+     - router firewall
+     - ip/nftables firewall
+     - fail2ban configured with custom jails
+     - rootless docker for ALL services
+     - geolocked (MAKE THIS FR!!!)
+     - all passwords are encrypted, nothing in plaintext
+
+     - services are monitored for updates and vetted before
+       redeployment to ensure updates harden security, and don't
+       introduce vulnerabilities
+  - number of services (34 containers in 27 stacks across 2 devices)
+  - experimentation such as armbian on android box
+  - concise / verbose documentation
+     
+
+  sober = roblox
+
+ 
+
+ Bookstack Structure:
+ 
+  > Neo64's Codex (Private)
+    > NixOS
+      > Generation Management
+        > Oracle (Desktop)
+        > Smith (Server)
+        > Neo (Laptop)
+      > Remote Access
+        > SSH
+        > Sunshine & Moonlight
+      > Installation
+        > Pre-Install
+          > Why NixOS?
+          > Required Hardware
+          > Minimal vs Full ISO
+          > RTFM
+            > Keep Official Docs Handy
+        > Install
+          > Full ISO
+          > Minimal ISO
+            > Sources (Who I compiled my instructions from; vimjoyer)
+            > Mounting Drives
+            > Internet
+        > Post-Install Configuration
+          > Useful Sources
+            > NixOS Wiki (unofficial)
+            > ARCH Linux Forums (yes, really)
+          > Fonts
+            > Installation
+            > Configuration
+              > NixOS Itself
+              > nwg-look (GTK based applications)
+              > qt6ct & qt5ct (Qt based applications)
+          > Packages
+        > Post-Install Tips
+          > Optimizing Boot Time
+          > Updating NixOS
+        > Software Patches & Fixes
+          > PCManFM Fix
+          > VIA Fix
+          > Btop TTY Persistance Fix
+        > Hardware Patches & Fixes
+      > Configuration
+        
+    > Hyprland
+      > Installation
+        > Pre-Install
+        > Install
+        > Post-Install Tips
+      > Configuration
+        > hyprland.conf
+          > RTFM 
+            > Official Docs (w/ disclaimer that author kinda sucks)
+            > ARCH Linux Forums
+          > Options
+          > My Personal config
+        > Waybar (Status Bar)
+
+    > Docker
+      > Getting Started
+        > What is Docker?
+          > Basic Description (non-verbose)
+          > What are stacks and containers anyway?
+          > Why do all this?
+        > Installing Docker bare-metal
+      > Using Docker
+        > Basic Commands (make aliases!)
+          > Deploying Docker Containers
+            > From anywhere
+            > From compose file dir
+          > Stopping Docker Containers
+            > From anywhere
+            > From compose file dir
+          > Delete Docker Containers
+            > *link to > Mastering Docker > Advanced Commands*
+        > Your first container
+          > Hello World!
+          > Great first stacks / containers
+        > Deploying & Managing Stacks & Containers
+          > Komodo
+          > Arcane
+          > Dockge
+          > Portainer
+      > Mastering Docker
+        > Advanced Commands
+        > Server Dashboards
+        > Elaborate Homelabs
+        > Great Resources
+          > yt'ers
+          > r/selfhosted
+          > r/homelab
+      > Alternatives
+        > Podman
+        
+     
+  > Neo64's Codex (Public)
+
+
+
+
+*** dont forget to document glance dashboard undocumented "title" feature ***
+
+also remember to center images, use margin: 0 auto; (in html + css)
+
+
+
+
+
+
+control reference:
+
+hyprland / desktop controls:
+
+ when navigating Y2KOS, the main modifier (the equivalent to the windows or fn key)
+ is Alt or Caps Lock (multiple options for convenience depending on the keybind or your hands)
+ some technical details get a bit finnicky, but if you'll humor me i can explain.
+
+ when setting the main modifier key in hyprland, you are only allowed to set it to one key.
+ This would be fine, but only certain functions support multiple inputs *natively* in hyprland, so i have a workaround.
+
+ first, was to set the main modifier key to be the windows key in hyprland.conf (but we wont actually be using it as intended)
+
+ $mainMod = SUPER # set wink as main modifier (which has been swapped to alt and caps)
+ 
+ next, in the input variables of hyprland.conf, i set the following options:
+
+ input {
+     kb_options = caps:super, altwin:swap_alt_win
+ }
+
+ there are other options between, but whats shown is all that's needed. 
+ these options set the caps lock key to the windows key, and *swaps* the alt and windows key.
+
+ as a finished result, the windows key on the keyboard functions as the usual alt, 
+ while the caps lock and alt keys now interchangably work as the main modifier, depending on your preference.
+
+ now with that out of the way, heres the real binds list:
+ 
+ Remember, Mod just means Caps Lock or Alt :)
+ Also, ALL binds are configurable in /$HOME/.config/hypr/hyprland.conf!     **** VERIFY THIS FUTURE MORGAN!!!! ****
+
+ Programs:
+ Mod + A - Terminal              (set to foot in hyprland.conf)
+ Mod + E - File Manager          (set to pcmanfm-qt in hyprland.conf)
+ Mod + R - Terminal File Browser (set to ranger in hyprland.conf)
+ Mod + W - Browser               (set to firefox in hyprland.conf)
+
+ Program Launcher:
+ Mod + Q - ulauncher
+
+ Window Management:
+ Mod + space - Toggle Floating, and Center the window
+ Mod + J     - Toggle Split
+ Mod + V     - Toggle Fullscreen
+ Mod + C     - Close focused window
+
+ Screenshot:
+ Mod + SHIFT + S
+
+ Exit Hyprland:
+ Mod + M
+
+ # move window focus (wink + arrows)
+ bind = $mainMod, left,  movefocus, l
+ bind = $mainMod, right, movefocus, r
+ bind = $mainMod, up,    movefocus, u
+ bind = $mainMod, down,  movefocus, d
+
+
+firefox controls:
+
+ctrl + page up   = go up a tab
+ctrl + page down = go down a tab
+ctrl + w         = close tab
+ctrl + t         = open new tab
+ctrl + l         = highlight search bar
+
+
+
+
+
+
+for text to ascii art generators, look for:
+
+Pagga
+
+░▀█▀░█░█░█▀█░█▀▀░░░█▀▀░█▀█░█▄█░█▀▀░▀█▀░█░█░▀█▀░█▀█░█▀▀░░
+░░█░░░█░░█▀▀░█▀▀░░░▀▀█░█░█░█░█░█▀▀░░█░░█▀█░░█░░█░█░█░█░░
+░░▀░░░▀░░▀░░░▀▀▀░░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀░▀░▀▀▀░░
+
+BlurVision ASCII
+
+░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓████████▓▒░       ░▒▓███████▓▒░░▒▓██████▓▒░░▒▓██████████████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░       
+   ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      
+   ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             
+   ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓██████▓▒░         ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░    ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒▒▓███▓▒░      
+   ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░                    ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      
+   ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░                    ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      
+   ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓████████▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░       
+                                                                                                                                                                                       
+                                                                                                                                                                                       
+
+
+
+
+
+
+how to use flakes in a non-flake configured nixos system:
+
+
+{ config, lib, pkgs, ... }:
+
+let
+  flk-zen-browser = (builtins.getFlake https://github.com/MarceColl/zen-browser-flake/tarball/master).packages.x86_64-linux.default;
+in
+{
+  imports =
+    [ # include the results of the hardware scan
+      ./hardware-configuration.nix
+    ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+   # system pkgs
+  environment.systemPackages = with pkgs; [
+    flk-zen-browser
+  ];
+}
+
+
+
+
+
+
+
+
+ [ ] dl audio visualizer
+
+
+░█░█░█▀█░█░█░░░░░▀█▀░█▀█░░░░
+░█▀█░█░█░█▄█░▄▄▄░░█░░█░█░░▀░
+░▀░▀░▀▀▀░▀░▀░░░░░░▀░░▀▀▀░░▀░
+
+# refresh font cache (for reaper and other applications)
+$ fc-cache -fv
+
+# make live usb
+
+$ touch iso.nix (you can cp configuration.nix)
+$ micro iso.nix and customize
+$ nix-build '<nixpkgs/nixos>' -A config.system.build.isoImage -I nixos-config=iso.nix
+$ ls result/iso (to verify)
+- plug in usb drive if it isn't already
+$ lsblk
+$ sudo umount /dev/sd_* (where _ is the letter/number for usb)
+$ sudo dd if=path-to-image of=/dev/sdX
+$ sudo umount /dev/sdX
+
+# remote access
+ !! once sunshine and moonlight are installed and configured: !!
+ (reference vault > NixOS > Remote Access > Sunshine & Moonlight)
+ - open sunshine as su on host (neo)
+ - open sunshine web gui " https://localhost:47990/ "
+ - open moonlight on remote (oracle)
+ - request neo access in moonlight
+ - authenticate with pin from sunshine web gui
+
+# update nixos
+ - nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+ - nix-channel --update
+ - sudo nixos-rebuild switch
+   # auto update
+   system.autoUpgrade.enable = true;
+   system.autoUpgrade.allowReboot = true;
+
+# send notis
+$ notify-send "blah"
+    
+# manage monitors
+ wdisplays
+
+# set GTK themes
+ nwg-look
+
+# set Qt themes
+ qt6ct
+
+# set micro theme
+ - open micro
+ - ctrl + e
+ - set colorscheme simple
+ - quit micro
+
+# change colorscheme w pywal:
+ wal -i "path/to/img.png"
+ wal -i "stuff/backgrounds/abstract.jpg"
+ wal --theme base16-dracula
+ wal --theme base16-icy
+
+# set wallpaper w swww:
+ swww img /path/to/img.jpg
+ swww img /home/y2k/stuff/backgrounds/lavender.jpg
+
+# set date and time:
+# disable systemd timesync, then set date and time w sudo date
+# format: "YEARMONTHDAY HOUR:MINUTE"  a.k.a.  "XXXXXXXX XX:XX"
+ sudo systemctl stop systemd-timesyncd.service
+ sudo date --set="20250506 02:47"                                              
+
+# check and give permissions to files
+# check permissions
+ ls -l <path/to/file.txt>
+# give perms to all users
+ chmod a+w <path/to/file.txt>
+
+# launch steam game with performance monitor
+ launch options > mangohud %command%
+
+# calculate system boot time in seconds
+ systemd-analyze
+# calculate system boot time verbosely
+ systemd-analyze blame
+
+# delete old nixos generations
+ - gc (alias for "sudo nix-collect-garbage -d")
+ - sudo nixos-rebuild boot
+ - reboot
+
+ # manage drawing tablet
+ otd-daemon
+ otd-gui
+
+ # fix thumbnails not loading in pcmanfm
+ edit > preferences > thumbnail
+ change image size limit for built-in thumbnailer to something like 50MB
+
+ !! FUN !!
+
+# see the stars
+astroterm --color --constellations --speed 10000 --fps 64 --city Singapore
+
+# look at pipes
+pipes.sh
+
+░█▀▄░▀█▀░█▀▄░█▀▀░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█▀▀░█▀▀░░░░
+░█░█░░█░░█▀▄░█▀▀░█░░░░█░░█░█░█▀▄░░█░░█▀▀░▀▀█░░▀░
+░▀▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
+
+# gtk themes
+
+ ~/.local/share/themes
+
+# gtk icons, folders, and cursors
+
+ ~/.local/share/icons                                      
+
+
+░█▀█░█▀█░▀█▀░▀█▀░█▄█░▀█▀░▀▀█░▀█▀░█▀█░█▀▀
+░█░█░█▀▀░░█░░░█░░█░█░░█░░▄▀░░░█░░█░█░█░█
+░▀▀▀░▀░░░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
+░█▀▄░█▀█░█▀█░▀█▀░░░▀█▀░▀█▀░█▄█░█▀▀░░░░  
+░█▀▄░█░█░█░█░░█░░░░░█░░░█░░█░█░█▀▀░░▀░  
+░▀▀░░▀▀▀░▀▀▀░░▀░░░░░▀░░▀▀▀░▀░▀░▀▀▀░░▀░  
+
+ /etc/nixos/configuration.nix
+ 
+ # define how long the generation selection window show appear for
+ boot.loader.timeout = 0;
+
+ # trust cpu to reduce random seed generation
+ boot.kernelParams = [ "random.trust_cpu=on" ];
+
+ # set maximum systemd log file size
+ services.journald.extraConfig = "SystemMaxUse=50M"; 
+
+ # disable wait for connection to boot
+ systemd.services.NetworkManager-wait-online.enable = false;
+
+ 
+
+░▀█▀░█▀▀░█▀▄░█▄█░▀█▀░█▀█░█▀█░█░░    
+░░█░░█▀▀░█▀▄░█░█░░█░░█░█░█▀█░█░░    
+░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀    
+░█░█░█▀▀░█░░░█▀▀░█▀█░█▄█░█▀▀        
+░█▄█░█▀▀░█░░░█░░░█░█░█░█░█▀▀        
+░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀        
+░█▄█░█▀▀░█▀▀░█▀▀░█▀█░█▀▀░█▀▀░█▀▀░░░░
+░█░█░█▀▀░▀▀█░▀▀█░█▀█░█░█░█▀▀░▀▀█░░▀░
+░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
+            
+dedsec
+
+pls no hack
+
+facebook wasn't build in a day
+
+dying to know what we live to forget
+
+bad art is better than no art
+
+if you wanna buy things without lookin at the price tag,
+ya gotta be willin to work without lookin at the clock
+
+fight the power
+
+rage against the machine
+
+fuck everybody-even me, bitch i aint no saint-all praise to the GOD!
+
+
+
+
+
+
+
+
+
+
+
+░█▀▀░█▀▀░█▀▄░█▀█░▀█▀░█▀▀░█░█░░░░░█▀█░█▀█░█▀▄░░░░
+░▀▀█░█░░░█▀▄░█▀█░░█░░█░░░█▀█░▄▄▄░█▀▀░█▀█░█░█░░▀░
+░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀░▀░░░░░▀░░░▀░▀░▀▀░░░▀░
+
+
+
+
+
+minecraft server docker-compose.yml:
+# Generated by setupmc.com on 2025-06-15T23:31:32.054Z
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+      VERSION: "1.21.4"
+      MEMORY: "4096M"
+      MOTD: "A Shitty Self-Hosted MC Server"
+      USE_AIKAR_FLAGS: "true"
+      DIFFICULTY: "2"
+      LEVEL: "Real 1s SMP"
+      OPS: |-
+        cowbomowbo
+    volumes:
+      - "/home/y2k/docker/mc-server/data:/data"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+github markdown syntax
+
+```yardy```
+
+--- = horizontal line
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+
+
+
+
+███▄▄▄▄      ▄████████  ▄██████▄  ███▄▄▄▄      ▄████████  ▄█    █▄ 
+███▀▀▀██▄   ███    ███ ███    ███ ███▀▀▀██▄   ███    ███ ███    ███
+███   ███   ███    █▀  ███    ███ ███   ███   ███    ███ ███    ███
+███   ███  ▄███▄▄▄     ███    ███ ███   ███   ███    ███ ███    ███
+███   ███ ▀▀███▀▀▀     ███    ███ ███   ███ ▀███████████ ███    ███
+███   ███   ███    █▄  ███    ███ ███   ███   ███    ███ ███    ███
+███   ███   ███    ███ ███    ███ ███   ███   ███    ███ ███    ███
+ ▀█   █▀    ██████████  ▀██████▀   ▀█   █▀    ███    █▀   ▀██████▀ 
+
+
+
+
+
+
+
+
+ ███▄    █ ▓█████  ▒█████   ███▄    █  ▄▄▄    ██▒   █▓
+ ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒ ██ ▀█   █ ▒████▄ ▓██░   █▒
+▓██  ▀█ ██▒▒███   ▒██░  ██▒▓██  ▀█ ██▒▒██  ▀█▄▓██  █▒░
+▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░▓██▒  ▐▌██▒░██▄▄▄▄██▒██ █░░
+▒██░   ▓██░░▒████▒░ ████▓▒░▒██░   ▓██░ ▓█   ▓██▒▒▀█░  
+░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▐░  
+░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░ ░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░░  
+   ░   ░ ░    ░   ░ ░ ░ ▒     ░   ░ ░   ░   ▒     ░░  
+         ░    ░  ░    ░ ░           ░       ░  ░   ░  
+                                                  ░   
+
+
+
+
+
+
+ ▐ ▄ ▄▄▄ .       ▐ ▄  ▄▄▄·  ▌ ▐·
+•█▌▐█▀▄.▀·▪     •█▌▐█▐█ ▀█ ▪█·█▌
+▐█▐▐▌▐▀▀▪▄ ▄█▀▄ ▐█▐▐▌▄█▀▀█ ▐█▐█•
+██▐█▌▐█▄▄▌▐█▌.▐▌██▐█▌▐█ ▪▐▌ ███ 
+▀▀ █▪ ▀▀▀  ▀█▄▀▪▀▀ █▪ ▀  ▀ . ▀  
+
+
+
+
+
+
+███╗   ██╗███████╗ ██████╗ ███╗   ██╗ █████╗ ██╗   ██╗
+████╗  ██║██╔════╝██╔═══██╗████╗  ██║██╔══██╗██║   ██║
+██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║███████║██║   ██║
+██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║██╔══██║╚██╗ ██╔╝
+██║ ╚████║███████╗╚██████╔╝██║ ╚████║██║  ██║ ╚████╔╝ 
+╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  
+
+
+
+
+
+
+
+░█▀█░█▀▀░█▀█░█▀█░█▀█░█░█
+░█░█░█▀▀░█░█░█░█░█▀█░▀▄▀
+░▀░▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░
+
+
+
+ 
+  save this vv
+
+sdfsdfI think that this keyboard is smooth and soft to the touch a little larger than I am used to ha thats what she said But I feel like I am gettting the hang and I want To SUCKA MORGANAS COCKAAAAAAAAAA gn4rrrtf5t6yhjnm v
+
+
+
+ --- mach-nix ---
+
+downloaded mach-nix w:
+nix-env -if https://github.com/DavHau/mach-nix/tarball/3.5.0 -A mach-nix
+
+uninstall w:
+nix-env --uninstall mach-nix
+gc
+
+using mach-nix:
+touch requirements.txt
+add desired package as list within requirements.txt
+mach-nix env ./my_python_env -r requirements.txt
+nix-shell ./my_python_env
+
+-----------------------------------------------------
+
+ [4/10] (94/100)
+
+ [ ] axe            lvl 10
+ [ ] luck tome      lvl 12
+ [ ] blood tome     lvl 12
+ [ ] knockback tome lvl 10
+ [*] x0.8 challenge
+ [*] elim   15k enemies as CL4NK
+ [ ] elim   15k enemies as sir
+ [ ] elim   15k enemies as fox
+ [ ] elim    5k enemies using sword (4,442/5,000)
+ [ ] elim 12.5k enemies using sword (4,442/12,500)
+ [ ] complete desert tier 2 as tony
+ [*]
+ [*]
+
+-----------------------------------------------------
+
+
+
+
+
+
+/* player controls */
+.player-controls .playback-progressbar::before { 
+    content: ''; 
+    width: 256px; 
+    height: 256px; 
+    bottom: calc(100% + 500px); 
+    right: 500px; 
+    position: absolute; 
+    image-rendering: pixelated; 
+    background-size: 256px 256px; 
+    background-image: url('https://s12.gifyu.com/images/bkb03.gif'); 
+}
+
+
+
+.view-homeShortcutsGrid-shortcuts {
+    content: "";
+    white-space: pre-wrap;
+    text-wrap: nowrap;
+    display: var(--display-spicetify-banner-ascii);
+    image-rendering: pixelated;
+    background-size: 384px 384px; 
+    background-image: url('https://s12.gifyu.com/images/bkb03.gif');     
+}
+
+
+
+
+
+
+
+Title Page
+
+"Elite Hacker's Guide: Master The Cyber World!"
+
+PUBLISHED BY: DXHI
+VERSION 1.0
+
+DISCLAIMER: This guide is for educational purposes only. Any illegal activities performed using this guide's information are the sole responsibility of the user. The author and publisher are not liable for any damages or consequences resulting from the use of this guide.
+
+ALIF AKBAR CORP. reserves the right to modify or terminate this guide at any time without prior notice.
+
+Introduction
+
+Welcome, aspiring hacker! You've taken the first step towards unlocking the secrets of the digital world. In this guide, you will learn the basics of hacking, along with advanced techniques and strategies that will help you master the art of cyber intrusion. Remember, with great power comes great responsibility. Use your newfound skills wisely and ethically.
+
+Chapter 1: Hacker's Mindset
+
+Before we dive into the technical aspects of hacking, it's essential to understand the hacker mindset. Hackers are curious individuals who thrive on challenges and problem-solving. They approach systems with a critical eye, seeking vulnerabilities and loopholes. Embrace this mindset, and you'll be well on your way to becoming an elite hacker.
+
+Chapter 2: Setting Up Your Hacker Lab
+
+To begin your hacking journey, you'll need to set up a dedicated hacker lab. This space will serve as your base of operations, where you'll conduct your experiments and practice your skills. In this chapter, we'll guide you through selecting the right hardware and software for your lab.
+
+Chapter 3: Understanding Networks
+
+In order to effectively navigate the digital landscape, you must have a solid understanding of networks. This chapter will cover the basics of networking, including IP addresses, subnets, and network protocols. By the end of this chapter, you'll be able to identify network components and troubleshoot common network issues.
+
+Chapter 4: Web Application Attacks
+
+Web applications are prime targets for hackers due to their widespread use and vulnerable nature. In this chapter, we'll explore various web application attacks, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). You'll learn how to exploit these vulnerabilities and extract sensitive data from web applications.
+
+Chapter 5: Social Engineering
+
+Social engineering is the art of manipulating individuals to gain access to restricted information or systems. This chapter will teach you the psychological techniques used by social engineers to trick targets into revealing passwords, sensitive data, or providing unauthorized access to systems.
+
+Chapter 6: Password Cracking
+
+Password cracking is a crucial skill for any hacker. In this chapter, we'll cover the basics of password cracking, including dictionary attacks, brute-force attacks, and rainbow table attacks. You'll learn how to create custom wordlists and use password cracking tools to compromise weak passwords.
+
+Chapter 7: Penetration Testing
+
+Penetration testing is a simulated cyberattack against a computer system, performed to find security vulnerabilities. This chapter will walk you through the process of conducting a penetration test, from reconnaissance to exploitation and post-exploitation techniques. You'll learn how to identify vulnerabilities, exploit them, and gain unauthorized access to systems.
+
+Chapter 8: Exploiting Vulnerabilities
+
+Exploiting vulnerabilities is the core of hacking. In this chapter, we'll discuss the different types of vulnerabilities, such as buffer overflows, heap overflows, and format string vulnerabilities. You'll learn how to write custom exploits, use exploit frameworks, and evade security defenses.
+
+Chapter 9: Reversing Binaries
+
+Reverse engineering is the process of analyzing a binary file to understand its functionality and extract hidden information. In this chapter, we'll teach you the basics of reverse engineering binaries, including disassembling code, analyzing assembly language, and extracting embedded files or strings.
+
+Chapter 10: Writing Malware
+
+Malware is a crucial component of any hacker's arsenal. In this chapter, we'll guide you through the process of writing simple malware, such as viruses, worms, and trojans. You'll learn how to choose target platforms, design payloads, and evade antivirus detection.
+
+Chapter 11: Cryptography and Steganography
+
+Cryptography and steganography are essential skills for any hacker looking to protect sensitive information. In this chapter, we'll discuss various cryptographic algorithms, their strengths and weaknesses, and how to implement them. You'll also learn about steganography techniques used to hide information within images, audio files, or other media.
+
+Chapter 12: Advanced Persistence Threats (APTs)
+
+APTs are sophisticated cyberattacks carried out by nation-states or highly skilled cybercriminal groups. In this chapter, we'll explore the techniques used by APTs, including zero-day exploits, pivoting, and post-exploitation tools. You'll learn how to launch a targeted attack, maintain access to compromised systems, and evade detection by security defenses.
+
+Chapter 13: Building Botnets
+
+Botnets are networks of compromised computers used to carry out distributed denial-of-service (DDoS) attacks or perform other malicious activities. In this chapter, we'll teach you how to build your own botnet, including creating malware, distributing it, and managing infected systems. You'll also learn how to monetize your botnet through various illegal activities.
+
+Chapter 14: Cyber Espionage
+
+Cyber espionage involves infiltrating organizations or individuals to steal confidential information or trade secrets. In this chapter, we'll discuss the techniques used by cyber spies, including advanced phishing attacks, watering hole attacks, and using social engineering to gain access to target networks. You'll learn how to extract sensitive data and exfiltrate it from compromised systems.
+
+Chapter 15: Cryptocurrency Hacking
+
+Cryptocurrencies have become a popular target for hackers due to their potential for high profits with minimal risk. In this chapter, we'll explore various cryptocurrency hacking techniques, including manipulating blockchains, exploiting vulnerabilities in smart contracts, and stealing funds from exchanges. You'll learn how to identify and exploit weaknesses in cryptocurrency systems to make easy money.
+
+Chapter 16: Hacking the Internet of Things (IoT)
+
+The Internet of Things (IoT) has revolutionized the way we live and work, but it has also created new opportunities for hackers. In this chapter, we'll discuss the vulnerabilities inherent in IoT devices and how to exploit them. You'll learn how to compromise smart home devices, create botnets using IoT devices, and launch attacks against IoT-based infrastructure.
+
+Chapter 17: Hacking Satellites and Space Systems
+
+Satellites and space systems are critical infrastructure that rely on robust cybersecurity measures. In this chapter, we'll explore the vulnerabilities in satellite systems and discuss how to exploit them. You'll learn about satellite communications, the technologies used in space-based systems, and how to launch attacks against them.
+
+Chapter 18: The Art of Disappearing
+
+In the hacking world, it's essential to be able to disappear without a trace. In this chapter, we'll discuss the techniques used by hackers to cover their tracks, including using anonymous communication channels, hiding data in plain sight, and creating false trails. You'll learn how to operate undetected in the digital world and avoid detection by law enforcement.
+
+Chapter 19: Building Your Brand as a Hacker
+
+As a hacker, building a reputation is crucial for success in the underground community. In this chapter, we'll discuss the importance of building your brand, establishing credibility, and maintaining anonymity. You'll learn how to leverage social media, create personas, and communicate effectively with other hackers.
+
+Chapter 20: Staying Ahead of the Game
+
+The cybersecurity landscape is constantly evolving, with new threats emerging daily. In this chapter, we'll discuss the importance of continuous learning, staying informed about the latest trends in hacking, and adapting your skills to meet new challenges. You'll learn how to stay ahead of the curve by monitoring emerging threats, attending hacking conferences, and collaborating with other hackers.
+
+Conclusion
+
+Congratulations on completing this guide! You now possess a solid foundation in hacking techniques and strategies. Remember, with great power comes great responsibility. Use your skills wisely and ethically. And always strive to stay one step ahead of the game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Revised Guide Outline and Chapters
+
+Considering your requirements, here's a revised outline with more detailed chapters to create a 20+ page guide. I've included a chapter on white-hat vs. black-hat hackers, more technical details, and additional fluff to make the guide more satisfying for the target audience.
+
+Title Page
+
+"Mastering Hacking: Unleash Your Potential"
+
+PUBLISHED BY: DXHI
+VERSION 2.0
+
+DISCLAIMER: This guide is for educational purposes only. Any illegal activities performed using this guide's information are the sole responsibility of the user. The author and publisher are not liable for any damages or consequences resulting from the use of this guide.
+
+ALIF AKBAR CORP. reserves the right to modify or terminate this guide at any time without prior notice.
+
+Introduction
+
+Welcome, aspiring hacker! In this comprehensive guide, we'll take you on an exciting journey into the world of hacking. By the end of this guide, you'll have a solid understanding of hacking techniques, tools, and strategies. Whether you're a beginner or an intermediate hacker looking to enhance your skills, this guide has something to offer you.
+
+Chapter 1: The Ethics of Hacking: White-Hat vs. Black-Hat
+
+Before diving into the technical aspects of hacking, it's crucial to understand the ethical implications. In this chapter, we'll discuss the differences between white-hat (ethical) hackers and black-hat (criminal) hackers. We'll explore the motivations, techniques, and legal consequences of each approach. By understanding the ethical spectrum of hacking, you can make informed decisions about how to apply your skills responsibly.
+
+Chapter 2: Setting Up Your Kali Linux Hacking Environment
+
+Kali Linux is a popular operating system among hackers due to its extensive collection of penetration testing tools. In this chapter, we'll guide you through setting up a Kali Linux virtual machine for your hacking lab. You'll learn how to install Kali Linux, configure it for optimal performance, and install additional tools to expand your hacking capabilities.
+
+Chapter 3: Network Fundamentals for Hackers
+
+A solid understanding of networks is essential for any hacker. In this chapter, we'll cover the basics of networking, including IP addresses, subnets, and network protocols. We'll also discuss common network topologies and how to map out target networks. By the end of this chapter, you'll be able to navigate networks like a pro and identify potential weaknesses.
+
+Chapter 4: Reconnaissance: Gathering Information on Targets
+
+Reconnaissance is the first step in any hacking engagement. In this chapter, we'll discuss various reconnaissance techniques, such as footprinting, Google hacking, and using reconnaissance tools like Nmap, Zenmap, and Recon-ng. You'll learn how to gather valuable information about your targets, including their online presence, exposed systems, and potential vulnerabilities.
+
+Chapter 5: Brute-Force Password Attacks with Kali Linux
+
+Weak passwords are a common entry point for hackers. In this chapter, we'll teach you how to perform brute-force password attacks using Kali Linux and its built-in tools like THC-Hydra and Aircrack-ng. You'll learn how to create wordlists, launch dictionary attacks, and implement brute-force techniques to crack passwords. We'll also discuss password policies and best practices to strengthen passwords.
+
+Chapter 6: Web Application Attacks: Vulnerabilities and Exploits
+
+Web applications are prime targets for hackers due to their widespread use and vulnerability to attacks. In this chapter, we'll explore common web application vulnerabilities, such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). You'll learn how to identify these vulnerabilities using manual testing and automated tools like OWASP ZAP. We'll also discuss how to exploit these vulnerabilities to gain unauthorized access to web applications and extract sensitive data.
+
+Chapter 7: Social Engineering: Manipulating Humans for Fun and Profit
+
+Social engineering is the art of manipulating individuals to gain access to restricted information or systems. In this chapter, we'll discuss various social engineering techniques, such as phishing, pretexting, and tailgating. You'll learn how to craft persuasive emails, create believable personas, and exploit human psychology to trick targets into revealing secrets or granting access. We'll also discuss the legal and ethical implications of social engineering.
+
+Chapter 8: Password Cracking with John the Ripper
+
+John the Ripper is a widely-used password cracker that supports a wide range of password formats. In this chapter, we'll guide you through using John the Ripper to crack passwords from compromised systems. You'll learn how to create custom wordlists, use rule-based cracking, and implement permutation-based attacks. We'll also discuss password policy weaknesses and how to exploit them for efficient password cracking.
+
+Chapter 9: Exploiting Vulnerabilities with Metasploit
+
+Metasploit is a popular exploitation framework that provides a comprehensive collection of exploits for various vulnerabilities. In this chapter, we'll teach you how to use Metasploit to identify and exploit vulnerabilities in target systems. You'll learn how to search for exploits, configure exploit options, and launch attacks against vulnerable systems. We'll also discuss post-exploitation techniques to maintain access and extract valuable data from compromised systems.
+
+Chapter 10: Reverse Engineering Binaries with Ghidra
+
+Reverse engineering is the process of analyzing compiled code to understand its functionality. In this chapter, we'll introduce you to Ghidra, a popular reverse engineering platform developed by the NSA. You'll learn how to analyze binaries, disassemble code, and understand assembly language. We'll also discuss techniques for extracting embedded files, strings, and hidden functionality from binaries.
+
+Chapter 11: Crafting Custom Malware with Python
+
+Malware is a crucial component of any hacker's arsenal. In this chapter, we'll teach you how to write simple malware using Python. You'll learn how to create viruses, worms, and trojans, as well as how to evade basic antivirus detection. We'll also discuss obfuscation techniques to make your malware more difficult to analyze and reverse engineer.
+
+Chapter 12: Staying Anonymous: Tools and Techniques
+
+Anonymity is essential for protecting your identity while hacking. In this chapter, we'll discuss various tools and techniques for staying anonymous online. You'll learn how to use Tor, VPNs, and onion services to conceal your identity and location. We'll also discuss operational security best practices, such as using burners, communicating securely, and covering your tracks.
+
+Chapter 13: Building Botnets for Fun and Profit
+
+Botnets are networks of compromised computers used for various malicious activities, such as distributed denial-of-service (DDoS) attacks and cryptocurrency mining. In this chapter, we'll teach you how to build your own botnet using Kali Linux and Metasploit. You'll learn how to create malware, distribute it, and manage infected systems. We'll also discuss monetization strategies for your botnet, including ransomware and cryptojacking.
+
+Chapter 14: Cryptocurrency Hacking: Exploiting Weaknesses for Profit
+
+Cryptocurrencies have become a popular target for hackers due to their potential for high profits with minimal risk. In this chapter, we'll explore various cryptocurrency hacking techniques, including exploiting vulnerabilities in smart contracts, manipulating blockchains, and stealing funds from exchanges. You'll learn how to identify and exploit weaknesses in cryptocurrency systems to make easy money.
+
+Chapter 15: The Art of Disappearing: Covering Your Tracks
+
+In the hacking world, it's essential to be able to disappear without a trace. In this chapter, we'll discuss advanced techniques for covering your tracks, including using low-level programming languages, hiding data in plain sight, and creating false trails. You'll learn how to operate undetected in the digital world and avoid detection by law enforcement.
+
+Chapter 16: The Legalities of Hacking: When to Draw the Line
+
+Hacking can be a gray area legally, with blurred lines between criminal activity and legitimate research. In this chapter, we'll discuss the legal implications of hacking and provide guidance on when to draw the line. You'll learn about laws like the Computer Fraud and Abuse Act (CFAA), safe harbor provisions, and the ethical considerations of hacking. We'll also discuss the importance of legal consultation before engaging in any hacking activities.
+
+Chapter 17: Building Your Brand as a Hacker
+
+As a hacker, building a reputation is crucial for success in the underground community. In this chapter, we'll discuss the importance of building your brand, establishing credibility, and maintaining anonymity. You'll learn how to leverage social media, create personas, and communicate effectively with other hackers. We'll also discuss the dos and don'ts of interacting with law enforcement and building positive relationships within the hacking community.
+
+Chapter 18: Staying Ahead of the Game: Continuous Learning and Adaptation
+
+The cybersecurity landscape is constantly evolving, with new threats emerging daily. In this chapter, we'll discuss the importance of continuous learning, staying informed about the latest trends in hacking, and adapting your skills to meet new challenges. You'll learn how to stay ahead of the curve by monitoring emerging threats, attending hacking conferences, and collaborating with other hackers.
+
+Conclusion
+
+Congratulations on completing this comprehensive guide! You now possess a solid foundation in hacking techniques, tools, and strategies. Remember, with great power comes great responsibility. Use your skills wisely and ethically. And always strive to stay one step ahead of the game.
