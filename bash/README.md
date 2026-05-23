@@ -16,7 +16,7 @@ This works by first defining a location to save the cached hardcopy of the `.bas
 
 ```
 CACHE="$HOME/.cache/bashrc_shared"
-URL="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/dots/bash/.bashrc_shared"
+URL="https://raw.githubusercontent.com/0lswitcher/dotfiles/refs/heads/main/bash/.bashrc_shared"
 
 # refresh once per day
 if [ ! -f "$CACHE" ] || [ $(date +%s -r "$CACHE") -lt $(( $(date +%s) - 86400 )) ]; then
