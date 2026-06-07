@@ -5,7 +5,7 @@
         "spacing": 0,
         "reload_style_on_change": true,
         "height": 36,
-        "margin": 0,        
+        "margin": 0,
         "modules-left": [
             "hyprland/workspaces",
             "group/shortcuts"
@@ -171,6 +171,13 @@
             },
             "active-only": false,
             "all-outputs": false,
+
+            "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'e-1' })\"",
+            "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'e+1' })\"",
+            "move-to-monitor": false,
+            //"on-click": "hyprctl dispatch \"hl.dsp.focus({ workspace = {name} })\"",
+            "on-click": "activate",
+
             "persistent-only": false,
             "persistent-workspaces": [ ],
             //"persistent-workspaces": {
@@ -197,6 +204,7 @@
               "class<heroic>":  "󱢾",
               "class<neovide":  "",
               "class<codium>":  "",
+              "class<menu.kando.Kando>": "",
               "foot": "",
               "vesktop": "",
             },
@@ -340,7 +348,7 @@
 
         "custom/reload": {
             "format": "  ",
-            "on-click": "foot pkill waybar && hyprctl dispatch exec waybar",
+            "on-click": "foot pkill waybar && waybar &",
             "tooltip-format": "reload waybar"
         },
 
@@ -397,7 +405,6 @@
               "custom/spacer",        
               "custom/gpu", 
               "custom/gpu-temp",
-              "custom/gpu-fan",
               "custom/spacer",
 		      "memory",
 		      "custom/spacer",
@@ -472,38 +479,53 @@
             },	        
 	        "modules": [
                 "pulseaudio",
+                "mpris",
                 "cava"
 	        ]
 	    },
+          "mpris": {
+	          "format": "{status_icon} {title} - {artist} {player_icon} ",
+	          "format-paused": "{status_icon} <i>{title} - {artist}</i> {player_icon} ",
+	          "player-icons": {
+		          "spotify": "",
+              "firefox": "󰈹",
+		          "mpv": ""
+	          },
+	          "status-icons": {
+              "playing": "",
+		          "paused": ""
+	          },
+	       // "ignored-players": ["firefox"]
+          },
 
-        "cava": {
-            // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-            "framerate": 60,
-            "autosens": 1,
-            "sensitivity": 1,
-            "bars": 16,
-            "lower_cutoff_freq": 50,
-            "higher_cutoff_freq": 10000,
-            "sleep_timer": 4,
-            "hide_on_silence": false,
-           // "format_silent": "quiet",
-            "method": "pulse",
-            "source": "auto",
-            "stereo": true,
-            "reverse": false,
-          //  "bar_width": 2,
-          //  "bar_spacing": 53,
-            "bar_delimiter": 32,
-            "monstercat": false,
-            "waves": false,
-            "noise_reduction": 0.77,
-            "input_delay": 2,
-            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-            "on-click": "pavucontrol",
-            "actions": {
-                       "on-click-right": "mode"
-                       }
-        },
+          "cava": {
+         //   "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+              "framerate": 60,
+              "autosens": 1,
+              "sensitivity": 1.8, //in %
+              "bars": 32, //16
+              "lower_cutoff_freq": 45, //50
+              "higher_cutoff_freq": 12500, //10000
+              "sleep_timer": 4,
+              "hide_on_silence": false,
+         //   "format_silent": "quiet",
+              "method": "pulse",
+              "source": "auto",
+              "stereo": true,
+              "reverse": false,
+         //   "bar_width": 2,
+         //   "bar_spacing": 53,
+              "bar_delimiter": 0,
+              "monstercat": false,
+              "waves": false,
+              "noise_reduction": 0.25,
+              "input_delay": 0,
+              "format-icons": [" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+              "on-click": "pavucontrol",
+              "actions": {
+                         "on-click-right": "mode"
+                         }
+          },
 
         "pulseaudio": {
             "format": " {icon} {volume}% ",

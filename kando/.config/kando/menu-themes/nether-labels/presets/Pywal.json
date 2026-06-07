@@ -1,0 +1,30 @@
+{
+  "colors": {
+    "accent-color": "#4D4A73",
+    "hover-color": "#61526D",
+    "submenu-items-hover-color": "#3E4882",
+    "text-hover-color": "#4D548E",
+    "connector-color": "#4D4A73",
+    "shrinked-outline-color": "#666CA2",
+    "circle-color": "#0f1022",
+    "border-color": "#c3c3c7",
+    "submenu-items-color": "#c3c3c7",
+    "label-background-color": "#0f1022",
+    "text-color": "#c3c3c7"
+  },
+  "menuThemeColors": {
+    "nether-labels": {
+      "accent-color": "#3C453F",
+      "hover-color": "#3A4A45",
+      "submenu-items-hover-color": "#2D6171",
+      "text-hover-color": "#47564E",
+      "connector-color": "#3C453F",
+      "shrinked-outline-color": "#546359",
+      "circle-color": "#0c1d0c",
+      "border-color": "#c2c6c2",
+      "submenu-items-color": "#c2c6c2",
+      "label-background-color": "#0c1d0c",
+      "text-color": "#c2c6c2"
+    }
+  }
+}

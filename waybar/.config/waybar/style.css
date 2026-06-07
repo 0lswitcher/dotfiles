@@ -14,20 +14,20 @@ window#waybar{
 
 .modules-left {
     padding:0px;
-    margin:6 0 0 10;
+    margin:6px 0px 0px 10px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
 .modules-center {
     padding:5px;
-    margin:6 0 0 0;
+    margin:6px 0px 0px 0px;
     border-radius:10px;
     background: alpha(@background, 0.6); 
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
 .modules-right {
     padding:0px;
-    margin: 6 10 0 0;
+    margin: 6px 10px 0px 0px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
@@ -76,6 +76,7 @@ tooltip {
 #custom-gpu:hover,
 #custom-gpu-temp:hover,
 #memory:hover,
+#mpris:hover,
 #pulseaudio:hover,
 #bluetooth:hover,
 #network:hover,
@@ -227,6 +228,15 @@ window#waybar.empty #window {
     padding: 0px 6px 0px 8px;  
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#mpris {
+    padding: 0px 10px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;

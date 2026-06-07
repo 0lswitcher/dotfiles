@@ -1,9 +1,704 @@
 {
+  "version": "2.3.0",
   "menus": [
     {
-      "shortcut": "Control+Space",
-      "shortcutID": "example-menu",
+      "root": {
+        "type": "submenu",
+        "name": "SAO",
+        "icon": "neurology",
+        "iconTheme": "material-symbols-rounded",
+        "children": [
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Pkgs",
+            "icon": "package_2",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Create",
+                "icon": "lightbulb_2",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "kdenlive",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "Kdenlive",
+                    "icon": "kdenlive",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "uri",
+                    "data": {
+                      "uri": "https://www.photopea.com/"
+                    },
+                    "name": "Photoea",
+                    "icon": "photopea",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "blender",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "Blender",
+                    "icon": "blender",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "reaper",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "REAPER",
+                    "icon": "music_note_2",
+                    "iconTheme": "material-symbols-rounded"
+                  }
+                ]
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Games",
+                "icon": "stadia_controller",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "heroic",
+                      "delayed": false
+                    },
+                    "name": "Heroic",
+                    "icon": "swords",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "submenu",
+                    "data": {},
+                    "name": "Library",
+                    "icon": "gamepad",
+                    "iconTheme": "material-symbols-rounded",
+                    "children": [
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open heroic://launch?appName=2umDGWwQxwLxKRb4Y9Pi8y&runner=sideload",
+                          "delayed": false
+                        },
+                        "name": "BeamNG.drive",
+                        "icon": "freedesktopdotorg",
+                        "iconTheme": "simple-icons"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "prismlauncher",
+                          "delayed": false
+                        },
+                        "name": "Minecraft",
+                        "icon": "developmentcontainers",
+                        "iconTheme": "simple-icons"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open heroic://launch?appName=eEpgZpF9QuE6kG9pWK71oR&runner=sideload",
+                          "delayed": false
+                        },
+                        "name": "Cruelty Squad",
+                        "icon": "sentiment_frustrated",
+                        "iconTheme": "material-symbols-rounded"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "steam",
+                      "delayed": false
+                    },
+                    "name": "Steam",
+                    "icon": "steam",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Code",
+                "icon": "code",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "foot",
+                      "delayed": false
+                    },
+                    "name": "Terminal",
+                    "icon": "terminal",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "codium",
+                      "delayed": false
+                    },
+                    "name": "VSCode",
+                    "icon": "vscodium",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide",
+                      "delayed": false
+                    },
+                    "name": "Neovim",
+                    "icon": "neovim",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "foot bash -i -l -c 'source /home/y2k/.bashrc; /home/y2k/stuff/dev/rust/neonav/neonav-v0.0.5/target/release/neonav'",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    },
+                    "name": "NeoNav",
+                    "icon": "rust",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Main",
+                "icon": "bookmark_heart",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "com.spotify.Client",
+                      "delayed": false
+                    },
+                    "name": "Spotify",
+                    "icon": "spotify",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "firefox",
+                      "delayed": false
+                    },
+                    "name": "Firefox",
+                    "icon": "firefoxbrowser",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "submenu",
+                    "data": {},
+                    "name": "Obsidian",
+                    "icon": "obsidian",
+                    "iconTheme": "simple-icons",
+                    "children": [
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open 'obsidian://open?vault=vault'",
+                          "delayed": false
+                        },
+                        "name": "Vault",
+                        "icon": "chess_knight",
+                        "iconTheme": "material-symbols-rounded"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open 'obsidian://open?vault=dotfiles'",
+                          "delayed": false
+                        },
+                        "name": "Dotfiles",
+                        "icon": "code",
+                        "iconTheme": "material-symbols-rounded"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "xdg-open 'obsidian://open?vault=tome42'",
+                          "delayed": false
+                        },
+                        "name": "Tome42",
+                        "icon": "book_2",
+                        "iconTheme": "material-symbols-rounded"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "pcmanfm-qt ~/stuff",
+                      "delayed": false
+                    },
+                    "name": "File Explorer",
+                    "icon": "folder_open",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 90
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "vesktop",
+                      "delayed": false
+                    },
+                    "name": "Discord",
+                    "icon": "vencord",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Links",
+            "icon": "link",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "http://192.168.254.167:48483/"
+                },
+                "name": "NeoDash",
+                "icon": "team_dashboard",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Docs",
+                "icon": "format_image_break_left",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "uri",
+                    "data": {
+                      "uri": "https://github.com/Alexays/Waybar/wiki/Configuration"
+                    },
+                    "name": "Waybar",
+                    "icon": "toolbar",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "uri",
+                    "data": {
+                      "uri": "https://github.com/glanceapp/glance/blob/main/docs/configuration.md#configuring-glance"
+                    },
+                    "name": "Glance",
+                    "icon": "space_dashboard",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "uri",
+                    "data": {
+                      "uri": "https://wiki.hypr.land/0.52.0/"
+                    },
+                    "name": "Hyprland",
+                    "icon": "hyprland",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/0lswitcher/tome42/blob/main/README.md"
+                },
+                "name": "Tome42",
+                "icon": "book_2",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://github.com/0lswitcher"
+                },
+                "name": "GitHub",
+                "icon": "github",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "uri",
+                "data": {
+                  "uri": "https://www.youtube.com/"
+                },
+                "name": "YouTube",
+                "icon": "youtube",
+                "iconTheme": "simple-icons"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "DE",
+            "icon": "hyprland",
+            "iconTheme": "simple-icons",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "waypaper",
+                  "delayed": false,
+                  "isolated": false,
+                  "detached": true
+                },
+                "name": "Change Theme",
+                "icon": "invert_colors",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 0
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "waypaper --no-post-command",
+                  "delayed": false,
+                  "isolated": false
+                },
+                "name": "Change Wallpaper",
+                "icon": "replace_image",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "foot -T ColorPicker --hold hyprpicker -a",
+                  "delayed": false
+                },
+                "name": "Color Picker",
+                "icon": "colorize",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "bash -lc 'foot -T ColorschemePicker bash /home/y2k/stuff/dev/bash/scripts/colorscheme-picker.sh'",
+                  "delayed": false,
+                  "isolated": false
+                },
+                "name": "Change Colorscheme",
+                "icon": "colors",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "foot bash ~/stuff/dev/bash/scripts/random-background.sh",
+                  "delayed": false
+                },
+                "name": "Random Background",
+                "icon": "shuffle",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 240
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "System",
+            "icon": "nixos",
+            "iconTheme": "simple-icons",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "shutdown -h now",
+                  "delayed": false
+                },
+                "name": "Shutdown",
+                "icon": "power_settings_new",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "shutdown -r now",
+                  "delayed": false
+                },
+                "name": "Restart",
+                "icon": "restart_alt",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Configure",
+            "icon": "edit_document",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "settings",
+                "data": null,
+                "name": "Kando",
+                "icon": "kando",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "neovide ~/.config/hypr/hyprland.lua",
+                  "delayed": false
+                },
+                "name": "Hyprland",
+                "icon": "hyprland",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "bash -c \"neovide /etc/nixos/configuration.nix && notify-send 'Remember to rebuild!' '(sudo nixos-rebuild switch)' && foot\"",
+                  "delayed": false
+                },
+                "name": "NixOS",
+                "icon": "nixos",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "bash -c \"neovide ~/dotfiles/bash/.bashrc_shared && notify-send 'Remember to push your new changes!' '(ga, gc, gpsh)' && foot -D ~/dotfiles\"",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                },
+                "name": "Bash Aliases",
+                "icon": "gnubash",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "neovide ~/.config/spicetify/Themes/text/user.css",
+                  "delayed": false
+                },
+                "name": "Spicetify",
+                "icon": "spotify",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "neovide /home/y2k/stuff/dev/rust/neonav/",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                },
+                "name": "NeoNav",
+                "icon": "rust",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Waybar",
+                "icon": "toolbar",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide ~/.config/waybar/config",
+                      "delayed": false
+                    },
+                    "name": "config.jsonc",
+                    "icon": "terminal",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide ~/.config/waybar/style.css",
+                      "delayed": false
+                    },
+                    "name": "style.css",
+                    "icon": "css",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Shortcuts",
+            "icon": "folder_data",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Pictures",
+                "icon": "image",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/af8c9b46/aesthetic"
+                    },
+                    "name": "aesthetic",
+                    "icon": "star_shine",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/1df7b48e/screenshots"
+                    },
+                    "name": "screenshots",
+                    "icon": "screenshot_monitor",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/dc14fefa/chorts"
+                    },
+                    "name": "chorts",
+                    "icon": "comedy_mask",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/da6be902/other"
+                    },
+                    "name": "other",
+                    "icon": "grid_3x3",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/6d364685/irl"
+                    },
+                    "name": "irl",
+                    "icon": "nature_people",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/c12f8149/vroom"
+                    },
+                    "name": "vroom",
+                    "icon": "directions_car",
+                    "iconTheme": "material-symbols-rounded"
+                  },
+                  {
+                    "type": "file",
+                    "data": {
+                      "path": "/run/user/1000/doc/397a2ea5/yours-truly"
+                    },
+                    "name": "yours-truly",
+                    "icon": "signature",
+                    "iconTheme": "material-symbols-rounded"
+                  }
+                ],
+                "angle": 75
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/2d9a54e0/temp"
+                },
+                "name": "Temp",
+                "icon": "takeout_dining",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/7999df3d/other"
+                },
+                "name": "Other",
+                "icon": "grid_3x3",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/aac85a15/dev"
+                },
+                "name": "Dev",
+                "icon": "code",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/4c585d34/docker"
+                },
+                "name": "Docker",
+                "icon": "docker",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/d2a9a226/junts"
+                },
+                "name": "Music",
+                "icon": "music_note_2",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "file",
+                "data": {
+                  "path": "/run/user/1000/doc/49dc8878/videos"
+                },
+                "name": "Videos",
+                "icon": "videocam",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          }
+        ]
+      },
+      "shortcut": "",
+      "shortcutID": "sao",
       "centered": false,
+      "anchored": false,
+      "hoverMode": false,
+      "tags": []
+    },
+    {
       "root": {
         "type": "submenu",
         "name": "Example Menu",
@@ -15,6 +710,7 @@
             "name": "Apps",
             "icon": "apps",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "A",
             "children": [
               {
                 "type": "command",
@@ -23,7 +719,8 @@
                 },
                 "name": "Web Browser",
                 "icon": "globe",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "W"
               },
               {
                 "type": "command",
@@ -32,7 +729,8 @@
                 },
                 "name": "E-Mail",
                 "icon": "mail",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "E"
               },
               {
                 "type": "command",
@@ -41,7 +739,8 @@
                 },
                 "name": "GIMP",
                 "icon": "gimp",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "G"
               },
               {
                 "type": "command",
@@ -50,7 +749,8 @@
                 },
                 "name": "File Browser",
                 "icon": "folder_shared",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "F"
               },
               {
                 "type": "command",
@@ -59,7 +759,8 @@
                 },
                 "name": "Terminal",
                 "icon": "terminal",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "T"
               }
             ]
           },
@@ -68,6 +769,7 @@
             "name": "Web Links",
             "icon": "public",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "L",
             "children": [
               {
                 "type": "uri",
@@ -76,7 +778,8 @@
                 },
                 "name": "Google",
                 "icon": "google",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "G"
               },
               {
                 "type": "uri",
@@ -85,7 +788,8 @@
                 },
                 "name": "Kando on GitHub",
                 "icon": "github",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "H"
               },
               {
                 "type": "uri",
@@ -94,7 +798,8 @@
                 },
                 "name": "Kando on Ko-fi",
                 "icon": "kofi",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "K"
               },
               {
                 "type": "uri",
@@ -103,7 +808,8 @@
                 },
                 "name": "Kando on YouTube",
                 "icon": "youtube",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "Y"
               },
               {
                 "type": "uri",
@@ -112,7 +818,8 @@
                 },
                 "name": "Kando on Discord",
                 "icon": "discord",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "quickSelectKey": "D"
               }
             ]
           },
@@ -124,13 +831,15 @@
             },
             "name": "Next Workspace",
             "icon": "arrow_forward",
-            "iconTheme": "material-symbols-rounded"
+            "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "N"
           },
           {
             "type": "submenu",
             "name": "Clipboard",
             "icon": "assignment",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "C",
             "children": [
               {
                 "type": "hotkey",
@@ -141,6 +850,7 @@
                 "name": "Paste",
                 "icon": "content_paste_go",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "V",
                 "angle": 90
               },
               {
@@ -151,7 +861,8 @@
                 },
                 "name": "Copy",
                 "icon": "content_copy",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "C"
               },
               {
                 "type": "hotkey",
@@ -161,7 +872,8 @@
                 },
                 "name": "Cut",
                 "icon": "cut",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "X"
               }
             ]
           },
@@ -170,6 +882,7 @@
             "name": "Audio",
             "icon": "play_circle",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "A",
             "children": [
               {
                 "type": "hotkey",
@@ -180,6 +893,7 @@
                 "name": "Next Track",
                 "icon": "skip_next",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "N",
                 "angle": 90
               },
               {
@@ -190,7 +904,8 @@
                 },
                 "name": "Play / Pause",
                 "icon": "play_pause",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "P"
               },
               {
                 "type": "hotkey",
@@ -200,7 +915,8 @@
                 },
                 "name": "Mute",
                 "icon": "music_off",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "M"
               },
               {
                 "type": "hotkey",
@@ -211,6 +927,7 @@
                 "name": "Previous Track",
                 "icon": "skip_previous",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "P",
                 "angle": 270
               }
             ]
@@ -220,6 +937,7 @@
             "name": "Windows",
             "icon": "select_window",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "W",
             "children": [
               {
                 "type": "hotkey",
@@ -230,6 +948,7 @@
                 "name": "Toggle Maximize",
                 "icon": "open_in_full",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "F",
                 "angle": 0
               },
               {
@@ -241,6 +960,7 @@
                 "name": "Tile Right",
                 "icon": "text_select_jump_to_end",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "R",
                 "angle": 90
               },
               {
@@ -251,7 +971,8 @@
                 },
                 "name": "Close Window",
                 "icon": "cancel_presentation",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "X"
               },
               {
                 "type": "hotkey",
@@ -262,6 +983,7 @@
                 "name": "Tile Left",
                 "icon": "text_select_jump_to_beginning",
                 "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "L",
                 "angle": 270
               }
             ]
@@ -274,13 +996,15 @@
             },
             "name": "Previous Workspace",
             "icon": "arrow_back",
-            "iconTheme": "material-symbols-rounded"
+            "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "P"
           },
           {
             "type": "submenu",
             "name": "Bookmarks",
             "icon": "folder_special",
             "iconTheme": "material-symbols-rounded",
+            "quickSelectKey": "B",
             "children": [
               {
                 "type": "command",
@@ -289,7 +1013,8 @@
                 },
                 "name": "Downloads",
                 "icon": "download",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "D"
               },
               {
                 "type": "command",
@@ -298,7 +1023,8 @@
                 },
                 "name": "Videos",
                 "icon": "video_camera_front",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "V"
               },
               {
                 "type": "command",
@@ -307,7 +1033,8 @@
                 },
                 "name": "Pictures",
                 "icon": "imagesmode",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "P"
               },
               {
                 "type": "command",
@@ -316,7 +1043,8 @@
                 },
                 "name": "Documents",
                 "icon": "text_ad",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "O"
               },
               {
                 "type": "command",
@@ -325,7 +1053,8 @@
                 },
                 "name": "Desktop",
                 "icon": "desktop_windows",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "E"
               },
               {
                 "type": "command",
@@ -334,7 +1063,8 @@
                 },
                 "name": "Home",
                 "icon": "home",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "H"
               },
               {
                 "type": "command",
@@ -343,14 +1073,20 @@
                 },
                 "name": "Music",
                 "icon": "music_note",
-                "iconTheme": "material-symbols-rounded"
+                "iconTheme": "material-symbols-rounded",
+                "quickSelectKey": "M"
               }
             ]
           }
         ]
-      }
-    },
-    
+      },
+      "shortcut": "Control+Space",
+      "shortcutID": "example-menu",
+      "centered": false,
+      "anchored": false,
+      "hoverMode": false,
+      "tags": []
+    }
   ],
   "collections": [
     {

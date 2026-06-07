@@ -1,6 +1,17 @@
 *.log
+logs/
+LOG*
 *.tmp
 .obsidian/
+cache/
+*cache/
+Cache/
+*Cache/
+Cookies*/
+Cookies
+session/
+Singleton*
+Singleton*/
 theming/.config/gtk-3.0/bookmarks
 micro/.config/micro/backups/
 micro/.config/micro/buffers/
