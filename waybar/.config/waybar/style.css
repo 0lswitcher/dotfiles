@@ -12,27 +12,30 @@ window#waybar{
     min-height: 30px;
 }
 
-.modules-left {
+window#waybar.bottom-bar {
+    background: alpha(@background, 0.6);
+}
+
+
+window#waybar.top-bar .modules-left {
     padding:0px;
     margin:6px 0px 0px 10px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
-.modules-center {
+window#waybar.top-bar .modules-center {
     padding:5px;
     margin:6px 0px 0px 0px;
     border-radius:10px;
     background: alpha(@background, 0.6); 
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
-.modules-right {
+window#waybar.top-bar .modules-right {
     padding:0px;
     margin: 6px 10px 0px 0px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
-
-
 
 
 
@@ -120,7 +123,10 @@ tooltip {
 }
 
 #workspaces button.active {
+    color: alpha(@color7,.8);
+    /*
     color: @color9;
+    */
 }
 
 #workspaces button.active:hover {
@@ -134,7 +140,7 @@ tooltip {
     color: alpha(@color7,.9);
 }
 #workspaces button.empty.active {
-    color: @color9;
+    color: alpha(@color7,.8);
 }
 
 
@@ -242,7 +248,7 @@ window#waybar.empty #window {
     color:@color7;
 }
 
-#cava {
+window#waybar.top-bar #cava {
     padding: 0px 6px;
     margin-left: 8px; 
     background-color: alpha(@background, 0.6); 
@@ -267,4 +273,10 @@ window#waybar.empty #window {
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
- }
+}
+
+
+#custom-lyrics.paused {
+    color:alpha(@color7, 0.6);
+}
+

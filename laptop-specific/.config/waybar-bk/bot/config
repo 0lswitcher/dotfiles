@@ -1,0 +1,31 @@
+// BOTTOM BAR
+
+
+{
+       "name": "bottombar",
+       "layer": "top",
+       "position": "bottom",
+       "height": 30,
+       "mode": "dock",
+       "spacing": 2,
+       "reload_style_on_change": true,
+       // "modules-left": [""],
+       "modules-center": ["hyprland/window"],
+       // "modules-right": [""],
+
+       //"custom/spacer": {
+       //  "format": "  -     : "
+       //},
+
+       "hyprland/window": {
+            "format": "{}",
+            "max-length": 40,
+            "separate-outputs": true,
+            "offscreen-css" : true,
+            "offscreen-css-text": "(inactive)",
+            "rewrite":{
+              "(.*) — Mozilla Firefox": "󰈹 "
+            }
+       },
+
+}

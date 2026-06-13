@@ -1,3 +1,4 @@
+
 @import url('../../.cache/wal/colors-waybar.css');
 
 * {
@@ -8,34 +9,36 @@
 window#waybar{
     all:unset;
     transition: opacity 0.3s ease;
+    min-height: 30px;
 }
 
-.modules-left {
+window#waybar.bottom-bar {
+    background: alpha(@background, 0.6);
+}
+
+
+window#waybar.top-bar .modules-left {
     padding:0px;
-    margin:6 0 0 10;
+    margin:6px 0px 0px 10px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
-.modules-center {
+window#waybar.top-bar .modules-center {
     padding:5px;
-    margin:6 0 0 0;
+    margin:6px 0px 0px 0px;
     border-radius:10px;
-    background: alpha(@background, 0.6); /* grey background */
+    background: alpha(@background, 0.6); 
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
-.modules-right {
+window#waybar.top-bar .modules-right {
     padding:0px;
-    margin: 6 10 0 0;
+    margin: 6px 10px 0px 0px;
     border-radius:10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
 
-/* default settings
-    padding:7px;
-    margin: 10 10 0 0;
-*/
 
-/*  ALL MODULES  */
+
 
 tooltip {
     background:@background;
@@ -44,17 +47,22 @@ tooltip {
 
 #custom-terminal:hover,
 #custom-sunshine:hover,
-#custom-obsidian:hover,
 #custom-firefox:hover,
 #custom-discord:hover,
 #custom-spotify:hover,
+#custom-neovide:hover,
 #custom-vscode:hover,
+#custom-obsidian-vault:hover,
+#custom-obsidian-tome42:hover,
+#custom-obsidian-dotfiles:hover,
 #custom-steam:hover,
 #custom-heroic:hover,
+#custom-beamng:hover,
 #custom-minecraft:hover,
-#custom-fm:hover,
-#custom-ranger:hover,
-#custom-rangerh:hover,
+#custom-tome42:hover,
+#custom-bashrc:hover,
+#custom-spicetify-apply:hover,
+#custom-spicetify-restore:hover,
 #clock:hover,
 #custom-waypaper:hover,
 #custom-random-background:hover,
@@ -63,32 +71,29 @@ tooltip {
 #custom-pywal:hover,
 #custom-colorpicker:hover,
 #custom-reload:hover,
+#system-tray:hover,
 #custom-notifications:hover,
+#custom-pulse:hover,
 #cpu:hover,
-#custom-gpu:hover,
-#memory:hover,
 #temperature:hover,
+#custom-gpu:hover,
+#custom-gpu-temp:hover,
+#memory:hover,
+#mpris:hover,
 #pulseaudio:hover,
 #bluetooth:hover,
-#backlight:hover,
 #network:hover,
-#battery:hover,
 #custom-off:hover,
 #custom-reboot:hover,
 #custom-lock:hover {
     transition: all .2s ease;
     color:@color9;
 }
-#custom-spacer {
-    color: alpha(@color7,.3);
-}
-
-/*  LEFT MODULES  */
 
 #shortcuts {
-    padding: 0px 5px 0px 5px;  /* top, right, bottom, left  */
+    padding: 0px 5px 0px 5px; 
     margin-left: 8px;
-    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
@@ -99,10 +104,10 @@ tooltip {
 }
 
 #workspaces {
-    background-color: alpha(@background, 0.6); /* grey background */
-    border-radius: 6px; /* round corners */
-    padding: 0px 5px 0px 5px; /* space between icons */
-    margin-left: 8px; /* space from other modules */
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px; 
+    padding: 0px 5px 0px 5px; 
+    margin-left: 8px;
 }
 
 #workspaces button {
@@ -118,7 +123,10 @@ tooltip {
 }
 
 #workspaces button.active {
+    color: alpha(@color7,.8);
+    /*
     color: @color9;
+    */
 }
 
 #workspaces button.active:hover {
@@ -132,25 +140,32 @@ tooltip {
     color: alpha(@color7,.9);
 }
 #workspaces button.empty.active {
-    color: @color9;
+    color: alpha(@color7,.8);
 }
 
 
 #window {
     color:@color7;
-    padding: 0px 5px 0px 0px; /* add extra padding to right */
+    padding: 0px 5px 0px 0px; 
 }
-/* reset window padding when no windows are present */
+
 window#waybar.empty #window {
     padding: 0px 0px 0px 5px;
 }
 
+
+
+
+
 #custom-spacer {
     padding: 0px 0px 0px 5px;
+    color: alpha(@color7,.5);    
 }
 
 
-/*  CENTER MODULES  */
+
+
+
 
 #clock{
     padding: 0px 5px;
@@ -159,12 +174,21 @@ window#waybar.empty #window {
 }
 
 
-/*  RIGHT MODULES  */
+
+#system-tray{
+    padding: 0px 10px 0px 10px; 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
 
 #custom-notifications {
-    padding: 0px 6px 0px 10px;  /* top, right, bottom, left  */
+    padding: 0px 6px 0px 10px; 
     margin-left: 8px;
-    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
@@ -172,66 +196,87 @@ window#waybar.empty #window {
 
 #performance {
     padding: 0px 4px 0px 4px;
-    margin-left: 8px; /* creates the gap between modules */
-    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
     transition: all .3s ease; 
-  }
+}
 
 #cpu {
-  color:#ff6161;
+  color:#ff6161; /* color:#ff6161; */
+}
+
+#custom-gpu {
+  color:#fe5f55; /* color:#c04abc; */ /* color:#f7ae62; */ /* color:#a561ff; */
+}
+
+#custom-gpu-temp {
+  color:#6198ff; 
 }
 
 #memory {
-  color:#61ff9e;
+  color:#6ab487; /*  */ /* color:#00ccaa; */ /* color:#61ff96; */
 }
 
 #temperature {
-  color:#61b8ff;
+  color:#6198ff;
+}
+
+#temperature.warning {
+  color:#ffa500;
+}
+
+#temperature.critical {
+  color:#ff0000;
 }
 
 #connections {
-    padding: 0px 6px 0px 8px;  /* top, right, bottom, left  */
+    padding: 0px 6px 0px 8px;  
     margin-left: 8px;
-    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
 }
 
-#pulseaudio,
-#backlight,
-#battery {
-  padding: 0px 0px;
-  margin-left: 8px; /* creates the gap between modules */
-  background-color: alpha(@background, 0.6); /* optional pill-box styling */
-  border-radius: 6px;
-  transition: all .3s ease; 
-  color:@color7;
+#mpris {
+    padding: 0px 10px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+window#waybar.top-bar #cava {
+    padding: 0px 6px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
+}
+
+#pulseaudio {
+    padding: 0px 0px;
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
+    border-radius: 6px;
+    transition: all .3s ease; 
+    color:@color7;
 }
 
 #power {
     padding: 0px 10px 0px 7px;
-    margin-left: 8px; /* creates the gap between modules */
-    background-color: alpha(@background, 0.6); /* optional pill-box styling */
+    margin-left: 8px; 
+    background-color: alpha(@background, 0.6); 
     border-radius: 6px;
     transition: all .3s ease; 
     color:@color7;
-  }
-
-#battery.charging {
-    color: #26A65B;
 }
 
-#battery.warning:not(.charging) {
-    color: #ffbe61;
+
+#custom-lyrics.paused {
+    color:alpha(@color7, 0.6);
 }
 
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}

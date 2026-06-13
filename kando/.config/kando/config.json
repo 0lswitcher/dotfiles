@@ -6,17 +6,17 @@
   "darkMenuTheme": "default",
   "menuThemeColors": {
     "nether-labels": {
-      "accent-color": "#90735F",
-      "hover-color": "#B0916B",
-      "submenu-items-hover-color": "#CBAD78",
-      "text-hover-color": "#DCC27E",
-      "connector-color": "#90735F",
-      "shrinked-outline-color": "#D6BB83",
-      "circle-color": "#200e14",
-      "border-color": "#c7c2c4",
-      "submenu-items-color": "#c7c2c4",
-      "label-background-color": "#200e14",
-      "text-color": "#c7c2c4"
+      "accent-color": "#42415B",
+      "hover-color": "#6A5FA8",
+      "submenu-items-hover-color": "#756CD1",
+      "text-hover-color": "#8E67B8",
+      "connector-color": "#42415B",
+      "shrinked-outline-color": "#A174D7",
+      "circle-color": "#111428",
+      "border-color": "#c3c4c9",
+      "submenu-items-color": "#c3c4c9",
+      "label-background-color": "#111428",
+      "text-color": "#c3c4c9"
     }
   },
   "darkMenuThemeColors": {},

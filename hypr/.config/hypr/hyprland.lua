@@ -310,8 +310,11 @@ hl.bind("CTRL + space", hl.dsp.exec_cmd("bash /home/y2k/stuff/dev/bash/scripts/k
 -- ulauncher
 hl.bind(mainMod .. " +  Q", hl.dsp.exec_cmd(launcher))
 
--- hide waybar
+-- toggle hide top waybar
 hl.bind(mainMod .. " +  Z", hl.dsp.exec_cmd("killall -SIGUSR1 .waybar-wrapped"))
+
+-- toggle hide bottom waybar
+hl.bind(mainMod .. " +  M", hl.dsp.exec_cmd("killall -SIGUSR2 .waybar-wrapped"))
 
 -- show and hide desktop shortcuts (wallpaper sync. needs updating)
 hl.bind(mainMod .. " +  D", hl.dsp.exec_cmd("pcmanfm-qt --desktop"))
@@ -463,6 +466,7 @@ hl.window_rule({
 	float = true,
 })
 
+-- pavucontrol
 hl.window_rule({
 	name = "pavucontrol",
 	match = {
@@ -567,4 +571,13 @@ hl.layer_rule({
 	},
 	blur = true,
 	ignore_alpha = 0.5,
+})
+
+-- hyprpicker fix
+hl.layer_rule({
+	name = "hyprpicker",
+	match = {
+		class = "selector",
+	},
+	no_anim = true,
 })
