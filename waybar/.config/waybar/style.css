@@ -1,47 +1,52 @@
-
-@import url('../../.cache/wal/colors-waybar.css');
+@import url("../../.cache/wal/colors-waybar.css");
 
 * {
-    font-size:14px;
+    font-size: 14px;
     font-family: "JetBrainsMono Nerd Font";
 }
 
-window#waybar{
-    all:unset;
+window#waybar {
+    all: unset;
     transition: opacity 0.3s ease;
     min-height: 30px;
 }
 
+/*
 window#waybar.bottom-bar {
     background: alpha(@background, 0.6);
 }
-
+*/
 
 window#waybar.top-bar .modules-left {
-    padding:0px;
-    margin:6px 0px 0px 10px;
-    border-radius:10px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+    padding: 0px;
+    margin: 6px 0px 0px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
 }
 window#waybar.top-bar .modules-center {
-    padding:5px;
-    margin:6px 0px 0px 0px;
-    border-radius:10px;
-    background: alpha(@background, 0.6); 
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+    padding: 5px;
+    margin: 6px 0px 0px 0px;
+    border-radius: 10px;
+    background: alpha(@background, 0.6);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
 }
 window#waybar.top-bar .modules-right {
-    padding:0px;
+    padding: 0px;
     margin: 6px 10px 0px 0px;
-    border-radius:10px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
-
-
+window#waybar.bottom-bar .modules-center {
+    padding: 0px 12px 0px 12px;
+    margin: 0px 6px -2px 6px;
+    border-radius: 10px 10px 0px 0px;
+    background: alpha(@background, 0.6);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+}
 
 tooltip {
-    background:@background;
+    background: @background;
     color: @color7;
 }
 
@@ -71,6 +76,8 @@ tooltip {
 #custom-pywal:hover,
 #custom-colorpicker:hover,
 #custom-reload:hover,
+#custom-pomoc:hover,
+#custom-pomoc-state:hover,
 #system-tray:hover,
 #custom-notifications:hover,
 #custom-pulse:hover,
@@ -86,17 +93,17 @@ tooltip {
 #custom-off:hover,
 #custom-reboot:hover,
 #custom-lock:hover {
-    transition: all .2s ease;
-    color:@color9;
+    transition: all 0.2s ease;
+    color: @color9;
 }
 
 #shortcuts {
-    padding: 0px 5px 0px 5px; 
+    padding: 0px 5px 0px 5px;
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 #custom-firefox {
@@ -104,179 +111,187 @@ tooltip {
 }
 
 #workspaces {
-    background-color: alpha(@background, 0.6); 
-    border-radius: 6px; 
-    padding: 0px 5px 0px 5px; 
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    padding: 0px 5px 0px 5px;
     margin-left: 8px;
 }
 
 #workspaces button {
-    all:unset;
+    all: unset;
     padding: 0px 15px 0px 10px;
     border: none;
-    color: alpha(@color7,.4);
-    transition: all .2s ease-in;
+    color: alpha(@color7, 0.4);
+    transition: all 0.2s ease-in;
 }
 
 #workspaces button:hover {
-    color: alpha(@color7,.9);
+    color: alpha(@color7, 0.9);
 }
 
 #workspaces button.active {
-    color: alpha(@color7,.8);
+    color: alpha(@color7, 0.8);
     /*
     color: @color9;
     */
 }
 
 #workspaces button.active:hover {
-    color: alpha(@color7,.9);
+    color: alpha(@color7, 0.9);
 }
 
 #workspaces button.empty {
-    color: alpha(@color7,.4);
+    color: alpha(@color7, 0.4);
 }
 #workspaces button.empty:hover {
-    color: alpha(@color7,.9);
+    color: alpha(@color7, 0.9);
 }
 #workspaces button.empty.active {
-    color: alpha(@color7,.8);
+    color: alpha(@color7, 0.8);
 }
 
-
 #window {
-    color:@color7;
-    padding: 0px 5px 0px 0px; 
+    color: @color7;
+    padding: 0px 5px 0px 0px;
 }
 
 window#waybar.empty #window {
     padding: 0px 0px 0px 5px;
 }
 
-
-
-
-
 #custom-spacer {
     padding: 0px 0px 0px 5px;
-    color: alpha(@color7,.5);    
+    color: alpha(@color7, 0.5);
 }
 
-
-
-
-
-
-#clock{
+#clock {
     padding: 0px 5px;
-    color:@color7;
-    transition: all .3s ease;
+    color: @color7;
+    transition: all 0.3s ease;
 }
 
+#pomoc {
+    padding: 0px 10px;
+    color: @color7;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: @color7;
+}
 
-
-#system-tray{
-    padding: 0px 10px 0px 10px; 
+#system-tray {
+    padding: 0px 10px 0px 10px;
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
-
 
 #custom-notifications {
-    padding: 0px 6px 0px 10px; 
+    padding: 0px 6px 0px 10px;
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 #performance {
     padding: 0px 4px 0px 4px;
-    margin-left: 8px; 
-    background-color: alpha(@background, 0.6);
-    border-radius: 6px;
-    transition: all .3s ease; 
-}
-
-#cpu {
-  color:#ff6161; /* color:#ff6161; */
-}
-
-#custom-gpu {
-  color:#fe5f55; /* color:#c04abc; */ /* color:#f7ae62; */ /* color:#a561ff; */
-}
-
-#custom-gpu-temp {
-  color:#6198ff; 
-}
-
-#memory {
-  color:#6ab487; /*  */ /* color:#00ccaa; */ /* color:#61ff96; */
-}
-
-#temperature {
-  color:#6198ff;
-}
-
-#temperature.warning {
-  color:#ffa500;
-}
-
-#temperature.critical {
-  color:#ff0000;
-}
-
-#connections {
-    padding: 0px 6px 0px 8px;  
     margin-left: 8px;
     background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+}
+
+#cpu {
+    color: #ff6161; /* color:#ff6161; */
+}
+
+#custom-gpu {
+    color: #fe5f55; /* color:#c04abc; */ /* color:#f7ae62; */ /* color:#a561ff; */
+}
+
+#custom-gpu-temp {
+    color: #6198ff;
+}
+
+#memory {
+    color: #6ab487; /*  */ /* color:#00ccaa; */ /* color:#61ff96; */
+}
+
+#temperature {
+    color: #6198ff;
+}
+
+#temperature.warning {
+    color: #ffa500;
+}
+
+#temperature.critical {
+    color: #ff0000;
+}
+
+#connections {
+    padding: 0px 6px 0px 8px;
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 #mpris {
     padding: 0px 10px;
-    margin-left: 8px; 
-    background-color: alpha(@background, 0.6); 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 window#waybar.top-bar #cava {
     padding: 0px 6px;
-    margin-left: 8px; 
-    background-color: alpha(@background, 0.6); 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 #pulseaudio {
     padding: 0px 0px;
-    margin-left: 8px; 
-    background-color: alpha(@background, 0.6); 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
 #power {
     padding: 0px 10px 0px 7px;
-    margin-left: 8px; 
-    background-color: alpha(@background, 0.6); 
+    margin-left: 8px;
+    background-color: alpha(@background, 0.6);
     border-radius: 6px;
-    transition: all .3s ease; 
-    color:@color7;
+    transition: all 0.3s ease;
+    color: @color7;
 }
 
+#custom-wayves-left,
+#custom-wayves-right {
+    margin-bottom: -14px;
+    color: @color1;
+}
+
+#custom-lyrics {
+    color: alpha(@color7, 0.4);
+}
 
 #custom-lyrics.paused {
-    color:alpha(@color7, 0.6);
+    color: alpha(@color7, 0.6);
 }
 
+#custom-lyrics:hover {
+    color: alpha(@color7, 0.9);
+}

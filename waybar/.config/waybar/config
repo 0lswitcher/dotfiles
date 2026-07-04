@@ -1,11 +1,11 @@
 /*
-██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
-██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
 ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
 ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
 ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
- ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
-*/                                                                                             
+ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+*/
 
 //░▀█▀░█▀█░█▀█░░░█▀▄░█▀█░█▀▄░░░░
 //░░█░░█░█░█▀▀░░░█▀▄░█▀█░█▀▄░░▀░
@@ -25,14 +25,16 @@
             "on-sigusr2": "noop",
             "modules-left": [
                 "hyprland/workspaces",
+                //"niri/workspaces",
                 "group/shortcuts"
-            ],        
+            ],
             "modules-center": [
                 "group/left-drawer",
                 "clock",
                 "group/tools"
             ],
             "modules-right": [
+                "group/pomoc",
                 "group/system-tray",
                 "custom/notifications",
                 "group/performance",
@@ -64,11 +66,12 @@
                     "custom/spotify",
                     "custom/discord",
                     "custom/neovide",
-                    "custom/vscode",
-                    "custom/spacer",                
+                    "custom/vscodium",
+                    "custom/zed",
+                    "custom/spacer",
                     "custom/obsidian-vault",
                     "custom/obsidian-tome42",
-                    "custom/obsidian-dotfiles",                
+                    "custom/obsidian-dotfiles",
                     "custom/spacer",
                     "custom/steam",
                     "custom/heroic",
@@ -98,14 +101,14 @@
                 "format": "  ",
                 "on-click": "foot sunshine; firefox --new-tab https://localhost:47990/",
                 "tooltip-format": "sunshine host"
-            },             
-            
+            },
+
             "custom/firefox": {
                 "format": " 󰈹",
                 "on-click": "firefox",
                 "tooltip-format": "firefox"
             },
-            
+
             "custom/spotify": {
                 "format": "  ",
                 "on-click": "com.spotify.Client",
@@ -123,11 +126,17 @@
                 "on-click": "neovide",
                 "tooltip-format": "neovide"
             },
-            
-            "custom/vscode": {
-                "format": " 󰨞 ",
+
+            "custom/vscodium": {
+                "format": "  ",
                 "on-click": "codium",
                 "tooltip-format": "open source vscode"
+            },
+
+            "custom/zed": {
+                "format": " 󰬡 ",
+                "on-click": "zeditor -n ~/777",
+                "tooltip-format": "speedy text editor"
             },
 
             "custom/obsidian-vault": {
@@ -146,7 +155,7 @@
                 "format": " <sub></sub>󰜥 ",
                 "on-click": "xdg-open 'obsidian://open?vault=dotfiles'",
                 "tooltip-format": "obsidian dotfiles repo"
-            },   
+            },
 
             "custom/steam": {
                 "format": "  ",
@@ -156,7 +165,7 @@
 
             "custom/heroic": {
                 "format": " 󱢾 ",
-                "on-click": "foot --hold heroic", 
+                "on-click": "foot --hold heroic",
                 "tooltip-format": "heroic"
             },
 
@@ -176,13 +185,13 @@
                 "format": "  ",
                 "on-click": "firefox --new-window http://192.168.254.130:6875/shelves/tome42-private",
                 "tooltip-format": "Tome42"
-            },        
+            },
 
             "custom/bashrc": {
                 "format": "<span font='16'> 󱆃 </span>",
                 "on-click": "firefox --new-window https://github.com/0lswitcher/dotfiles/blob/main/dots/bash/.bashrc_shared",
                 "tooltip-format": "Globally shared .bashrc sourced from GitHub"
-            },   
+            },
 
             "hyprland/workspaces": {
                 "format": "<sub>{icon}</sub>{windows}",
@@ -198,7 +207,7 @@
                 "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'e+1' })\"",
                 "move-to-monitor": false,
                 // clicking workspaces doesn't work for now due to Hyprland's Lua migration,
-                // but can be solved by using waybar-git. 
+                // but can be solved by using waybar-git.
                 //"on-click": "hyprctl dispatch \"hl.dsp.focus({ workspace = {id} })\"",
                 "on-click": "activate",
 
@@ -208,34 +217,36 @@
                 //  "*": [ 1,2,3,4,5 ]
                 //  "DP-2":     [ 1,2,3 ], // left monitor
                 //  "DP-1":     [ 4,5,6 ], // center monitor
-                //  "HDMI-A-1": [ 7,8,9 ], // right monitor            
+                //  "HDMI-A-1": [ 7,8,9 ], // right monitor
                 //},
                 // to find name of program to rewrite, run hyprctl clients
                 "window-rewrite-default": "", //     
                 "window-rewrite": {
-                "class<firefox> title<.*youtube.*>": "", 
-                "class<firefox> title<.*github.*>": "",
-                "class<firefox> title<.*r/.*>": "",
-                "class<firefox> title<.*photopea.*>": "",
-                "class<firefox> title<.*tome42.*>": "",
-                "class<firefox> title<.*neowiki.*>": "",
-                "class<firefox>": "",
-                "class<obsidian> title<.*vault.*>": "",
-                "class<obsidian> title<.*tome42.*>": "",
+                "class<firefox> title<.*youtube.*>":     "",
+                "class<firefox> title<.*github.*>":      "",
+                "class<firefox> title<.*0lswitcher.*>":  "",
+                "class<firefox> title<.*r/.*>":          "",
+                "class<firefox> title<.*photopea.*>":    "",
+                "class<firefox> title<.*tome42.*>":      "",
+                "class<firefox> title<.*neowiki.*>":     "",
+                "class<firefox>":                        "",
+                "class<obsidian> title<.*vault.*>":    "",
+                "class<obsidian> title<.*tome42.*>":   "",
                 "class<obsidian> title<.*dotfiles.*>": "󰜥",
-                "class<Spotify>": "",
-                "class<feh>":     "",
-                "class<steam>":   "",
-                "class<heroic>":  "󱢾",
-                "class<neovide":  "",
-                "class<codium>":  "",
+                "class<Spotify>":          "",
+                "class<feh>":              "",
+                "class<steam>":            "",
+                "class<heroic>":           "󱢾",
+                "class<neovide":           "",
+                "class<codium>":           "",
+                "class<dev.zed.Zed>":      "󰬡",
                 "class<menu.kando.Kando>": "",
-                "foot": "",
-                "vesktop": "",
-                "stuff": "",
+                "foot":                    "",
+                "vesktop":                 "",
+                "stuff":                   "",
                 },
             },
-            
+
         "hyprland/window": {
                 /* 󱞩     */
                 "format": "   {}",
@@ -250,7 +261,30 @@
             //  }
         },
 
+            "niri/workspaces": {
+                "format": "<sub>{icon}</sub>{value}",
+                "format-icons": {
+                    "active":  "",
+                    "default": "",
+                    "empty":   ""
+                },
+                "current-only": false,
+                "all-outputs": false,
+            },
 
+        "niri/window": {
+                /* 󱞩     */
+                "format": "   {}",
+                /* "max-length": 50, */
+                "separate-outputs": true,
+                "icon": false,
+                "icon-size": 14,
+                /* "offscreen-css" : true, */
+                /* "offscreen-css-text": "(inactive)", */
+            //  "rewrite":{
+            //    "(.*) — Mozilla Firefox": "󰈹 "
+            //  }
+        },
 
 
 
@@ -397,6 +431,36 @@
 
     // RIGHT MODULES
 
+            "group/pomoc": {
+                "orientation": "inherit",
+                "modules": [
+                    "custom/pomoc-state",
+                    "custom/pomoc",
+                ]
+            },
+
+            "custom/pomoc": {
+              "exec": "bash ~/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc.sh",
+              "interval": 1,
+
+              "format": "{}",
+
+              "on-click": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle'",
+              "on-click-right": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end'",
+            },
+
+            "custom/pomoc-state": {
+              "exec": "bash ~/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc-state.sh",
+              "interval": 1,
+
+              "format": "{} ",
+
+              "on-click": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle'",
+              "on-click-right": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end'"
+            },
+
+
+
             "group/system-tray": {
                 "orientation": "inherit",
                     "drawer": {
@@ -437,17 +501,17 @@
                 },
                 "modules": [
                 "custom/pulse",
-                "cpu",  
-                "temperature",      
-                "custom/spacer",        
-                "custom/gpu", 
+                "cpu",
+                "temperature",
+                "custom/spacer",
+                "custom/gpu",
                 "custom/gpu-temp",
                 "custom/spacer",
                 "memory",
                 "custom/spacer",
                 ]
             },
-        
+
             "custom/spacer": {
                 "format": "|<span>\u2009</span>",
                 "tooltip": false
@@ -475,7 +539,7 @@
             "custom/gpu-temp": {
                 "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
                 "format": "  {icon} {text}°C ",
-                "format-icons": ["", "", "", "", ""],  
+                "format-icons": ["", "", "", "", ""],
                 "return-type": "",
                 "interval": 1
             },
@@ -503,7 +567,7 @@
                 "critical-threshold": 90,
                 "warning-threshold": 78,
                 "format": " {icon} {temperatureC}°C ",
-                "format-icons": ["", "", "", "", "", ""],            
+                "format-icons": ["", "", "", "", "", ""],
                 "format-critical": " {icon} {temperatureC}°C ",
             },
 
@@ -513,7 +577,7 @@
                     "transition-duration": 500,
                     "transition-left-to-right": false,
                     "click-to-reveal": true,
-                },	        
+                },
                 "modules": [
                     "pulseaudio",
                     "mpris",
@@ -579,7 +643,7 @@
                 },
             // "on-click": "pavucontrol"
             },
-        
+
             "group/connections": {
                 "orientation": "inherit",
                 "drawer": {
@@ -592,10 +656,10 @@
                 "bluetooth",
                 "custom/spacer",
                 "network#ip",
-                "custom/spacer",		    
+                "custom/spacer",
                 ]
             },
-        
+
             "bluetooth": {
                 "format-on": "<span font='12'> 󰂯 </span>",
                 "format-off": " BT-off ",
@@ -622,7 +686,7 @@
                 "tooltip-format-ethernet": "{ifname} 🖧 ",
                 "on-click": "foot nmtui",
                 /* BACKUP ICON:       󰈀  󰈁 󰈂 */
-                "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",],  /*  
+                "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨",],  /*
                 "format-icons": ["󰢿", "󰢼", "󰢽", "󰢾",],       */
                 "interval": 10,
             },
@@ -642,7 +706,7 @@
                 ]
             },
 
-            "custom/leader": { 
+            "custom/leader": {
                 "format": "<span>\u2004</span> ",
                 "tooltip":false
             },
@@ -685,7 +749,7 @@
 
     {
             "layer": "top",
-            "output": ["DP-1"],
+            "output": ["DP-2", "DP-1" , "HDMI-A-1"], // "DP-2", "DP-1",
             "name": "bottom-bar",
             "position": "bottom",
             "mode": "dock",
@@ -697,7 +761,7 @@
             "on-sigusr2": "toggle",
             "modules-left": [
                 "custom/wayves-left",
-            ],        
+            ],
             "modules-center": [
                 "custom/lyrics",
             ],
@@ -724,7 +788,7 @@
 
             "custom/wayves-left": {
                 "format": "{}",
-                "exec": "python ~/stuff/other/wayves/wayves.py -o cava=left -i cava=left -a cava=left"
+                "exec": "python ~/stuff/other/wayves/wayves.py -o cava=left -i cava=left -a cava=left",
             },
 
             "custom/wayves-right": {
@@ -790,7 +854,7 @@
                 "actions": {
                             "on-click-right": "mode"
                             }
-            },            
+            },
 
 
 
