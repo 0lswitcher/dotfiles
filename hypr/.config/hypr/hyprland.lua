@@ -10,15 +10,18 @@
 -- but out of my personal preference when working within IDE's and for ease of accessibility for beginners,
 -- everything is held here. enjoy!
 
+require("smart-scrolling-layout-gaps") -- import script for dynamically changing `focus_fit_method` for scrolling layout
+
 -- ░█▄█░█▀█░█▀█░▀█▀░▀█▀░█▀█░█▀▄░█▀▀░░░░
 -- ░█░█░█░█░█░█░░█░░░█░░█░█░█▀▄░▀▀█░░▀░
 -- ░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀░░▀░
 
--- monitor format:    name,              resolution,             position,       scale
+-- monitor format:    name,           resolution,         position,              scale
 
-hl.monitor({ output = "DP-2", mode = "1920x1080", position = "0x0", scale = 1 }) -- left monitor
-hl.monitor({ output = "DP-1", mode = "1920x1080", position = "1920x0", scale = 1 }) -- middle monitor
-hl.monitor({ output = "HDMI-A-1", mode = "1920x1080", position = "auto-right", scale = 1 }) -- right monitor
+hl.monitor({ output = "DP-2",     mode = "1920x1080", position = "0x0",        scale = 1 }) -- left monitor
+hl.monitor({ output = "DP-1",     mode = "1920x1080", position = "1920x0",     scale = 1 }) -- middle monitor
+hl.monitor({ output = "HDMI-A-1", mode = "1920x1080", position = "3840x0",     scale = 1 }) -- right monitor
+hl.monitor({ output = "",         mode = "preferred", position = "auto",       scale = 1 }) -- fallback config
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-2", persistent = true, default = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-2", persistent = true, default = false })
@@ -29,6 +32,16 @@ hl.workspace_rule({ workspace = "6", monitor = "DP-1", persistent = true, defaul
 hl.workspace_rule({ workspace = "7", monitor = "HDMI-A-1", persistent = true, default = true })
 hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-1", persistent = true, default = false })
 hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1", persistent = true, default = false })
+
+-- set 1st workspace on each monitor to scrolling layout (the rest are set to dwindle)
+hl.workspace_rule({ workspace = "1", layout = "scrolling" })
+hl.workspace_rule({ workspace = "4", layout = "scrolling" })
+hl.workspace_rule({ workspace = "7", layout = "scrolling" })
+
+-- define unique direction for scrolling layout on each monitor
+hl.workspace_rule({ workspace = "1", layout_opts = { direction = "left" } })
+hl.workspace_rule({ workspace = "4", layout_opts = { direction = "up" } })
+hl.workspace_rule({ workspace = "7", layout_opts = { direction = "right" } })
 
 -- ░█▀▀░█▀█░█░█░▀█▀░█▀▄░█▀█░█▀█░█▀█░█▀▀░█▀█░▀█▀░░░█░█░█▀█░█▀▄░▀█▀░█▀█░█▀▄░█░░░█▀▀░█▀▀
 -- ░█▀▀░█░█░▀▄▀░░█░░█▀▄░█░█░█░█░█░█░█▀▀░█░█░░█░░░░▀▄▀░█▀█░█▀▄░░█░░█▀█░█▀▄░█░░░█▀▀░▀▀█
@@ -74,7 +87,10 @@ local ffp = "firefox --private-window"
 local launcher = "ulauncher"
 local spotify = "com.spotify.Client"
 local btop = "foot bash -l -c 'wal -R && btop'"
-local screenshot = "hyprshot -m region -o ~/stuff/pictures/screenshots "
+local zed = "zeditor -n ~/777"
+local screenshotRegion = "hyprshot -m region -o ~/stuff/pictures/screenshots"
+local screenshotWindow = "hyprshot -m window -m active -o ~/stuff/pictures/screenshots"
+local screenshotScreen = "hyprshot -m output -o ~/stuff/pictures/screenshots"
 local neonav =
 	"foot bash -i -l -c 'source /home/y2k/.bashrc; /home/y2k/stuff/dev/rust/neonav/neonav-v0.0.5/target/release/neonav'"
 local wallpaperPicker = "foot -T WallpaperPicker bash /home/y2k/stuff/dev/bash/scripts/background-picker.sh && wal -R"
@@ -86,17 +102,17 @@ local themePicker = "foot -T ThemePicker bash ~/stuff/dev/bash/scripts/theme-pic
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE")
-	hl.exec_cmd("hyprctl setcursor Capitaine Cursors 30") ----------# set cursor (doesn't effect gtk apps)
-	--hl.exec_cmd("hyprctl setcursor WinSur White Cursors 36 &) ------# set cursor (doesn't effect gtk apps)
-	hl.exec_cmd("awww-daemon") -------------------------------------# initialize wallpaper daemon
-	hl.exec_cmd("nm-applet --indicator") ---------------------------# initialize network manager applet
-	hl.exec_cmd("swaync") ------------------------------------------# initialize notification daemon
-	hl.exec_cmd("systemctl --user start hyprpolkitagent") ----------# initialize authentication daemon
-	--hl.exec_cmd(terminal -T SysInfo --hold -e $fastfetch &) --------# open terminal (foot fastfetch)
-	--hl.exec_cmd("bash $shPath/workspace-previews-wrapper.sh &) -----# initialize workspace previews scripts
-	hl.exec_cmd("waybar") ---------------# initialize status bar
-	--hl.exec_cmd("sleep 15 && systemd-run --user --scope kando") ----------------# initialize pie app picker
-	-- ^^ this any many variations don't work, so I'm launching w/ ~/.config/autostart/kando.desktop
+	hl.exec_cmd("hyprctl setcursor Capitaine Cursors 30") ------------ set cursor (doesn't effect gtk apps)
+  --hl.exec_cmd("hyprctl setcursor WinSur White Cursors 36 &) -------- set cursor (doesn't effect gtk apps)
+	hl.exec_cmd("awww-daemon") --------------------------------------- initialize wallpaper daemon
+	hl.exec_cmd("nm-applet --indicator") ----------------------------- initialize network manager applet
+	hl.exec_cmd("swaync") -------------------------------------------- initialize notification daemon
+	hl.exec_cmd("systemctl --user start hyprpolkitagent") ------------ initialize authentication daemon
+  --hl.exec_cmd("bash $shPath/workspace-previews-wrapper.sh" &) ------ initialize workspace previews scripts
+	hl.exec_cmd("waybar") -------------------------------------------- initialize status bar
+	hl.exec_cmd("~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomod") -- initialize pomodoro timer daemon
+  --hl.exec_cmd("terminal -T SysInfo --hold -e $fastfetch" &) -------- open terminal (foot fastfetch)
+  --hl.exec_cmd("hyprctl plugin load /run/current-system/sw/lib/libhyprfocus.so") -- broken upstream: https://github.com/hyprwm/hyprland-plugins/issues/681
 end)
 
 -- ░█░░░█▀█░█▀█░█░█░░░█▀█░█▀█░█▀▄░░░█▀▀░█▀▀░█▀▀░█░░░░░░
@@ -114,8 +130,14 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
+			--active_border = { colors = { "rgba(e8154dee)", "rgba(d96f0dee)" }, angle = 45 }, -- warm
+			--active_border = { colors = { "rgba(e8154dee)", "rgba(f73bb2ee)" }, angle = 45 }, -- warm n pink
+			--active_border = { colors = { "rgba(00000000)", "rgba(f5f5f580)" }, angle = 45 }, -- single soft white
+			--active_border = { colors = { "rgba(f73bb2ee)", "rgba(3bacf7ee)" }, angle = 45 }, -- cotton candy
+			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },   -- lime
+			--active_border = "rgba(00000000)", -- invisible
+			inactive_border = "rgba(00000000)", -- invisible
+			--inactive_border = "rgba(595959aa)",
 		},
 
 		-- Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -124,7 +146,24 @@ hl.config({
 		-- Please see https=//wiki.hyprland.org/Configuring/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "dwindle", -- applied to all workspaces but 1, 4, and 7 (the 1st workspace on each monitor) - see workspace rules below
+	},
+
+	dwindle = {
+		preserve_split = true,
+		smart_split = false,
+		precise_mouse_move = true,
+	},
+
+	master = {
+		new_status = "master",
+	},
+
+	scrolling = {
+	    fullscreen_on_one_column = true,
+        column_width = 0.95,
+        focus_fit_method = 0,
+        direction = "up",
 	},
 
 	decoration = {
@@ -137,9 +176,9 @@ hl.config({
 
 		shadow = {
 			enabled = true,
-			range = 4,
+			range = 14,
 			render_power = 3,
-			color = 0x1a1a1aee,
+			color = "rgba(00000045)",
 		},
 
 		blur = {
@@ -200,45 +239,8 @@ hl.animation({
 hl.animation({ leaf = "border", enabled = true, speed = 1, bezier = "linear" })
 hl.animation({ leaf = "borderangle", enabled = true, speed = 24, bezier = "linear", style = "loop" })
 
--- older animations backup
-
---animations {
---    enabled = true
---
---    bezier = easeOutQuint,0.23,1,0.32,1
---    bezier = easeInOutCubic,0.65,0.05,0.36,1
---    bezier = linear,0,0,1,1
---    bezier = almostLinear,0.5,0.5,0.75,1.0
---    bezier = quick,0.15,0,0.1,1
---    bezier = easeInOutQuint, 0.76, 0, 0.24, 1
---    bezier = easeOutCirc, 0, 0.55, 0.46, 1
---    bezier = overshoot, 0.05, 0.9, 0.1, 1.1
---    animation = global, 1, 10, default
---    animation = border, 1, 5.39, easeOutQuint
---    animation = fadeIn, 1, 1.73, almostLinear
---    animation = fadeOut, 1, 1.46, almostLinear
---    animation = fade, 1, 3.03, quick
---    animation = layers, 1, 3.81, easeOutQuint
---    animation = layersIn, 1, 4, easeOutQuint, fade
---    animation = layersOut, 1, 1.5, linear, fade
---    animation = fadeLayersIn, 1, 1.79, almostLinear
---    animation = fadeLayersOut, 1, 1.39, almostLinear
---    animation = windows, 1, 6, easeOutCirc, gnomed
---    animation = windowsMove, 1, 6, overshoot, slide
---    animation = workspaces, 1, 8, easeInOutQuint
---}
-
-hl.config({
-	dwindle = {
-		preserve_split = true, -- you probably want this
-	},
-})
-
-hl.config({
-	master = {
-		new_status = "master",
-	},
-})
+--hl.animation({ leaf = "hyprfocusIn", enabled = true, speed = 1, bezier = "linear" })
+--hl.animation({ leaf = "hyprfocusOut", enabled = true, speed = 1, bezier = "linear"})
 
 -- ░▀█▀░█▀█░█▀█░█░█░▀█▀░░░░
 -- ░░█░░█░█░█▀▀░█░█░░█░░░▀░
@@ -264,64 +266,42 @@ hl.config({
 
 local mainMod = "SUPER" -- set wink as main modifier (which has been swapped to alt and caps)
 
--- programs
-hl.bind(mainMod .. " +  A", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " +  E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " +  R", hl.dsp.exec_cmd(ranger))
-hl.bind(mainMod .. " +  B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " +  W", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " +  P", hl.dsp.exec_cmd(ffp))
---hl.bind(mainMod .. " +  S", hl.dsp.exec_cmd(spotify))
-hl.bind(mainMod .. " +  N", hl.dsp.exec_cmd(neonav))
-hl.bind(mainMod .. " +  L", hl.dsp.exec_cmd("neovide"))
-hl.bind(mainMod .. " +  V", hl.dsp.exec_cmd("codium"))
+-- program binds: -------------------------------------------------------------------------------
+
+-- general
+hl.bind(mainMod .. " +     A", hl.dsp.exec_cmd(terminal)) ----------- foot -------- terminal
+hl.bind(mainMod .. " +     E", hl.dsp.exec_cmd(fileManager)) -------- pcmanfm-qt -- file manager (GUI)
+hl.bind(mainMod .. " +     R", hl.dsp.exec_cmd(ranger)) ------------- ranger ------ file manager (TUI)
+hl.bind(mainMod .. " +     B", hl.dsp.exec_cmd(browser)) ------------ firefox ----- browser
+hl.bind(mainMod .. " +     W", hl.dsp.exec_cmd(browser)) ------------ firefox ----- browser
+hl.bind(mainMod .. " +     P", hl.dsp.exec_cmd(ffp)) ---------------- firefox ----- browser (private)
+--hl.bind(mainMod .. " + M + S", hl.dsp.exec_cmd(spotify)) ------------ spotify ----- music player (commented out due to conflict w/ bottom waybar and window splitting)
+hl.bind(mainMod .. " +     N", hl.dsp.exec_cmd(neonav)) ------------- neonav ------ custom project
+hl.bind(mainMod .. " +     L", hl.dsp.exec_cmd("neovide")) ---------- neovide ----- text editor (GUI - *for neovim)
+hl.bind(mainMod .. " +     V", hl.dsp.exec_cmd("codium")) ----------- vscodium ---- FOSS telemetry-free vscode fork/alt
+hl.bind(mainMod .. " +     Z", hl.dsp.exec_cmd(zed)) ---------------- zed editor -- speedy text editor written in rust (GUI)
 --hl.bind(SHIFT .. " + Home", hl.dsp.exec_cmd(wallpaperPicker))
 --hl.bind(SHIFT .. " + End",  hl.dsp.exec_cmd(themePicker))
 
---hl.bind(mainMod .. " +  K", hl.dsp.exec_cmd("bash -l -c 'sleep 7s && kando'"))
-
--- window management
-hl.bind(mainMod .. " +  space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " +  space", hl.dsp.window.center())
-hl.bind(mainMod .. " +    S", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " +    F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod .. " +    C", hl.dsp.window.close())
-
--- special workspace toggle
-hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("minimize"))
--- send to special workspace
-hl.bind(
-	mainMod .. " + SHIFT + X",
-	hl.dsp.window.move({
-		workspace = "special:minimize",
-	})
-)
-
--- screenshot
-hl.bind(mainMod .. " + SHIFT + S ", hl.dsp.exec_cmd(screenshot))
-
--- btop
+-- system monitor (a.k.a. task manager)
 hl.bind(mainMod .. " + CTRL + DELETE ", hl.dsp.exec_cmd(btop))
 
--- kando
+-- kando (pie-menu everything* launcher)
 --hl.bind("CTRL + space", hl.dsp.global("menu.kando.Kando:sao"))
 hl.bind("CTRL + space", hl.dsp.exec_cmd("bash /home/y2k/stuff/dev/bash/scripts/kando-wrapper.sh"))
 
--- ulauncher
+-- ulauncher (traditional application launcher)
 hl.bind(mainMod .. " +  Q", hl.dsp.exec_cmd(launcher))
 
--- toggle hide top waybar
-hl.bind(mainMod .. " +  Z", hl.dsp.exec_cmd("killall -SIGUSR1 .waybar-wrapped"))
+-- window & layout management binds: ------------------------------------------------------------
 
--- toggle hide bottom waybar
-hl.bind(mainMod .. " +  M", hl.dsp.exec_cmd("killall -SIGUSR2 .waybar-wrapped"))
-
--- show and hide desktop shortcuts (wallpaper sync. needs updating)
-hl.bind(mainMod .. " +  D", hl.dsp.exec_cmd("pcmanfm-qt --desktop"))
-hl.bind(mainMod .. " +  H", hl.dsp.exec_cmd("pcmanfm-qt --desktop-off"))
-
--- exit hyprland (commented out for now)
---  hl.bind(mainMod .. " +  M, exit,
+-- modify window properties
+hl.bind(mainMod .. " +     space", hl.dsp.window.float({ action = "toggle" })) -------------- float window
+hl.bind(mainMod .. " +     space", hl.dsp.window.center()) --------------------------------- center window
+hl.bind(mainMod .. " +         S", hl.dsp.layout("togglesplit")) ---------------------------- split window
+hl.bind(mainMod .. " +         F", hl.dsp.window.fullscreen({ action = "toggle" })) ---- fullscreen window
+hl.bind(mainMod .. " +         C", hl.dsp.window.close()) ----------------------------------- close window
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.float({ action = "toggle" })) -------- pseudo tile window
 
 -- move window focus (mainMod + arrow keys)
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -335,7 +315,24 @@ hl.bind("ALT + right", hl.dsp.window.move({ direction = "right" }))
 hl.bind("ALT + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind("ALT + down", hl.dsp.window.move({ direction = "down" }))
 
--- switch workspaces (mainMod + [0-9])
+-- resize windows (ctrl + shift + arrow keys)
+local function resize(x, y)
+	return function()
+		hl.dispatch(hl.dsp.window.resize({ x = x, y = y, relative = true }))
+	end
+end
+hl.bind("CTRL + SHIFT + left", resize(-25, 0), { repeating = true })
+hl.bind("CTRL + SHIFT + right", resize(25, 0), { repeating = true })
+hl.bind("CTRL + SHIFT + up", resize(0, -25), { repeating = true })
+hl.bind("CTRL + SHIFT + down", resize(0, 25), { repeating = true })
+
+-- alt tab pretty much (cycles through windows and brings them to top)
+hl.bind(mainMod .. " +  Tab", hl.dsp.window.cycle_next({}))
+hl.bind(mainMod .. " +  Tab", hl.dsp.window.alter_zorder({ mode = "top" }))
+
+-- workspace-related binds: -------------------------------------------------------------------
+
+-- change/switch workspaces (mainMod + [0-9])
 -- move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 9 do
 	local key = i
@@ -343,17 +340,25 @@ for i = 1, 9 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- change workspaces (mainMod + arrow keys)
+-- change/switch workspaces (mainMod + arrow keys)
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.focus({ workspace = "e+1" }))
 
--- change workspaces and bring windows (mainMod + shift + arrow keys)
+-- change/switch workspaces and bring windows (mainMod + shift + arrow keys)
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ workspace = "e+1", follow = true }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ workspace = "e-1", follow = true }))
 
--- alt tab pretty much (cycles through windows and brings them to top)
-hl.bind(mainMod .. " +  Tab", hl.dsp.window.cycle_next({}))
-hl.bind(mainMod .. " +  Tab", hl.dsp.window.alter_zorder({ mode = "top" }))
+-- special workspace toggle
+hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("minimize"))
+-- send to special workspace
+hl.bind(
+	mainMod .. " + SHIFT + X",
+	hl.dsp.window.move({
+		workspace = "special:minimize",
+	})
+)
+
+-- mouse-centric/based binds: ----------------------------------------------------------------
 
 -- move/resize windows (mainMod + LMB/RMB and dragging)
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -377,6 +382,24 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.window.tag({ tag = "+alpha_default" }))
 hl.window_rule({ match = { tag = "alpha_default" }, opacity = "0.8 override 0.6 override" })
 hl.window_rule({ match = { tag = "alpha_higher" }, opacity = "0.9 override 0.8 override" })
 hl.window_rule({ match = { tag = "alpha_highest" }, opacity = "1 override" })
+
+-- other misc. binds: ----------------------------------------------------------------------
+
+-- toggle waybar visibility
+hl.bind(mainMod .. " + SHIFT +  W", hl.dsp.exec_cmd("killall -SIGUSR1 .waybar-wrapped")) -- top bar
+hl.bind(mainMod .. " +  M", hl.dsp.exec_cmd("killall -SIGUSR2 .waybar-wrapped")) -- bottom bar
+
+-- show and hide desktop shortcuts (great for letting non-linux users access ya shiz)
+hl.bind(mainMod .. " +  D", hl.dsp.exec_cmd("pcmanfm-qt --desktop"))
+hl.bind(mainMod .. " +  H", hl.dsp.exec_cmd("pcmanfm-qt --desktop-off"))
+
+-- screenshot
+hl.bind(mainMod .. " + SHIFT + S ", hl.dsp.exec_cmd(screenshotRegion))
+hl.bind("ALT + SHIFT + S ", hl.dsp.exec_cmd(screenshotWindow))
+hl.bind("CTRL + SHIFT + S ", hl.dsp.exec_cmd(screenshotScreen))
+
+-- exit hyprland (left in-case u need it)
+--  hl.bind(mainMod .. " +  M, exit,
 
 -- ░█▀▄░█░█░█░░░█▀▀░█▀▀░░░░
 -- ░█▀▄░█░█░█░░░█▀▀░▀▀█░░▀░
@@ -410,6 +433,9 @@ hl.window_rule({
 		class = "^(ulauncher)$",
 	},
 	stay_focused = true,
+	no_blur = true,
+	no_shadow = true,
+	border_size = 0,
 })
 
 hl.window_rule({
@@ -540,7 +566,7 @@ hl.window_rule({
 	stay_focused = true,
 })
 
--- remove = { border from beamng
+-- remove border from beamng
 hl.window_rule({
 	name = "beamng",
 	match = {
@@ -548,6 +574,12 @@ hl.window_rule({
 	},
 	border_size = 0,
 })
+
+-- remove border from inactive windows (not using cus the window contents jump around too much - made em invisible instead)
+--hl.window_rule({
+--	match = { focus = 0 },
+--	border_size = 0,
+--})
 
 -- fix some dragging issues with XWayland
 hl.window_rule({
@@ -581,3 +613,23 @@ hl.layer_rule({
 	},
 	no_anim = true,
 })
+
+-- ░█▀█░█░░░█░█░█▀▀░▀█▀░█▀█░█▀▀░░░░
+-- ░█▀▀░█░░░█░█░█░█░░█░░█░█░▀▀█░░▀░
+-- ░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░▀░
+
+--hl.config({
+--    plugin = {
+--        hyprfocus = {
+--            enabled = true,
+--            animate_floating = true,
+--            animate_workspacechange = false,
+--
+--            keyboard_focus_animation = shrink,
+--            mouse_focus_animation = shrink,
+--
+--            fade_opacity = 0.7,
+--            shrink_percentage = 0.75,
+--        }
+--    }
+--})
