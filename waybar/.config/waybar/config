@@ -135,7 +135,7 @@
 
             "custom/zed": {
                 "format": " 󰬡 ",
-                "on-click": "zeditor -n ~/777",
+                "on-click": "zeditor -n $HOME/777",
                 "tooltip-format": "speedy text editor"
             },
 
@@ -171,7 +171,7 @@
 
             "custom/beamng": {
                 "format": "<span>\u2008</span><span font='12'>󰓔</span><span>\u2008</span>",
-                "on-click": "~/Desktop/BeamNG.drive.desktop",
+                "on-click": "$HOME/Desktop/BeamNG.drive.desktop",
                 "tooltip-format": "BeamNG.drive"
             },
 
@@ -208,8 +208,8 @@
                 "move-to-monitor": false,
                 // clicking workspaces doesn't work for now due to Hyprland's Lua migration,
                 // but can be solved by using waybar-git.
-                //"on-click": "hyprctl dispatch \"hl.dsp.focus({ workspace = {id} })\"",
-                "on-click": "activate",
+                //"on-click-window": "hyprctl dispatch \"hl.dsp.focus({ workspace = {button} })\"", //to be used w/ future release
+                //"on-click": "activate", //depricated :/
 
                 "persistent-only": false,
                 "persistent-workspaces": [ ],
@@ -385,25 +385,25 @@
 
             "custom/random-background": {
                 "format": "  ",
-                "on-click": "foot bash ~/stuff/dev/bash/scripts/random-background.sh",
+                "on-click": "foot bash $HOME/stuff/dev/bash/scripts/random-background.sh",
                 "tooltip-format": "change to random wallpaper"
             },
 
             "custom/swww": {
                 "format": " 󰸉 ",
-                "on-click": "foot -T WallpaperPicker bash ~/stuff/dev/bash/scripts/background-picker.sh && wal -R",
+                "on-click": "foot -T WallpaperPicker bash $HOME/stuff/dev/bash/scripts/background-picker.sh && wal -R",
                 "tooltip-format": "change wallpaper"
             },
 
             "custom/wp2theme": {
                 "format": "  ",
-                "on-click": "bash ~/stuff/dev/bash/scripts/swww-as-theme.sh",
+                "on-click": "bash $HOME/stuff/dev/bash/scripts/swww-as-theme.sh",
                 "tooltip-format": "set colorscheme from wallpaper"
             },
 
             "custom/pywal": {
                 "format": "  ",
-                "on-click": "foot -T ThemePicker bash ~/stuff/dev/bash/scripts/theme-picker.sh & wal -R",
+                "on-click": "foot -T ThemePicker bash $HOME/stuff/dev/bash/scripts/theme-picker.sh & wal -R",
                 "tooltip-format": "change theme"
             },
 
@@ -440,23 +440,23 @@
             },
 
             "custom/pomoc": {
-              "exec": "bash ~/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc.sh",
+              "exec": "bash $HOME/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc.sh",
               "interval": 1,
 
               "format": "{}",
 
-              "on-click": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle'",
-              "on-click-right": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end'",
+              "on-click": "$HOME/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle ; pw-play '/home/y2k/stuff/other/tf2 hit sounds/minecraft xp/hitsound.wav'",
+              "on-click-right": "$HOME/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end ; pw-play '/home/y2k/stuff/other/tf2 hit sounds/minecraft xp/killsound.wav'",
             },
 
             "custom/pomoc-state": {
-              "exec": "bash ~/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc-state.sh",
+              "exec": "bash $HOME/stuff/dev/git/0l-dev-env/pomoc/scripts/pomoc-state.sh",
               "interval": 1,
 
               "format": "{} ",
 
-              "on-click": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle'",
-              "on-click-right": "bash -c '~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end'"
+              "on-click": "$HOME/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc toggle ; pw-play '/home/y2k/stuff/other/tf2 hit sounds/minecraft xp/hitsound.wav'",
+              "on-click-right": "$HOME/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomoc end ; pw-play '/home/y2k/stuff/other/tf2 hit sounds/minecraft xp/killsound.wav'"
             },
 
 
@@ -788,12 +788,12 @@
 
             "custom/wayves-left": {
                 "format": "{}",
-                "exec": "python ~/stuff/other/wayves/wayves.py -o cava=left -i cava=left -a cava=left",
+                "exec": "python $HOME/stuff/other/wayves/wayves.py -o cava=left -i cava=left -a cava=left",
             },
 
             "custom/wayves-right": {
                 "format": "{}",
-                "exec": "python ~/stuff/other/wayves/wayves.py -o cava=right -i cava=right -a cava=right"
+                "exec": "python $HOME/stuff/other/wayves/wayves.py -o cava=right -i cava=right -a cava=right"
             },
 
 
