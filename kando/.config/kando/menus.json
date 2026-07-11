@@ -167,6 +167,18 @@
                   {
                     "type": "command",
                     "data": {
+                      "command": "zeditor -n ~/777",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "Zed",
+                    "icon": "zedindustries",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
                       "command": "neovide",
                       "delayed": false
                     },
@@ -469,24 +481,66 @@
                 "iconTheme": "simple-icons"
               },
               {
-                "type": "command",
-                "data": {
-                  "command": "neovide ~/.config/hypr/hyprland.lua",
-                  "delayed": false
-                },
+                "type": "submenu",
+                "data": {},
                 "name": "Hyprland",
                 "icon": "hyprland",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "zeditor -n ~/.config/hypr/hyprland.lua",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "Zedit Hyprland",
+                    "icon": "zedindustries",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "neovide ~/.config/hypr/hyprland.lua",
+                      "delayed": false
+                    },
+                    "name": " Nvim Hyprland",
+                    "icon": "neovim",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
               },
               {
-                "type": "command",
-                "data": {
-                  "command": "bash -c \"neovide /etc/nixos/configuration.nix && notify-send 'Remember to rebuild!' '(sudo nixos-rebuild switch)' && foot\"",
-                  "delayed": false
-                },
+                "type": "submenu",
+                "data": {},
                 "name": "NixOS",
                 "icon": "nixos",
-                "iconTheme": "simple-icons"
+                "iconTheme": "simple-icons",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "bash -c \"zeditor -n /etc/nixos/configuration.nix && notify-send 'Remember to rebuild!' '(sudo nixos-rebuild switch)' && foot\"",
+                      "detached": true,
+                      "isolated": false,
+                      "delayed": false
+                    },
+                    "name": "Zedit NixOS",
+                    "icon": "zedindustries",
+                    "iconTheme": "simple-icons"
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "bash -c \"neovide /etc/nixos/configuration.nix && notify-send 'Remember to rebuild!' '(sudo nixos-rebuild switch)' && foot\"",
+                      "delayed": false
+                    },
+                    "name": "NeoVim NixOS",
+                    "icon": "neovim",
+                    "iconTheme": "simple-icons"
+                  }
+                ]
               },
               {
                 "type": "command",
@@ -530,24 +584,62 @@
                 "iconTheme": "material-symbols-rounded",
                 "children": [
                   {
-                    "type": "command",
-                    "data": {
-                      "command": "neovide ~/.config/waybar/config",
-                      "delayed": false
-                    },
-                    "name": "config.jsonc",
-                    "icon": "terminal",
-                    "iconTheme": "material-symbols-rounded"
+                    "type": "submenu",
+                    "data": {},
+                    "name": "Zedit",
+                    "icon": "zedindustries",
+                    "iconTheme": "simple-icons",
+                    "children": [
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "zeditor -n ~/.config/waybar/style.css",
+                          "delayed": false
+                        },
+                        "name": "style.css",
+                        "icon": "css",
+                        "iconTheme": "simple-icons"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "zeditor -n ~/.config/waybar/config",
+                          "delayed": false
+                        },
+                        "name": "config.jsonc",
+                        "icon": "terminal",
+                        "iconTheme": "material-symbols-rounded"
+                      }
+                    ]
                   },
                   {
-                    "type": "command",
-                    "data": {
-                      "command": "neovide ~/.config/waybar/style.css",
-                      "delayed": false
-                    },
-                    "name": "style.css",
-                    "icon": "css",
-                    "iconTheme": "simple-icons"
+                    "type": "submenu",
+                    "data": {},
+                    "name": "Neovim",
+                    "icon": "neovim",
+                    "iconTheme": "simple-icons",
+                    "children": [
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "neovide ~/.config/waybar/style.css",
+                          "delayed": false
+                        },
+                        "name": "style.css",
+                        "icon": "css",
+                        "iconTheme": "simple-icons"
+                      },
+                      {
+                        "type": "command",
+                        "data": {
+                          "command": "neovide ~/.config/waybar/config",
+                          "delayed": false
+                        },
+                        "name": "config.jsonc",
+                        "icon": "terminal",
+                        "iconTheme": "material-symbols-rounded"
+                      }
+                    ]
                   }
                 ]
               }
@@ -693,7 +785,7 @@
       },
       "shortcut": "",
       "shortcutID": "sao",
-      "centered": false,
+      "centered": true,
       "anchored": false,
       "hoverMode": false,
       "tags": []
