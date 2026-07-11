@@ -4,15 +4,7 @@
 # ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░
 
 # general commands
-alias ns='nix-shell'
-alias try='nix-shell -p'
 alias pls='sudo $(history -p !!)'
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias lsa='ls -a'
-alias lst='lsd --tree --depth 2'
-alias tree='lsd --tree --depth'
 alias cpa='cp -a'
 alias cpd='cp -r'
 alias cpr='cp -r'
@@ -21,21 +13,35 @@ alias cyall='sudo rm -R'
 alias diff+='diff -c --color'
 alias diff++='diff -y --color'
 alias edit='$EDITOR'
+alias m='micro'
+alias n="nvim"
+alias r="ranger"
+alias q='exit'
+alias c='exit'
+
+# navigation and listing
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias lst='lsd --tree --depth 2'
+alias tree='lsd --tree --depth'
+alias lsa='lsd -a --date "+- %D @ %I:%M %p"'
+alias lsdv='lsd -lt --group-dirs=first --date "+- %D @ %I:%M %p"'
+alias lsdl='lsd -lt --group-dirs=first --blocks=size,date,git,name --date "+- %D @ %I:%M %p"'
+alias lsdla='lsd -lta --group-dirs=first --date "+- %D @ %I:%M %p"'
+
+# perms / privelage
 alias who-owns='ls -l'
 alias who-owns-d='ls -ld'
 alias gimme='sudo chown -R 1000:100'
 alias lemme='sudo chmod -R 644'
 alias LEMME='sudo chmod -R 775'
 alias bashable='chmod +x'
-alias ports='sudo ss -tulnp'
-alias purl='curl -v'
-alias p='ping neocities.org'
-alias m='micro'
-alias n="nvim"
-alias q='exit'
-alias c='exit'
 
 # config editing
+alias bashrc='$EDITOR ~/.bashrc_local'
+alias bashrc-comb='$EDITOR ~/.bashrc'
+alias bashrc-true='$EDITOR ~/.bashrc'
 alias ssh-conf='$EDITOR ~/.ssh/config'
 alias nixos='$EDITOR /etc/nixos/configuration.nix'
 alias nixos-conf='$EDITOR /etc/nixos/configuration.nix'
@@ -64,12 +70,20 @@ alias docker-reboot='sudo systemctl restart docker'
 alias cyagarb='sudo nix-collect-garbage'
 alias cyagens='sudo nix-collect-garbage --delete-older-than 2d && echo "yo, make sure to type sudo nixos-rebuild boot after this-DONT CONFUSE IT W/ REBUILD ALIAS, then ciar"'
 alias rebuild='sudo nixos-rebuild switch'
+alias nrs='sudo nixos-rebuild switch'
 alias ciao='shutdown now'
 alias ciaor='sudo reboot'
+
+# net
+alias ports='sudo ss -tulnp'
+alias purl='curl -v'
+alias p='ping neocities.org'
 
 # other
 alias smith='ssh smith'
 alias cr='cargo run'
+alias ns='nix-shell'
+alias try='nix-shell -p'
 
 # ░█▀▀░█░█░█▀█░█▀▀░▀█▀░▀█▀░█▀█░█▀█░█▀▀░░░░
 # ░█▀▀░█░█░█░█░█░░░░█░░░█░░█░█░█░█░▀▀█░░▀░
