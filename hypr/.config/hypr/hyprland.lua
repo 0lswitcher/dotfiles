@@ -111,6 +111,7 @@ hl.on("hyprland.start", function()
   --hl.exec_cmd("bash $shPath/workspace-previews-wrapper.sh" &) ------ initialize workspace previews scripts
 	hl.exec_cmd("waybar") -------------------------------------------- initialize status bar
 	hl.exec_cmd("~/stuff/dev/git/0l-dev-env/pomoc/build/bin/pomod") -- initialize pomodoro timer daemon
+	hl.exec_cmd("hyprsunset") ---------------------------------------- initialize hyprsunset for blue-light filter
   --hl.exec_cmd("terminal -T SysInfo --hold -e $fastfetch" &) -------- open terminal (foot fastfetch)
   --hl.exec_cmd("hyprctl plugin load /run/current-system/sw/lib/libhyprfocus.so") -- broken upstream: https://github.com/hyprwm/hyprland-plugins/issues/681
 end)
@@ -398,6 +399,10 @@ hl.bind(mainMod .. " +  H", hl.dsp.exec_cmd("pcmanfm-qt --desktop-off"))
 hl.bind(mainMod .. " + SHIFT + S ", hl.dsp.exec_cmd(screenshotRegion))
 hl.bind("ALT + SHIFT + S ", hl.dsp.exec_cmd(screenshotWindow))
 hl.bind("CTRL + SHIFT + S ", hl.dsp.exec_cmd(screenshotScreen))
+
+-- activate blue light filter (w/ hyprsunset)
+hl.bind(mainMod .. " + SHIFT + semicolon ", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 2500")) -- activate
+hl.bind(mainMod .. " + semicolon ", hl.dsp.exec_cmd("hyprctl hyprsunset identity")) -- de-activate/restore to default
 
 -- exit hyprland (left in-case u need it)
 --  hl.bind(mainMod .. " +  M, exit,
