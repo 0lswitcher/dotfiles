@@ -1,14 +1,74 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=1000&color=B277F7&vCenter=true&width=500&lines=0lswitcher's+UNIX+Dotfiles)](https://git.io/typing-svg)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=46&duration=4500&pause=1000&color=B277F7&center=true&vCenter=true&width=1012&lines=0lswitcher's+UNIX+Dotfiles)
 
-My collection of dotfiles for different applications that I considered noteworthy.\
-No install scripts, just pure dotfiles.
+![MultiPreview](md-assets/previews/combined-preview.gif)
 
+<p align="center">
+    My collection of dotfiles for different applications that I considered noteworthy.<br>
+    No install scripts, just pure dotfiles.
+</p>
 
 > [!TIP]
 > If you're looking for bash scripts, take a look at my [bash-scripts](https://github.com/0lswitcher/bash-scripts) repository since I've moved them there.
 > 
 > If you're instead looking for NixOS configuration files, take a look at my [nixfiles](https://github.com/0lswitcher/nixfiles) repository since I've moved them there.
 
+<br>
+
+### Previews
+
+<details>
+<summary><b>NeoVim:</b></summary>
+
+![Neovim](md-assets/previews/neovim-preview.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>Obsidian:</b></summary>
+
+![Obsidian](md-assets/previews/obsidian-preview-cropped.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>Kando (The Pie Menu):</b></summary>
+
+![Kando](md-assets/previews/kando-preview-cropped.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>Firefox (w/ Pywalfox Extension):</b></summary>
+
+> w/ Standard Hyprland Transparency Effects:
+![Firefox/Pywalfox](md-assets/previews/firefox-preview.gif)
+> w/ Opaque Effect: (This can be used for all programs, see mouse binds)
+![Firefox/Pywalfox Opaque](md-assets/previews/firefox-opaque-preview.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>Glance (The Server Dashboard):</b></summary>
+
+![Glance](md-assets/previews/glance-preview.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>Ranger: (TUI File Manager):</b></summary>
+
+![Ranger](md-assets/previews/ranger-preview.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<details>
+<summary><b>PCManFM-Qt: (GUI File Manager):</b></summary>
+
+![PCManFM-Qt](md-assets/previews/pcmanfm-qt-preview.gif)
+
+</details>
+<!----------------------------------------------------------------->
+<br>
 
 ### Keybindings
 
@@ -104,6 +164,8 @@ Mouse-centric/based binds:
 
 See [hypr/.config/hypr/hyprland.lua](hypr/.config/hypr/hyprland.lua) for a comprehensive list.
 It will recieve updates before this README does.
+
+<br>
 
 ### Installation
 ---
