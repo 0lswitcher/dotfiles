@@ -38,10 +38,10 @@ hl.workspace_rule({ workspace = "1", layout = "scrolling" })
 hl.workspace_rule({ workspace = "4", layout = "scrolling" })
 hl.workspace_rule({ workspace = "7", layout = "scrolling" })
 
--- define unique direction for scrolling layout on each monitor
-hl.workspace_rule({ workspace = "1", layout_opts = { direction = "left" } })
-hl.workspace_rule({ workspace = "4", layout_opts = { direction = "up" } })
-hl.workspace_rule({ workspace = "7", layout_opts = { direction = "right" } })
+-- define unique direction for scrolling layout on each monitor (i don't do this anymore, but it's left here for our convenience)
+--hl.workspace_rule({ workspace = "1", layout_opts = { direction = "left" } })
+--hl.workspace_rule({ workspace = "4", layout_opts = { direction = "up" } })
+--hl.workspace_rule({ workspace = "7", layout_opts = { direction = "right" } })
 
 -- ░█▀▀░█▀█░█░█░▀█▀░█▀▄░█▀█░█▀█░█▀█░█▀▀░█▀█░▀█▀░░░█░█░█▀█░█▀▄░▀█▀░█▀█░█▀▄░█░░░█▀▀░█▀▀
 -- ░█▀▀░█░█░▀▄▀░░█░░█▀▄░█░█░█░█░█░█░█▀▀░█░█░░█░░░░▀▄▀░█▀█░█▀▄░░█░░█▀█░█▀▄░█░░░█▀▀░▀▀█
