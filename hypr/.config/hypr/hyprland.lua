@@ -122,10 +122,11 @@ end)
 hl.config({
 	general = {
 		gaps_in = 5,
-		gaps_out = 7, --top
-		20, --left
-		10, --bottom
-		20, --right
+		gaps_out = 7, -- fix css_gaps syntax
+		--7, --top
+		--20, --left
+		--10, --bottom
+		--20, --right
 
 		border_size = 2,
 
