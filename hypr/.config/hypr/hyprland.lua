@@ -404,6 +404,24 @@ hl.bind("CTRL + SHIFT + S ", hl.dsp.exec_cmd(screenshotScreen))
 hl.bind(mainMod .. " + SHIFT + semicolon ", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 2500")) -- activate
 hl.bind(mainMod .. " + semicolon ", hl.dsp.exec_cmd("hyprctl hyprsunset identity")) -- de-activate/restore to default
 
+-- disable most keybinds for gaming / game mode
+--
+-- note: most binds were set with intention of avoiding any conflict while gaming, with the exception of kando.
+--       feel free to disable this bind, just make sure to find a non-conflicting bind for kando, since it *will*
+--       activate any time you try to crouch jump in a game.
+--
+--       the ability to close anything w/ mainMod + C bind is still kept in emergencies
+--
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("notify-send 'Entered Game Mode...All binds disabled!' 'Press mainMod + Escape/ESC to re-enable binds'"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(xpSoundShort))
+hl.bind(mainMod .. " + G ", hl.dsp.submap("clean"))
+hl.define_submap("clean", function()
+    hl.bind(mainMod .. " + C", hl.dsp.window.close()) -- close window
+    hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("notify-send 'Exiting Game Mode...All binds re-enabled!'"))
+    hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(xpSoundShort))
+    hl.bind(mainMod .. " + Escape", hl.dsp.submap("reset")) -- exit submap / re-enable binds
+end)
+
 -- exit hyprland (left in-case u need it)
 --  hl.bind(mainMod .. " +  M, exit,
 

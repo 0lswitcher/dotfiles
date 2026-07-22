@@ -153,12 +153,14 @@ Mouse-centric/based binds:
 <details>
 <summary><b>Miscellaneous</b></summary>
 
-| Key                                                       | Action                                |
-| --------------------------------------------------------- | ------------------------------------- |
-| <kbd>mainMod</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd>      | Toggle Waybar Visibility (top bar)    |
-| <kbd>mainMod</kbd> + <kbd>M</kbd>                         | Toggle Waybar Visibility (bottom bar) |
-| <kbd>mainMod</kbd> + <kbd>D</kbd>                         | Show Desktop Shortcuts w/ PCManFM-Qt  |
-| <kbd>mainMod</kbd> + <kbd>H</kbd>                         | Hide Desktop Shortcuts w/ PCManFM-Qt  |
+| Key                                                       | Action                                 |
+| --------------------------------------------------------- | -------------------------------------- |
+| <kbd>mainMod</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd>      | Toggle Waybar Visibility (top bar)     |
+| <kbd>mainMod</kbd> + <kbd>M</kbd>                         | Toggle Waybar Visibility (bottom bar)  |
+| <kbd>mainMod</kbd> + <kbd>D</kbd>                         | Show Desktop Shortcuts w/ PCManFM-Qt   |
+| <kbd>mainMod</kbd> + <kbd>H</kbd>                         | Hide Desktop Shortcuts w/ PCManFM-Qt   |
+| <kbd>mainMod</kbd> + <kbd>G</kbd>                         | Disable most binds (useful for gaming) |
+| <kbd>mainMod</kbd> + <kbd>Escape</kbd>                    | (Re-)Enable all binds (exit submap)    |
 
 </details>
 
